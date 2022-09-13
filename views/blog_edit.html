@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/static/css/wangeditoreditor@5.1style.css" rel="stylesheet">
+    <link href="/static/layui/css/layui.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            background-color: #fff;
+            height: 100%;
+            overflow: hidden;
+            color: #333;
+        }
+
+        #top-container {
+            border-bottom: 1px solid #e8e8e8;
+            padding-left: 30px;
+        }
+
+        #editor-toolbar {
+            width: 1350px;
+            background-color: #FCFCFC;
+            margin: 0 auto;
+        }
+
+        #content {
+            height: calc(100% - 40px);
+            background-color: rgb(245, 245, 245);
+            overflow-y: auto;
+            position: relative;
+        }
+
+        #editor-container {
+            width: 850px;
+            margin: 30px auto 150px auto;
+            background-color: #fff;
+            padding: 20px 50px 50px 50px;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 2px 10px rgb(0 0 0 / 12%);
+        }
+
+        #title-container {
+            padding: 20px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        #title-container input {
+            font-size: 30px;
+            border: 0;
+            outline: none;
+            width: 100%;
+            line-height: 1;
+        }
+
+        #editor-text-area {
+            min-height: 900px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div style="border-bottom: 1px solid #e8e8e8;">
+    <div id="editor-toolbar"></div>
+</div>
+<div id="content">
+    <div id="editor-container">
+        <div id="title-container">
+            <input placeholder="请输入标题！" id="blog_title">
+        </div>
+        <div id="editor-text-area"></div>
+        <div id="top-container">
+        </div>
+        <div>
+            <button class="layui-btn layui-btn-sm" id="hq" style="margin-top: 5px">提交</button>
+            <button class="layui-btn layui-btn-sm" id="hq1" style="margin-top: 5px">暂存</button>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/static/js/wangeditoreditor@5.1.15distindex.js"></script>
+<script src="/static/js/jquery2.1.1.min.js"></script>
+<script src="/static/layui/layui.js"></script>
+<script>
+
+    const E = window.wangEditor
+    // Change language
+    const LANG = location.href.indexOf('lang=en') > 0 ? 'en' : 'zh-CN'
+    E.i18nChangeLanguage(LANG)
+
+    const editorConfig = {MENU_CONF: {}}
+    editorConfig.MENU_CONF['uploadImage'] = {
+        server: '/api/upload_img',
+        // server: '/api/upload-img-10s', // test timeout
+        // server: '/api/upload-img-failed', // test failed
+        // server: '/api/xxx', // test 404
+
+        timeout: 5 * 1000, // 5s
+
+        fieldName: 'custom-fileName',
+        meta: {token: 'xxx', a: 100},
+        metaWithUrl: true, // join params to url
+        headers: {Accept: 'text/x-json'},
+
+        maxFileSize: 10 * 1024 * 1024, // 10M
+
+        base64LimitSize: 5 * 1024, // insert base64 format, if file's size less than 5kb
+
+        onBeforeUpload(file) {
+            console.log('onBeforeUpload', file)
+
+            return file // will upload this file
+            // return false // prevent upload
+        },
+        onProgress(progress) {
+            console.log('onProgress', progress)
+        },
+        onSuccess(file, res) {
+            console.log('onSuccess', file, res)
+        },
+        onFailed(file, res) {
+            alert(res.message)
+            console.log('onFailed', file, res)
+        },
+        onError(file, err, res) {
+            alert(err.message)
+            console.error('onError', file, err, res)
+        },
+
+        // customInsert(res, insertFn) {
+        //   console.log('customInsert', res)
+        //   const imgInfo = res.data[0] || {}
+        //   const { url, alt, href } = imgInfo
+        //   if (!url) throw new Error(`Image url is empty`)
+
+        //   console.log('Your image url ', url)
+        //   insertFn(url, alt, href)
+        // },
+
+        // customUpload(file, insertFn) {
+        //   console.log('customUpload', file)
+
+        //   return new Promise((resolve) => {
+        //     // Simulate async insert image
+        //     setTimeout(() => {
+        //       const src = `https://www.baidu.com/img/flexible/logo/pc/result@2.png?r=${Math.random()}`
+        //       insertFn(src, 'baidu logo', src)
+        //       resolve('ok')
+        //     }, 500)
+        //   })
+        // },
+
+        // customBrowseAndUpload(insertFn) {
+        //   alert('Custom browse and upload')
+
+        //   // Simulate async insert image
+        //   setTimeout(() => {
+        //     const src = 'https://www.baidu.com/img/flexible/logo/pc/result@2.png'
+        //     insertFn(src, 'baidu logo', src) // insert a image
+        //   }, 500)
+        // },
+    }
+
+    const editor = E.createEditor({
+        selector: '#editor-text-area',
+        html: '<p>请输入内容！</p><p><br></p>',
+        config: editorConfig
+    })
+
+    const toolbar = E.createToolbar({
+        editor,
+        selector: '#editor-toolbar',
+        config: {
+            excludeKeys: 'fullScreen',
+        }
+        // config: {}
+    })
+    layui.use(['layer'], function () {
+        $('#hq').on('click', function () {
+            var date = {
+                BlogTitle: $('#blog_title').val(),
+                BlogContent: editor.getHtml(),
+              //  BlogId: 1,
+               BlogBrief: "",
+             //   BlogCreateTime: "",
+              //  BlogCreateUser: "",
+                BlogImgUrl: "",
+                BlogType: 1,
+             //   BlogLastModifyTime: "",
+                BlogState: 0
+            }
+            // alert(JSON.stringify(date))
+            $.ajax({
+                type: "POST",
+                url: 'api/edit_submit',
+                data: JSON.stringify(date),
+                contentType: "application/json",
+                dataType: "json",
+                beforeSend: function () {
+                    // TODO...
+                },
+                success: function (res) {
+                    if (res.code == 0) {
+
+                        // 提示语
+                        layer.msg('提交成功', {
+                            icon: 1,
+                            time: 1500
+                        });
+                       // editor.disable()
+
+                       // $('#blog_title').val("")
+                       // editor.clear()
+                        /* // 延迟3秒
+                         setTimeout(function () {
+                           // 跳转后台首页
+                           window.location.href = "/index";
+                         }, 2000);*/
+
+                        return false;
+                    } else {
+                        alert(res.msg())
+                        // 错误信息
+                       // layer.msg(res.msg, {icon: 2, anim: 6});
+
+                    }
+                },
+                error: function () {
+                    layer.msg("AJAX请求异常");
+                }
+            });
+
+
+        });
+    });
+</script>
+<!--
+<script>
+   // const E = window.wangEditor
+    const {createEditor,createToolbar}= window.wangEditor
+    // 切换语言
+    const LANG = location.href.indexOf('lang=en') > 0 ? 'en' : 'zh-CN'
+   createEditor.i18nChangeLanguage(LANG)
+
+    const editorConfig = {
+        placeholder: 'Type here...',
+        scroll: false, // 禁止编辑器滚动
+        MENU_CONF: {
+            uploadImage: {
+                fieldName: 'your-fileName',
+                base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
+            }
+        },
+        onChange(editor) {
+            console.log(editor.getHtml())
+        }
+    }
+
+    // 先创建 editor
+    const editor = createEditor({
+        selector: '#editor-text-area',
+        content: [],
+        // html: '',
+        config: editorConfig
+    })
+
+    // 创建 toolbar
+    const toolbar = createEditor.createToolbar({
+        editor,
+        selector: '#editor-toolbar',
+        config: {
+            excludeKeys: 'fullScreen',
+        }
+    })
+
+    // 点击空白处 focus 编辑器
+    document.getElementById('editor-text-area').addEventListener('click', e => {
+        if (e.target.id === 'editor-text-area') {
+            editor.blur()
+            editor.focus(true) // focus 到末尾
+        }
+    })
+    $('#hq').on('click', function () {
+        alert(editor.getHtml())
+    });
+</script>
+-->
+</html>

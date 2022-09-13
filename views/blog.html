@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/static/css/prism.css" rel="stylesheet">
+    <link href="/static/css/view.css" rel="stylesheet">
+    <link href="/static/css/abc.css" rel="stylesheet">
+</head>
+<body>
+<!--<div class="toolbar-search onlySearch">
+    <div class="toolbar-search-container">
+        <span class="icon-fire"></span>
+        <input id="toolbar-search-input"
+                                                                                      maxlength="2000"
+                                                                                      autocomplete="off" type="text"
+                                                                                      value=""
+                                                                                      placeholder="' + this.getSearchInputPlaceholder() + '">
+        <div class="gradient"></div>
+
+        <button id="toolbar-search-button"><i></i><span>搜索</span></button>
+        <input type="password" autocomplete="new-password" readonly disabled="true"
+                tyle="display: none; position:absolute;left:-9999999px;width:0;height:0;"/>
+    </div>
+</div>-->
+<div id="csdn-toolbar" style="position: relative; min-width: 100%; width: max-content; top: 0px; left: 0px;">
+        <div class="toolbar-search">
+            <div class="toolbar-search-container">
+                <input class="input111" id="toolbar-search-input" maxlength="2000" autocomplete="off" type="text"
+                       value=""
+                       placeholder="请输入搜索内容!" style="text-indent: 32px;">
+                <button class="button1" id="toolbar-search-button"><i class="ser"></i><span class="ccccc">搜索</span></button>
+                <input class="abc111" type="password" autocomplete="new-password" readonly="" disabled="true"
+                       style="display: none; position:absolute;left:-9999999px;width:0;height:0;">
+            </div>
+        </div>
+</div>
+<div id="content">
+    <div id="page-container" class="page-container">
+        <!--        <div style="padding: 20px 0;border-bottom: 1px solid #e8e8e8; " id="blog_title">
+                    <h1 align="center">{{str2html .Title}}</h1>
+                    <div class="information-details-msg">
+                        <span class="send-time">发布时间：<span>2020-09-26 14:48:45</span></span>
+                        <span class="comefrom">来源：<span>亿速云</span></span>
+                        <span class="readmath">阅读：<span id="reading_quantity">1261</span></span>
+                        <span class="autour">作者：<span>小新</span></span>
+                        <span class="special">栏目：<a style="color:#9EA7B3;" href="/zixun/kf_webkf/"><span>web开发</span></a></span>
+                    </div>
+                </div>-->
+
+        <div class="information-details">
+            <h1>html中h1标签如何居中</h1>
+            <div class="information-details-msg">
+                <span class="send-time">发布时间：<span>2020-09-26 14:48:45</span></span>
+                <span class="readmath">阅读：<span id="reading_quantity">1261</span></span>
+                <span class="autour">作者：<span>小新</span></span>
+                <span class="special">栏目：<a style="color:#9EA7B3;" href="/zixun/kf_webkf/"><span>web开发</span></a></span>
+            </div>
+
+            {{str2html .Html}}
+        </div>
+    </div>
+</div>
+</body>
+<script src="../static/js/prism.js"></script>
+</html>
+
+
