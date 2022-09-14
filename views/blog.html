@@ -5,7 +5,7 @@
     <title>Title</title>
     <link href="/static/css/prism.css" rel="stylesheet">
     <link href="/static/css/view.css" rel="stylesheet">
-    <link href="/static/css/abc.css" rel="stylesheet">
+    <link href="/static/css/cnds.css" rel="stylesheet">
 </head>
 <body>
 <!--<div class="toolbar-search onlySearch">
@@ -23,17 +23,145 @@
                 tyle="display: none; position:absolute;left:-9999999px;width:0;height:0;"/>
     </div>
 </div>-->
+
 <div id="csdn-toolbar" style="position: relative; min-width: 100%; width: max-content; top: 0px; left: 0px;">
-        <div class="toolbar-search">
-            <div class="toolbar-search-container">
-                <input class="input111" id="toolbar-search-input" maxlength="2000" autocomplete="off" type="text"
-                       value=""
-                       placeholder="请输入搜索内容!" style="text-indent: 32px;">
-                <button class="button1" id="toolbar-search-button"><i class="ser"></i><span class="ccccc">搜索</span></button>
-                <input class="abc111" type="password" autocomplete="new-password" readonly="" disabled="true"
-                       style="display: none; position:absolute;left:-9999999px;width:0;height:0;">
+    <div class="toolbar-inside">
+        <div class="toolbar-container">
+            <div class="toolbar-container-left">
+                <div class="toolbar-logo"><a href=""><img title="CSDN首页" src="/static/img/logo.png"></a>
+                </div>
+                <ul class="toolbar-menus csdn-toolbar-fl">
+                    <li class="active " title="阅读深度、前沿文章">
+                        <a href="https://blog.csdn.net/"> 博客</a>
+                    </li>
+                    <li class="active " title="阅读深度、前沿文章">
+                        <a href="https://blog.csdn.net/"> 下载</a>
+                    </li>
+                    <li class="active " title="阅读深度、前沿文章">
+                        <a href="https://blog.csdn.net/"> 学习</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="toolbar-container-middle">
+                <div class="toolbar-search">
+                    <div class="toolbar-search-container">
+                        <span class="icon-fire" style="display: none;"></span>
+                        <input id="toolbar-search-input" maxlength="2000" autocomplete="off" type="text" value=""
+                               placeholder="1062 1 for key" style="text-indent: 12px;">
+                        <div class="gradient"></div>
+                        <button id="toolbar-search-button">
+                            <i></i>
+                            <span class="btn-ss">搜索</span>
+                        </button>
+                        <input type="password" autocomplete="new-password" readonly="" disabled="true"
+                               style="display: none; position:absolute;left:-9999999px;width:0;height:0;">
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar-container-right">
+                <div class="toolbar-btns">
+                    <div class="toolbar-btn">
+                        <a class="hasAvatar" href="https://blog.csdn.net/qq_33989915"><img
+                                src="/static/img/tx.jpg"></a>
+                        <div id="csdn-toolbar-profile" class="csdn-toolbar-plugin" style="display: none; opacity: 1;">
+                            <div class="csdn-profile-top">
+                                <a class="csdn-profile-avatar" href="https://blog.csdn.net/qq_33989915"><img
+                                        src="https://profile.csdnimg.cn/A/9/2/0_qq_33989915"></a>
+                                <p class="csdn-profile-nickName">qq_33989915</p>
+                                <a data-report-query="spm=3001.5344" href="https://mall.csdn.net/vip"
+                                   class="csdn-profile-no-vip"></a>
+                            </div>
+                            <div class="csdn-profile-mid">
+                                <a href="https://blog.csdn.net/qq_33989915?type=subsubType=fans"><i
+                                        class="csdn-profile-fansCount">--</i>粉丝</a>
+                                <a href="https://blog.csdn.net/qq_33989915?type=sub"><i class="csdn-profile-followCount">17</i>关注</a>
+                                <a href="https://blog.csdn.net/qq_33989915"><i class="csdn-profile-likeCount">--</i>获赞</a>
+                            </div>
+                            <div class="csdn-profile-bottom">
+                                <ul class="csdn-border-bottom">
+                                    <li class=""><a href="https://i.csdn.net/#/user-center/profile"><i
+                                            class="csdn-profile-icon "></i>个人中心</a></li>
+                                    <li class=""><a href="https://mp.csdn.net/mp_blog/manage/article?spm=1011.2124.3001.5298"><i
+                                            class="csdn-profile-icon  "></i>内容管理</a></li>
+                                    <li class=""><a href="https://edu.csdn.net?utm_source=edu_txxl_mh"><i
+                                            class="csdn-profile-icon csdn-profile-icon-study"></i>我的学习</a></li>
+                                    <li class=""><a href="https://mall.csdn.net/myorder"><i
+                                            class="csdn-profile-icon csdn-profile-icon-order"></i>我的订单</a></li>
+                                    <li class=""><a href="https://i.csdn.net/#/wallet/index"><i
+                                            class="csdn-profile-icon csdn-profile-icon-wallet"></i>我的钱包</a></li>
+                                    <li class=""><a
+                                            href="https://dev-portal.csdn.net/welcome?utm_source=toolbar_user_profile"><i
+                                            class="csdn-profile-icon csdn-profile-icon-API"></i>我的云服务</a></li>
+                                    <li class="pt-8 csdn-profile-logout"><a href="javascript:;"><i
+                                            class="csdn-profile-icon csdn-profile-icon-logout"></i>退出</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toolbar-btn  ">
+                        <a href="https://mall.csdn.net/vip">会员中心 <img
+                                style="position: relative; vertical-align: middle; width: 14px; top: -2px; left: 0px;display:inline-block" src="https://img-home.csdnimg.cn/images/20210918025138.gif"></a>
+                        <div id="csdn-plugin-vip"
+                             style="background:url(https://img-home.csdnimg.cn/images/20210826055049.png) no-repeat center center; background-size: cover;" }="">
+                            <div class="csdn-plugin-vip-header">
+                                会员特权
+                            </div>
+                            <div class="csdn-plugin-vip-footer">
+                                <a class="csdn-plugin-vip-footer-link"
+                                   href="https://mall.csdn.net/vip">
+                                    领取限时优惠券，最高可减80元<i></i>
+                                </a>
+                                <a class="csdn-plugin-vip-footer-btn"
+                                   href="https://mall.csdn.net/vip">
+                                    领券开通
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toolbar-btn ">
+                        <a href="https://i.csdn.net/#/user-center/collection-list?type=1">足迹</a>
+                    </div>
+                    <div class="toolbar-btn">
+                        <a href="https://blink.csdn.net">动态</a>
+                        <div class="toolbar-dynamic-subMenu">
+                            <a class="vote-item" href="https://blink.csdn.net/?source=vote">
+                                <span class="pos-rel">投票<i style="display: inline;"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="toolbar-btn ">
+                        <div class="toolbar-subMenu-box">
+                            <a id="toolbar-remind" href="https://i.csdn.net/#/msg/index">消息</a>
+                        </div>
+                        <div class="toolbar-msg-box"></div>
+                    </div>
+
+                    <div class="toolbar-btn toolbar-btn-dynamic csdn-toolbar-fl toolbar-mp-menubox">
+                        <a title="创作中心" href="https://mp.csdn.net/">
+                            创作中心
+                            <img src="https://img-home.csdnimg.cn/images/20220627041202.png" class="icon-mp-menu">
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
+    </div>
+
+
+    <!--
+            <div class="toolbar-search">
+                <div class="toolbar-search-container">
+                    <input class="input111" id="toolbar-search-input" maxlength="2000" autocomplete="off" type="text"
+                           value=""
+                           placeholder="请输入搜索内容!" style="text-indent: 32px;">
+                    <button class="button1" id="toolbar-search-button"><i class="ser"></i><span class="ccccc">搜索</span></button>
+                    <input class="abc111" type="password" autocomplete="new-password" readonly="" disabled="true"
+                           style="display: none; position:absolute;left:-9999999px;width:0;height:0;">
+                </div>
+            </div>
+    -->
+
 </div>
 <div id="content">
     <div id="page-container" class="page-container">
@@ -64,5 +192,3 @@
 </body>
 <script src="../static/js/prism.js"></script>
 </html>
-
-

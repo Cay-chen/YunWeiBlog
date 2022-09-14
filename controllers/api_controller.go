@@ -88,7 +88,7 @@ func (c *ApiController) Post() {
 		}
 		blogInfo.BlogCreateTime = util.GetNowTime()
 		blogInfo.BlogLastModifyTime = util.GetNowTime()
-		blogInfo.BlogCreateUser = "admin"
+		blogInfo.BlogCreateUser = "1001"
 		o := orm.NewOrm()
 		insert, err := o.Insert(&blogInfo)
 		var jsonBack dao.JsonResult

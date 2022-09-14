@@ -13,7 +13,7 @@ import (
 func main() {
 	orm.Debug = true
 	beego.BConfig.WebConfig.Session.SessionOn = true
-	beego.BConfig.WebConfig.Session.SessionGCMaxLifetime = 1800
+	beego.BConfig.WebConfig.Session.SessionGCMaxLifetime = 600
 	err := logs.SetLogger(logs.AdapterFile, `{"filename":"logs/log","level":7,"maxlines":0,"maxsize":0,"daily":true,"maxdays":10,"color":true}`)
 	if err != nil {
 		return
@@ -99,13 +99,12 @@ func main() {
 func init() {
 	orm.RegisterDriver("mysql", orm.DRMySQL)
 	dataSource, _ := beego.AppConfig.String("mysql")
-	logs.Debug(dataSource)
 	//,"root:root@tcp(192.200.102.56:3306)/yunwei?charset=utf8"
 	orm.RegisterDataBase("default", "mysql", dataSource) // register model
 	orm.SetMaxIdleConns("default", 30)
 	orm.SetMaxOpenConns("default", 30)
 	orm.DefaultTimeLoc = time.UTC
-	orm.RegisterModel(new(dao.BlogInfo))
+	orm.RegisterModel(new(dao.BlogInfo), new(dao.User))
 	//orm.RegisterModel(new(dao.User1), new(dao.Post), new(dao.Profile), new(dao.Tag))
 
 	// create table
