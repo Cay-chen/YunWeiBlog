@@ -1,4 +1,4 @@
-.toolbar-inside{
+.toolbar-inside {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     --blue: #007bff;
@@ -27,8 +27,8 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5;
     text-align: left;
@@ -38,9 +38,10 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
 }
-.toolbar-container{
+
+.toolbar-container {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     --blue: #007bff;
@@ -69,14 +70,14 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     -webkit-font-smoothing: antialiased;
     text-align: left;
     font-size: 14px;
     font-weight: 400;
     color: #222226;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     width: 100%;
     min-width: 1280px;
     box-sizing: border-box;
@@ -88,7 +89,8 @@
     -webkit-box-pack: justify;
     justify-content: space-between;
 }
-.toolbar-container-left{
+
+.toolbar-container-left {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     color: #222226;
@@ -98,11 +100,12 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     -webkit-box-flex: 0;
     flex: none;
 }
-.toolbar-logo{
+
+.toolbar-logo {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     color: #222226;
@@ -112,13 +115,14 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     float: left;
     max-width: 80px;
     height: 100%;
     margin-right: 8px;
     position: relative;
 }
+
 .toolbar-logo a {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
@@ -130,10 +134,11 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     text-decoration: none;
 }
-.toolbar-logo a img{
+
+.toolbar-logo a img {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     line-height: 48px;
@@ -145,14 +150,15 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     display: block;
     width: 80px;
     min-width: 80px;
     height: 44px;
-    margin-top: calc((48px - 44px)/ 2);
+    margin-top: calc((48px - 44px) / 2);
 }
-.toolbar-menus{
+
+.toolbar-menus {
     -webkit-font-smoothing: antialiased;
     color: #222226;
     line-height: 48px;
@@ -162,12 +168,13 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     float: left;
     width: auto;
     height: 100%;
     font-size: 0;
 }
+
 .active {
     -webkit-font-smoothing: antialiased;
     color: #222226;
@@ -176,7 +183,7 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     position: relative;
     display: inline-block;
     list-style: none;
@@ -184,6 +191,7 @@
     height: 100%;
     line-height: 48px;
 }
+
 .active a {
     -webkit-font-smoothing: antialiased;
     list-style: none;
@@ -192,16 +200,17 @@
     font-weight: normal;
     outline: none;
     cursor: pointer;
-    text-decoration: none!important;
+    text-decoration: none !important;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     display: block;
     height: 100%;
     color: inherit;
     padding: 0 10px;
 }
-.toolbar-container-middle{
+
+.toolbar-container-middle {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     color: #222226;
@@ -210,7 +219,7 @@
     font-weight: normal;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     -webkit-box-flex: 1;
     flex: 1;
     padding: 0 40px;
@@ -218,10 +227,7 @@
 }
 
 
-
-
-
-.toolbar-search{
+.toolbar-search {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     color: #222226;
@@ -230,17 +236,18 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     width: 100%;
     max-width: 720px;
     height: 32px;
     line-height: 32px;
-    margin-top: calc((48px - 32px)/ 2);
+    margin-top: calc((48px - 32px) / 2);
     margin-left: auto;
     margin-right: auto;
     position: relative;
 }
-.toolbar-search-container{
+
+.toolbar-search-container {
     -webkit-font-smoothing: antialiased;
     color: #222226;
     line-height: 32px;
@@ -248,13 +255,14 @@
     font-weight: normal;
     padding: 0;
     margin: 0;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     font-size: 0;
 }
-.toolbar-search-container span{
+
+.toolbar-search-container span {
     -webkit-font-smoothing: antialiased;
     color: #222226;
     line-height: 32px;
@@ -264,7 +272,7 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     position: absolute;
     width: 16px;
     height: 16px;
@@ -275,12 +283,13 @@
     top: 8px;
     display: none;
 }
-.toolbar-search-container input{
+
+.toolbar-search-container input {
     -webkit-font-smoothing: antialiased;
     font-weight: normal;
     padding: 0;
     margin: 0;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     font-size: 14px;
     display: inline-block;
     width: calc(100% - 104px);
@@ -296,14 +305,15 @@
     border-radius: 16px 0 0 16px;
     text-indent: 12px;
 }
-.toolbar-search-container button{
+
+.toolbar-search-container button {
     -webkit-font-smoothing: antialiased;
     font-weight: normal;
     -webkit-appearance: button;
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     display: inline-block;
     width: 88px;
     height: 100%;
@@ -317,6 +327,7 @@
     background-color: #fc5531;
     text-align: left;
 }
+
 .toolbar-search-container div {
     -webkit-font-smoothing: antialiased;
     color: #222226;
@@ -327,15 +338,16 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     pointer-events: none;
-    background: linear-gradient(to left,#f5f6f7 5px,rgba(245,246,247,0) 30px);
+    background: linear-gradient(to left, #f5f6f7 5px, rgba(245, 246, 247, 0) 30px);
     position: absolute;
-    transform: translate(-40px,1px);
+    transform: translate(-40px, 1px);
     display: inline-block;
     width: 40px;
     height: 30px;
 }
+
 .toolbar-search-container button i {
     -webkit-font-smoothing: antialiased;
     font-weight: normal;
@@ -348,7 +360,7 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -360,7 +372,7 @@
     margin-left: 14px;
 }
 
-.btn-ss{
+.btn-ss {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     line-height: 32px;
@@ -371,15 +383,11 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     display: inline-block;
     vertical-align: top;
     color: #fff;
 }
-
-
-
-
 
 
 .toolbar-container-right {
@@ -392,11 +400,12 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     -webkit-box-flex: 0;
     flex: none;
 }
-.toolbar-btns{
+
+.toolbar-btns {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     color: #222226;
@@ -406,11 +415,31 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     height: 100%;
 }
-.toolbar-btn{
+
+.toolbar-btn {
     -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    outline: 0;
+    font-weight: normal;
+    margin: 0;
+    box-sizing: content-box;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
+    float: left;
+    position: relative;
+    line-height: 48px;
+    color: inherit;
+    text-align: center;
+    padding: 0 8px;
+    height: 100%;
+}
+.toolbar-btn_tx {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-variant-ligatures: common-ligatures;
+    tab-size: 4;
     font-size: 14px;
     outline: 0;
     font-weight: normal;
@@ -425,18 +454,42 @@
     padding: 0 8px;
     height: 100%;
 }
-.hasAvatar{
+
+.toolbar-btn a {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-variant-ligatures: common-ligatures;
+    tab-size: 4;
+    font-size: 14px;
+    text-align: center;
+    font-weight: normal;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    line-height: inherit;
+    color: inherit;
+    min-width: 32px;
+}
+
+.hasAvatar {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     text-align: center;
     font-weight: normal;
     outline: none;
     cursor: pointer;
-    text-decoration: none!important;
+    text-decoration: none !important;
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     height: 100%;
     min-width: 32px;
     display: block;
@@ -444,11 +497,12 @@
     line-height: 48px;
     position: relative;
     margin-right: 16px;
-    margin-top: calc((48px - 32px)/ 2);
+    margin-top: calc((48px - 32px) / 2);
     transition: all .2s ease-out;
     transform-origin: top center;
 }
-.hasAvatar img{
+
+.hasAvatar img {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     text-align: center;
@@ -461,13 +515,14 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     display: block;
     width: 32px;
     height: 32px;
     border-radius: 50%;
 }
-.csdn-toolbar-plugin{
+
+.csdn-toolbar-plugin {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     line-height: 48px;
@@ -477,7 +532,7 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     display: none;
     width: 248px;
     color: #222226;
@@ -489,9 +544,10 @@
     margin-left: -132px;
     z-index: 9999999;
     border-radius: 4px;
-    box-shadow: 0 0 10px 2px rgba(0,0,0,.06);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, .06);
 }
-.csdn-profile-top{
+
+.csdn-profile-top {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     line-height: 48px;
@@ -500,12 +556,13 @@
     font-weight: normal;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     text-align: center;
     padding: 20px 0 12px 0;
     border-bottom: 1px solid #e8e8ed;
 }
-.csdn-profile-top a{
+
+.csdn-profile-top a {
     -webkit-font-smoothing: antialiased;
     line-height: 48px;
     text-align: center;
@@ -515,7 +572,7 @@
     color: #4f4f4f;
     padding: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     text-decoration: none;
     display: block;
     width: 47px;
@@ -525,7 +582,8 @@
     background: url(https://g.csdnimg.cn/common/csdn-toolbar/images/csdn-no-vip.png) no-repeat center center;
     background-size: contain;
 }
-.csdn-profile-avatar{
+
+.csdn-profile-avatar {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     line-height: 48px;
@@ -533,23 +591,24 @@
     font-weight: normal;
     outline: none;
     color: #4f4f4f;
-    text-decoration: none!important;
+    text-decoration: none !important;
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     position: absolute;
     width: 48px;
     height: 48px;
     top: -32px;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
     border-radius: 50%;
     cursor: pointer;
     z-index: 9999;
     border: 1px solid #e8e8ed;
 }
-.csdn-profile-avatar img{
+
+.csdn-profile-avatar img {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     line-height: 48px;
@@ -562,17 +621,18 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     width: 100%;
     height: 100%;
     border-radius: 50%;
 }
-.csdn-profile-nickName{
+
+.csdn-profile-nickName {
     -webkit-font-smoothing: antialiased;
     text-align: center;
     outline: 0;
     margin: 0;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     width: 100%;
     box-sizing: border-box;
     padding: 0 16px;
@@ -585,14 +645,15 @@
     white-space: nowrap;
     overflow: hidden;
 }
-.csdn-profile-mid{
+
+.csdn-profile-mid {
     -webkit-font-smoothing: antialiased;
     line-height: 48px;
     outline: 0;
     font-weight: normal;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     display: flex;
     justify-content: space-around;
     color: #999aaa;
@@ -601,6 +662,7 @@
     padding: 8px 0;
     border-bottom: 1px solid #e8e8ed;
 }
+
 .csdn-profile-mid a {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
@@ -611,14 +673,15 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     text-decoration: none;
     display: block;
     height: 50px;
     line-height: 20px;
     color: inherit;
 }
-.csdn-profile-fansCount{
+
+.csdn-profile-fansCount {
     -webkit-font-smoothing: antialiased;
     text-align: center;
     cursor: pointer;
@@ -626,7 +689,7 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     font-size: 20px;
     color: #222226;
     font-style: normal;
@@ -635,7 +698,8 @@
     line-height: 30px;
     height: 30px;
 }
-.csdn-profile-bottom{
+
+.csdn-profile-bottom {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     line-height: 48px;
@@ -645,10 +709,11 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     text-align: left;
 }
-.csdn-border-bottom{
+
+.csdn-border-bottom {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     line-height: 48px;
@@ -657,14 +722,15 @@
     list-style: none;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     border-bottom: 1px solid #e8e8ed;
     padding: 8px 0;
     font-weight: 400;
     color: #555666;
     border-radius: 0 0 4px 4px;
 }
-.csdn-border-bottom li{
+
+.csdn-border-bottom li {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     line-height: 48px;
@@ -674,10 +740,11 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     list-style: none;
 }
-.csdn-border-bottom li a{
+
+.csdn-border-bottom li a {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     list-style: none;
@@ -686,7 +753,7 @@
     cursor: pointer;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     text-decoration: none;
     display: block;
     padding: 0 16px;
@@ -694,7 +761,8 @@
     line-height: 40px;
     color: inherit;
 }
-.csdn-border-bottom li a i{
+
+.csdn-border-bottom li a i {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     list-style: none;
@@ -707,7 +775,7 @@
     padding: 0;
     margin: 0;
     box-sizing: content-box;
-    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
     display: inline-block;
     position: relative;
     width: 16px;
@@ -720,4 +788,99 @@
     background-size: 300%;
     background-position-x: 0;
     background-position-y: 0;
+}
+
+.csdn-profile-no-vip {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-variant-ligatures: common-ligatures;
+    tab-size: 4;
+    line-height: 48px;
+    text-align: center;
+    font-weight: normal;
+    outline: none;
+    cursor: pointer;
+    color: #4f4f4f;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
+    text-decoration: none;
+    display: block;
+    width: 47px;
+    height: 20px;
+    margin: 0 auto;
+    font-size: 0;
+    background: url(https://g.csdnimg.cn/common/csdn-toolbar/images/csdn-no-vip.png) no-repeat center center;
+    background-size: contain;
+}
+.toolbar-btn-write {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-variant-ligatures: common-ligatures;
+    tab-size: 4;
+    font-size: 14px;
+    outline: 0;
+    font-weight: normal;
+    margin: 0;
+    box-sizing: content-box;
+    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    float: left;
+    position: relative;
+    line-height: 48px;
+    color: inherit;
+    text-align: center;
+    padding: 0 8px;
+    height: 100%;
+    padding-right: 0;
+}
+.toolbar-btn-write a{
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-variant-ligatures: common-ligatures;
+    tab-size: 4;
+    font-size: 14px;
+    font-weight: normal;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    text-decoration: none;
+    display: block;
+    min-width: 88px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    background-color: #fc5531;
+    border-radius: 20px;
+    margin-top: calc((48px - 32px)/ 2);
+}
+.toolbar-btn-write a i{
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-variant-ligatures: common-ligatures;
+    tab-size: 4;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    outline: 0;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+    font-family: 'PingFang SC','SF Pro Display','Microsoft YaHei',Roboto,Noto,Arial,sans-serif;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    vertical-align: middle;
+    background: url(/static/img/backicn.png) no-repeat -38px -20px;
+    background-size: 300%;
+    top: -2px;
+    margin-right: 2px;
 }

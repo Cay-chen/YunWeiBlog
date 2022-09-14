@@ -5,42 +5,33 @@
     <title>Title</title>
     <link href="/static/css/wangeditoreditor@5.1style.css" rel="stylesheet">
     <link href="/static/layui/css/layui.css" rel="stylesheet">
+    <link href="/static/css/cnds.css" rel="stylesheet">
+    <link href="/static/css/bomm.css" rel="stylesheet">
+
     <style>
-        html,
-        body {
-            background-color: #fff;
-            height: 100%;
-            overflow: hidden;
-            color: #333;
-        }
-
-        #top-container {
-            border-bottom: 1px solid #e8e8e8;
-            padding-left: 30px;
-        }
-
-        #editor-toolbar {
-            width: 1350px;
-            background-color: #FCFCFC;
-            margin: 0 auto;
-        }
-
-        #content {
+        .content {
             height: calc(100% - 40px);
             background-color: rgb(245, 245, 245);
             overflow-y: auto;
             position: relative;
         }
 
-        #editor-container {
+        .editor-container {
             width: 850px;
-            margin: 30px auto 150px auto;
+            margin: 30px auto 15px auto;
             background-color: #fff;
             padding: 20px 50px 50px 50px;
             border: 1px solid #e8e8e8;
             box-shadow: 0 2px 10px rgb(0 0 0 / 12%);
         }
-
+        .editor-container1 {
+            width: 850px;
+            margin: 5px auto 150px auto;
+            background-color: #fff;
+            padding: 20px 50px 50px 50px;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 2px 10px rgb(0 0 0 / 12%);
+        }
         #title-container {
             padding: 20px 0;
             border-bottom: 1px solid #e8e8e8;
@@ -55,30 +46,99 @@
         }
 
         #editor-text-area {
-            min-height: 900px;
+            min-height: 600px;
             margin-top: 20px;
         }
     </style>
 </head>
 <body>
-
+<div id="csdn-toolbar" style="position: relative; min-width: 100%; width: max-content; top: 0px; left: 0px;">
+    <div class="toolbar-inside">
+        <div class="toolbar-container">
+            <div class="toolbar-container-left">
+                <div class="toolbar-logo"><a href=""><img title="CSDN首页" src="/static/img/logo.png"></a>
+                </div>
+                <ul class="toolbar-menus csdn-toolbar-fl">
+                    <li class="active " title="阅读深度、前沿文章">
+                        <a href="https://blog.csdn.net/"> 博客</a>
+                    </li>
+                    <li class="active " title="阅读深度、前沿文章">
+                        <a href="https://blog.csdn.net/"> 下载</a>
+                    </li>
+                    <li class="active " title="阅读深度、前沿文章">
+                        <a href="https://blog.csdn.net/"> 学习</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="toolbar-container-right">
+                <div class="toolbar-btns">
+                    <div class="toolbar-btn_tx">
+                        <a class="hasAvatar" href="https://blog.csdn.net/qq_33989915"><img
+                                src="/static/img/tx.jpg"></a>
+                    </div>
+                    <div class="toolbar-btn ">
+                        <a href="https://i.csdn.net/#/user-center/collection-list?type=1">足迹</a>
+                    </div>
+                    <div class="toolbar-btn">
+                        <a href="https://blink.csdn.net">动态</a>
+                        <div class="toolbar-dynamic-subMenu">
+                            <a class="vote-item" href="https://blink.csdn.net/?source=vote">
+                                <span class="pos-rel">投票<i style="display: inline;"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="toolbar-btn ">
+                        <div class="toolbar-subMenu-box">
+                            <a id="toolbar-remind" href="https://i.csdn.net/#/msg/index">消息</a>
+                        </div>
+                        <div class="toolbar-msg-box"></div>
+                    </div>
+                    <div class="toolbar-btn-write">
+                        <a data-report-click="{&quot;spm&quot;:&quot;3001.4503&quot;}" data-report-query="spm=3001.4503"
+                           href="/edit"><i></i>发布</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div style="border-bottom: 1px solid #e8e8e8;">
     <div id="editor-toolbar"></div>
 </div>
-<div id="content">
-    <div id="editor-container">
+<div id="content" class="content">
+    <div id="editor-container" class="editor-container">
         <div id="title-container">
             <input placeholder="请输入标题！" id="blog_title">
         </div>
         <div id="editor-text-area"></div>
         <div id="top-container">
         </div>
-        <div>
-            <button class="layui-btn layui-btn-sm" id="hq" style="margin-top: 5px">提交</button>
-            <button class="layui-btn layui-btn-sm" id="hq1" style="margin-top: 5px">暂存</button>
+    </div>
+</div>
+<div data-v-173330b0="" class="el-form-item"><!---->
+    <div class="el-form-item__content" style="margin-left: 90px;">
+        <div class="opt-box">
+            <div class="btn-box">
+                <span>
+                     <span class="el-popover__reference-wrapper">
+                         <button type="button" class="el-button" tabindex="0">
+                             <span>保存草稿
+                                 <i class="el-icon-caret-bottom" style="margin-left: 4px; margin-right: -2px;"></i>
+                            </span>
+                        </button>
+                     </span>
+                </span>
+                <button type="button" class="el-button btn-outline-danger">
+                    <span style="color: white"> 发布博客</span>
+                </button>
+            </div>
         </div>
     </div>
 </div>
+<div class="content">
+    <div class="editor-container1">
+    </div>
+</div >
 </body>
 <script src="/static/js/wangeditoreditor@5.1.15distindex.js"></script>
 <script src="/static/js/jquery2.1.1.min.js"></script>
@@ -182,13 +242,13 @@
             var date = {
                 BlogTitle: $('#blog_title').val(),
                 BlogContent: editor.getHtml(),
-              //  BlogId: 1,
-               BlogBrief: "",
-             //   BlogCreateTime: "",
-              //  BlogCreateUser: "",
+                //  BlogId: 1,
+                BlogBrief: "",
+                //   BlogCreateTime: "",
+                //  BlogCreateUser: "",
                 BlogImgUrl: "",
                 BlogType: 1,
-             //   BlogLastModifyTime: "",
+                //   BlogLastModifyTime: "",
                 BlogState: 0
             }
             // alert(JSON.stringify(date))
@@ -209,10 +269,10 @@
                             icon: 1,
                             time: 1500
                         });
-                       // editor.disable()
+                        // editor.disable()
 
-                       // $('#blog_title').val("")
-                       // editor.clear()
+                        // $('#blog_title').val("")
+                        // editor.clear()
                         /* // 延迟3秒
                          setTimeout(function () {
                            // 跳转后台首页
@@ -223,7 +283,7 @@
                     } else {
                         alert(res.msg())
                         // 错误信息
-                       // layer.msg(res.msg, {icon: 2, anim: 6});
+                        // layer.msg(res.msg, {icon: 2, anim: 6});
 
                     }
                 },
