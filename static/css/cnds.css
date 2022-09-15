@@ -262,7 +262,7 @@
     font-size: 0;
 }
 
-.toolbar-search-container span {
+.icon-fire {
     -webkit-font-smoothing: antialiased;
     color: #222226;
     line-height: 32px;
@@ -364,7 +364,7 @@
     display: inline-block;
     width: 24px;
     height: 24px;
-    background: url(https://g.csdnimg.cn/common/csdn-toolbar/images/csdn-white-search.png) no-repeat center center;
+    background: url(/static/img/search.png) no-repeat center center;
     background-size: 100%;
     vertical-align: middle;
     position: relative;
@@ -372,18 +372,7 @@
     margin-left: 14px;
 }
 
-.btn-ss {
-    -webkit-font-smoothing: antialiased;
-    font-size: 14px;
-    line-height: 32px;
-    cursor: pointer;
-    text-align: left;
-    outline: 0;
-    font-weight: normal;
-    padding: 0;
-    margin: 0;
-    box-sizing: content-box;
-    font-family: 'PingFang SC', 'SF Pro Display', 'Microsoft YaHei', Roboto, Noto, Arial, sans-serif;
+.button_span {
     display: inline-block;
     vertical-align: top;
     color: #fff;

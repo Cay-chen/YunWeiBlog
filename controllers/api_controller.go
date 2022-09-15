@@ -73,7 +73,7 @@ func (c *ApiController) Post() {
 		}
 		Success.Errno = 0
 		Success.Data.Url = "http://127.0.0.1/static/upload/" + timeString + randString + ext
-		Success.Data.Alt = ""
+		Success.Data.Alt = "/static/upload/" + timeString + randString + ext
 		Success.Data.Href = "http://127.0.0.1/static/upload/" + timeString + randString + ext
 		//返回图片地址
 		res, _ := json.Marshal(Success)
