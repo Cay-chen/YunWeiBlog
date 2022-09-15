@@ -120,8 +120,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">封面：</label>
                 <div class="layui-upload-drag" id="custom-fileName">
-                    <i class="layui-icon"></i>
-                    <p>点击上传，或将文件拖拽到此处</p>
+                    <i id="img_i" class="layui-icon"></i>
+                    <p id="img_p">点击上传，或将文件拖拽到此处</p>
                     <div class="layui-hide" id="uploadDemoView">
                         <hr>
                         <img src="" alt="上传成功后渲染" style="max-width: 196px">
@@ -308,6 +308,8 @@
             , done: function (res) {
                 layer.msg('上传成功');
                 $('#uploadDemoView').removeClass('layui-hide').find('img').attr('src', res.data.alt);
+                $('#img_i').hide();
+                $('#img_p').hide();
                 $("[name='custom-fileName']").attr('value', res.data.alt);
                 $("[name='title']").attr('value', res.data.alt);
                 img_url=res.data.alt;
