@@ -108,7 +108,7 @@
     <div id="content" class="content">
         <div id="editor-container" class="editor-container">
             <div id="title-container">
-                <input name="title" placeholder="请输入标题！" lay-verify="title" id="blog_title" value="AAAAAAAAAAAA">
+                <input name="title" placeholder="请输入标题！" lay-verify="title" id="blog_title">
             </div>
             <div id="editor-text-area"></div>
             <!--<div id="top-container">-->
@@ -131,7 +131,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label" id="zhaiyao">摘要：</label>
                 <div class="layui-input-block">
-                    <textarea name="zhaiyao" placeholder="请输入内容" lay-verify="make" class="layui-textarea"></textarea>
+                    <textarea name="brief" placeholder="请输入摘要" lay-verify="brief" class="layui-textarea"></textarea>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -163,7 +163,7 @@
                 <div class="btn-box">
                 <span>
                      <span class="el-popover__reference-wrapper">
-                         <button type="button" class="el-button" lay-submit="" tabindex="0">
+                         <button type="button" class="el-button" lay-submit="" tabindex="0" lay-filter="button_cg">
                              <span>保存草稿
                                  <i class="el-icon-caret-bottom" style="margin-left: 4px; margin-right: -2px;"></i>
                             </span>
@@ -272,7 +272,7 @@
             , upload = layui.upload
             , layer = layui.layer,
             form = layui.form;
-        var flzl = "",img_url="";
+        var flzl = "", img_url = "";
 
         //自定义验证规则
         form.verify({
@@ -281,7 +281,7 @@
                     return '标题不能为空或空格!';
                 }
             }
-            , make: function (value) {
+            , brief: function (value) {
                 if (value.trim().length < 5) {
                     return '摘要不能少于5个字!';
                 }
@@ -310,9 +310,7 @@
                 $('#uploadDemoView').removeClass('layui-hide').find('img').attr('src', res.data.alt);
                 $('#img_i').hide();
                 $('#img_p').hide();
-                $("[name='custom-fileName']").attr('value', res.data.alt);
-                $("[name='title']").attr('value', res.data.alt);
-                img_url=res.data.alt;
+                img_url = res.data.alt;
             }
         });
         $('#submit11').on('click', function () {
@@ -377,7 +375,30 @@
         //提交事件
 
         form.on('submit(button_tj)', function (data) {
-            flzl="";
+            submit(data, 0)
+
+            /*     alert(JSON.stringify(data.field), {
+                       title: '最终的提交信息'
+                   })*/
+        });
+        form.on('submit(button_cg)', function (data) {
+            submit(data, 1)
+
+            /*     alert(JSON.stringify(data.field), {
+                       title: '最终的提交信息'
+                   })*/
+        });
+        function flzlFun(s1, s2) {
+            if (s1.trim().length === 0) {
+                s1 = s2;
+            } else {
+                s1 = s1 + "|" + s2;
+            }
+            return s1
+        }
+
+        function submit(data, state) {
+            flzl = "";
             if (editor.getText().trim().length < 1) {
                 //$("html,body").stop(true);
                 $("html,body").animate({scrollTop: $("#content").offset().top}, 100);
@@ -385,7 +406,7 @@
                 return false;
             }
 
-            if (img_url.trim().length<1){
+            if (img_url.trim().length < 1) {
                 $("html,body").animate({scrollTop: $("#zhaiyao").offset().top}, 100);
                 layer.msg("请选择封面！", {icon: 5, shift: 6});
                 return false;
@@ -417,21 +438,59 @@
                 layer.msg("请选择分类专栏！", {icon: 5, shift: 6});
                 return false;
             }
-
-            alert(flzl);
-
-            /*     alert(JSON.stringify(data.field), {
-                       title: '最终的提交信息'
-                   })*/
-        });
-
-        function flzlFun(s1, s2) {
-            if (s1.trim().length === 0) {
-                s1 = s2;
-            } else {
-                s1 = s1 + "|" + s2;
+            var dataJson = {
+                BlogTitle: data.field.title,
+                BlogContent: editor.getHtml(),
+                BlogBrief: data.field.brief,
+                BlogImgUrl: img_url,
+                BlogClassifyType:flzl,
+                BlogVisibleType: Number(data.field.fbxs) ,
+                //   BlogLastModifyTime: "",
+                BlogState: state
             }
-            return s1
+            $.ajax({
+                type: "POST",
+                url: 'api/edit_submit',
+                data: JSON.stringify(dataJson),
+                contentType: "application/json",
+                dataType: "json",
+                beforeSend: function () {
+                    // TODO...
+                },
+                success: function (res) {
+                    if (res.code == 0) {
+
+                        // 提示语
+                        layer.msg('提交成功', {
+                            icon: 1,
+                            time: 1500
+                        });
+                        // editor.disable()
+
+                        // $('#blog_title').val("")
+                        // editor.clear()
+                        /* // 延迟3秒
+                         setTimeout(function () {
+                           // 跳转后台首页
+                           window.location.href = "/index";
+                         }, 2000);*/
+
+                        return false;
+                    } else {
+                        alert(res.msg)
+                        // 错误信息
+                        // layer.msg(res.msg, {icon: 2, anim: 6});
+
+                    }
+                },
+                error: function () {
+                    layer.msg("AJAX请求异常");
+                }
+            });
+
+/*
+            alert(JSON.stringify(date));
+*/
         }
 
     });

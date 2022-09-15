@@ -18,8 +18,7 @@ func (c *BlogController) Get() {
 	u := dao.BlogInfo{BlogId: id1}
 	err := o.Read(&u)
 	if err == nil {
-		c.Data["Html"] = u.BlogContent
-		c.Data["Title"] = u.BlogTitle
+		c.Data["Data"] = u
 	} else {
 		c.Data["Html"] = "<p>没内容！</p>"
 

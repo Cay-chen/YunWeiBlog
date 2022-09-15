@@ -82,13 +82,14 @@ func (c *ApiController) Post() {
 	case "edit_submit":
 		var blogInfo dao.BlogInfo
 		data := c.Ctx.Input.RequestBody
+		logs.Error(string(data))
 		err := json.Unmarshal(data, &blogInfo)
 		if err != nil {
 			logs.Error("json.Unmarshal is err:", err.Error())
 		}
 		blogInfo.BlogCreateTime = util.GetNowTime()
 		blogInfo.BlogLastModifyTime = util.GetNowTime()
-		blogInfo.BlogCreateUser = "1001"
+		blogInfo.BlogCreateUser = "2"
 		o := orm.NewOrm()
 		insert, err := o.Insert(&blogInfo)
 		var jsonBack dao.JsonResult

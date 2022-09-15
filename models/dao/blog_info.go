@@ -8,7 +8,9 @@ type BlogInfo struct {
 	BlogCreateUser     string
 	BlogContent        string
 	BlogImgUrl         string
-	BlogType           int
+	BlogVisibleType    int
+	BlogClassifyType   string
 	BlogLastModifyTime string
+	BlogReadCount      int
 	BlogState          int
 }

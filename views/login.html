@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <style>
+        .login{
+            margin-top: 60px;
+            min-height: 400px;
+        }
+        #code{
+            width:80px;
+            height:30px;
+            font-size:20px;
+            font-family:Arial;
+            font-style:italic;
+            font-weight:bold;
+            border:0;
+            letter-spacing:2px;
+            color:blue;
+        }
+        #code1{
+            width:80px;
+            height:30px;
+            font-size:20px;
+            font-family:Arial;
+            font-style:italic;
+            font-weight:bold;
+            border:0;
+            letter-spacing:2px;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md4 layui-col-md-offset4 login">
+            <div class="layui-tab layui-tab-brief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">登录</li>
+                    <li>注册</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+                        <form action="" class="layui-form layui-form-pane">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><i class="layui-icon layui-icon-user"></i></label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="username"  lay-verify="required|username" class="layui-input" placeholder="用户名">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                                <div class="layui-input-block">
+                                    <input type="password" name="password" required lay-verify="required|password" class="layui-input" placeholder="密码">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><i class="layui-icon layui-icon-friends"></i></label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="grade" value="管理员" title="管理员">
+                                    <input type="radio" name="grade" value="用户" title="用户" checked>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-row layui-col-space20">
+                                    <div class="layui-col-md8 layui-col-xs8">
+                                        <input type="text" name="code" required lay-verify="required" class="layui-input" placeholder="验证码">
+                                    </div>
+                                    <div class="layui-col-md4 layui-col-xs4">
+                                        <input type = "button" id="code" />
+<!--
+                                        <img id="code">
+-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <button class="layui-btn" lay-submit>登录</button>
+                                <span style="margin-left: 30px"><a href="#">忘记密码</a></span>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="layui-tab-item">
+                        <form action="" class="layui-form layui-form-pane">
+       <!--                     <div class="layui-form-item">
+                                <label class="layui-form-label"><i class="layui-icon layui-icon-cellphone"></i></label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="zhanghao" required lay-verify="required|number" class="layui-input" placeholder="账号">
+                                </div>
+                            </div>-->
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><i class="layui-icon layui-icon-user"></i></label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="username2" required lay-verify="required|username" class="layui-input" placeholder="用户名">
+
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                                <div class="layui-input-block">
+                                    <input type="password" name="password2" required lay-verify="required|password" class="layui-input" placeholder="密码">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                                <div class="layui-input-block">
+                                    <input type="password" name="password3" required lay-verify="required|password1" class="layui-input" placeholder="再次输入密码">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-row layui-col-space20">
+                                    <div class="layui-col-md8 layui-col-xs8">
+                                        <input type="text" name="code2" required lay-verify="required" class="layui-input" placeholder="验证码">
+                                    </div>
+                                    <div class="layui-col-md4 layui-col-xs4">
+                                        <input type = "button" id="code1" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <button class="layui-btn" lay-submit="" lay-filter="sing-in">注册</button>
+<!--
+                                <span style="margin-left: 30px"><a href="#">已有账号，去登陆</a></span>
+-->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.use(["element","form","layer"],function () {
+        var element = layui.element;
+        var form = layui.form;
+        var layer = layui.layer;
+        var  $ = layui.jquery;
+        //表单验证功能
+        form.verify({
+            username: function(value, item){ //value：表单的值、item：表单的DOM对象
+                if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)){
+                    return '用户名不能有特殊字符';
+                }
+                if(/(^\_)|(\__)|(\_+$)/.test(value)){
+                    return '用户名首尾不能出现下划线\'_\'';
+                }
+                if(/^\d+\d+\d$/.test(value)){
+                    return '用户名不能全为数字';
+                }
+            }
+            ,password: [
+                /^[\S]{6,12}$/
+                ,'密码必须6到12位，且不能出现空格'
+            ]
+            ,phone:[
+                /^\d{11}$/
+                ,"手机号必须为11位数字"
+            ]
+            ,password1:function (value) {
+                if ($('input[name=password2]').val()!==value){
+                    return "两次密码不一致！";
+                }
+            }
+        });
+        function change(){
+            code=$('#code');
+            // 验证码组成库
+            var arrays=new Array(
+                '1','2','3','4','5','6','7','8','9','0',
+                'a','b','c','d','e','f','g','h','i','j',
+                'k','l','m','n','o','p','q','r','s','t',
+                'u','v','w','x','y','z',
+                'A','B','C','D','E','F','G','H','I','J',
+                'K','L','M','N','O','P','Q','R','S','T',
+                'U','V','W','X','Y','Z'
+            );
+            codes='';// 重新初始化验证码
+            for(var i = 0; i<4; i++){
+                // 随机获取一个数组的下标
+                var r = parseInt(Math.random()*arrays.length);
+                codes += arrays[r];
+            }
+            // 验证码添加到input里
+            code.val(codes);
+        }
+        function change1(){
+            code1=$('#code1');
+            // 验证码组成库
+            var arrays=new Array(
+                '1','2','3','4','5','6','7','8','9','0',
+                'a','b','c','d','e','f','g','h','i','j',
+                'k','l','m','n','o','p','q','r','s','t',
+                'u','v','w','x','y','z',
+                'A','B','C','D','E','F','G','H','I','J',
+                'K','L','M','N','O','P','Q','R','S','T',
+                'U','V','W','X','Y','Z'
+            );
+            codes='';// 重新初始化验证码
+            for(var i = 0; i<4; i++){
+                // 随机获取一个数组的下标
+                var r = parseInt(Math.random()*arrays.length);
+                codes += arrays[r];
+            }
+            // 验证码添加到input里
+            code1.val(codes);
+        }
+        change();
+        change1();
+        code.click(change);
+        code1.click(change1);
+        //单击验证
+
+
+        form.on('submit(sing-in)', function (data) {
+            var inputCode = $("#input").val().toUpperCase(); //取得输入的验证码并转化为大写
+            console.log(inputCode);
+            if(inputCode.length == 0) { //若输入的验证码长度为0
+                alert("请输入验证码！"); //则弹出请输入验证码
+            }
+            else if(inputCode!=codes.toUpperCase()) { //若输入的验证码与产生的验证码不一致时
+                alert("验证码输入错误!请重新输入"); //则弹出验证码输入错误
+                change();//刷新验证码
+                $("#input").val("");//清空文本框
+            }else { //输入正确时
+                alert("正确"); //弹出^-^
+            }
+            /*     alert(JSON.stringify(data.field), {
+                       title: '最终的提交信息'
+                   })*/
+        });
+/*
+        $("#check").click(function(){
+            var inputCode = $("#input").val().toUpperCase(); //取得输入的验证码并转化为大写
+            console.log(inputCode);
+            if(inputCode.length == 0) { //若输入的验证码长度为0
+                alert("请输入验证码！"); //则弹出请输入验证码
+            }
+            else if(inputCode!=codes.toUpperCase()) { //若输入的验证码与产生的验证码不一致时
+                alert("验证码输入错误!请重新输入"); //则弹出验证码输入错误
+                change();//刷新验证码
+                $("#input").val("");//清空文本框
+            }else { //输入正确时
+                alert("正确"); //弹出^-^
+            }
+        });
+*/
+    })
+</script>
+</body>
+</html>

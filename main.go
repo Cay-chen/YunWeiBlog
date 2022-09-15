@@ -108,6 +108,6 @@ func init() {
 	//orm.RegisterModel(new(dao.User1), new(dao.Post), new(dao.Profile), new(dao.Tag))
 
 	// create table
-	//	orm.RunSyncdb("default", false, true)
+	orm.RunSyncdb("default", false, true)
 
 }
