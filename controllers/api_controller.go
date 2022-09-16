@@ -111,6 +111,37 @@ func (c *ApiController) Post() {
 		res, err := json.Marshal(jsonBack)
 		c.Ctx.WriteString(string(res))
 		break
+	case "sign_in":
+		var blogInfo dao.BlogInfo
+		data := c.Ctx.Input.RequestBody
+		logs.Error(string(data))
+		err := json.Unmarshal(data, &blogInfo)
+		if err != nil {
+			logs.Error("json.Unmarshal is err:", err.Error())
+		}
+		blogInfo.BlogCreateTime = util.GetNowTime()
+		blogInfo.BlogLastModifyTime = util.GetNowTime()
+		blogInfo.BlogCreateUser = "2"
+		o := orm.NewOrm()
+		insert, err := o.Insert(&blogInfo)
+		var jsonBack dao.JsonResult
 
+		if err != nil {
+			logs.Error(insert)
+			logs.Error(err.Error())
+			jsonBack.Code = -1
+			jsonBack.Msg = err.Error()
+		} else {
+			if insert > 0 {
+				jsonBack.Code = 0
+				jsonBack.Msg = "乘车"
+			} else {
+				jsonBack.Code = -1
+				jsonBack.Msg = "失败"
+			}
+		}
+		res, err := json.Marshal(jsonBack)
+		c.Ctx.WriteString(string(res))
+		break
 	}
 }

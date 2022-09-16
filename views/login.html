@@ -9,7 +9,7 @@
             margin-top: 60px;
             min-height: 400px;
         }
-        #code{
+        .code{
             width:80px;
             height:30px;
             font-size:20px;
@@ -18,26 +18,21 @@
             font-weight:bold;
             border:0;
             letter-spacing:2px;
+/*
             color:blue;
+*/
+            color:#fc5531;
         }
-        #code1{
-            width:80px;
-            height:30px;
-            font-size:20px;
-            font-family:Arial;
-            font-style:italic;
-            font-weight:bold;
-            border:0;
-            letter-spacing:2px;
-            color:blue;
-        }
+
     </style>
 </head>
 <body>
 <div class="layui-fluid">
     <div class="layui-row">
+<!--
         <div class="layui-col-md4 layui-col-md-offset4 login">
-            <div class="layui-tab layui-tab-brief">
+-->
+            <div class="layui-tab layui-tab-brief" style="margin-top: 20px">
                 <ul class="layui-tab-title">
                     <li class="layui-this">登录</li>
                     <li>注册</li>
@@ -57,20 +52,20 @@
                                     <input type="password" name="password" required lay-verify="required|password" class="layui-input" placeholder="密码">
                                 </div>
                             </div>
-                            <div class="layui-form-item">
+<!--                            <div class="layui-form-item">
                                 <label class="layui-form-label"><i class="layui-icon layui-icon-friends"></i></label>
                                 <div class="layui-input-block">
                                     <input type="radio" name="grade" value="管理员" title="管理员">
                                     <input type="radio" name="grade" value="用户" title="用户" checked>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="layui-form-item">
                                 <div class="layui-row layui-col-space20">
                                     <div class="layui-col-md8 layui-col-xs8">
-                                        <input type="text" name="code" required lay-verify="required" class="layui-input" placeholder="验证码">
+                                        <input type="text" name="code" required lay-verify="required|login_code" class="layui-input" placeholder="验证码">
                                     </div>
                                     <div class="layui-col-md4 layui-col-xs4">
-                                        <input type = "button" id="code" />
+                                        <input type = "button" class="code" id="login_code" />
 <!--
                                         <img id="code">
 -->
@@ -95,29 +90,36 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><i class="layui-icon layui-icon-user"></i></label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="username2" required lay-verify="required|username" class="layui-input" placeholder="用户名">
+                                    <input type="text" name="Id" required lay-verify="required|userId" class="layui-input" placeholder="用户号">
+
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><i class="layui-icon layui-icon-user"></i></label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="IdName" required lay-verify="required|username" class="layui-input" placeholder="用户名">
 
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
                                 <div class="layui-input-block">
-                                    <input type="password" name="password2" required lay-verify="required|password" class="layui-input" placeholder="密码">
+                                    <input type="password" name="SignInPassword" required lay-verify="required|password" class="layui-input" placeholder="密码">
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
                                 <div class="layui-input-block">
-                                    <input type="password" name="password3" required lay-verify="required|password1" class="layui-input" placeholder="再次输入密码">
+                                    <input type="password" name="SignInPassword2" required lay-verify="required|cPassword" class="layui-input" placeholder="再次输入密码">
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <div class="layui-row layui-col-space20">
                                     <div class="layui-col-md8 layui-col-xs8">
-                                        <input type="text" name="code2" required lay-verify="required" class="layui-input" placeholder="验证码">
+                                        <input type="text" name="SingCode" required lay-verify="required|sing_code" class="layui-input" placeholder="验证码">
                                     </div>
                                     <div class="layui-col-md4 layui-col-xs4">
-                                        <input type = "button" id="code1" />
+                                        <input type = "button" class="code" id="sing_code" />
                                     </div>
 
                                 </div>
@@ -132,16 +134,17 @@
                     </div>
                 </div>
             </div>
+<!--
         </div>
+-->
     </div>
 </div>
 <script src="/static/layui/layui.js"></script>
 <script>
-    layui.use(["element","form","layer"],function () {
-        var element = layui.element;
+    layui.use(["form","layer"],function () {
         var form = layui.form;
-        var layer = layui.layer;
         var  $ = layui.jquery;
+        var login_code,sing_code;
         //表单验证功能
         form.verify({
             username: function(value, item){ //value：表单的值、item：表单的DOM对象
@@ -155,6 +158,10 @@
                     return '用户名不能全为数字';
                 }
             }
+            ,userId:[
+                /^\d{4}$/
+                ,"用户号必须为4位数字"
+            ]
             ,password: [
                 /^[\S]{6,12}$/
                 ,'密码必须6到12位，且不能出现空格'
@@ -163,77 +170,115 @@
                 /^\d{11}$/
                 ,"手机号必须为11位数字"
             ]
-            ,password1:function (value) {
-                if ($('input[name=password2]').val()!==value){
+            ,cPassword:function (value) {
+                if ($('input[name=SignInPassword]').val()!==value){
                     return "两次密码不一致！";
                 }
             }
+            ,login_code :function (value) {
+                if (login_code.toUpperCase()!==value.toUpperCase()){
+                    return "验证码不正确！";
+                }
+            }
+            ,sing_code :function (value) {
+                if (sing_code.toUpperCase()!==value.toUpperCase()){
+                    return "验证码不正确！";
+                }
+            }
         });
-        function change(){
-            code=$('#code');
+        function changeLogin(){
+             loginCode = $('#login_code');
             // 验证码组成库
-            var arrays=new Array(
-                '1','2','3','4','5','6','7','8','9','0',
+            var arrays=['1','2','3','4','5','6','7','8','9','0',
                 'a','b','c','d','e','f','g','h','i','j',
                 'k','l','m','n','o','p','q','r','s','t',
                 'u','v','w','x','y','z',
                 'A','B','C','D','E','F','G','H','I','J',
                 'K','L','M','N','O','P','Q','R','S','T',
-                'U','V','W','X','Y','Z'
-            );
-            codes='';// 重新初始化验证码
+                'U','V','W','X','Y','Z'];
+            login_code='';// 重新初始化验证码
             for(var i = 0; i<4; i++){
                 // 随机获取一个数组的下标
                 var r = parseInt(Math.random()*arrays.length);
-                codes += arrays[r];
+                login_code += arrays[r];
             }
             // 验证码添加到input里
-            code.val(codes);
+            loginCode.val(login_code);
         }
-        function change1(){
-            code1=$('#code1');
+        function changeSingIn(){
+             singCode = $('#sing_code');
             // 验证码组成库
-            var arrays=new Array(
-                '1','2','3','4','5','6','7','8','9','0',
+            var arrays=['1','2','3','4','5','6','7','8','9','0',
                 'a','b','c','d','e','f','g','h','i','j',
                 'k','l','m','n','o','p','q','r','s','t',
                 'u','v','w','x','y','z',
                 'A','B','C','D','E','F','G','H','I','J',
                 'K','L','M','N','O','P','Q','R','S','T',
-                'U','V','W','X','Y','Z'
-            );
-            codes='';// 重新初始化验证码
+                'U','V','W','X','Y','Z'];
+            sing_code='';// 重新初始化验证码
             for(var i = 0; i<4; i++){
                 // 随机获取一个数组的下标
                 var r = parseInt(Math.random()*arrays.length);
-                codes += arrays[r];
+                sing_code += arrays[r];
             }
             // 验证码添加到input里
-            code1.val(codes);
+            singCode.val(sing_code);
         }
-        change();
-        change1();
-        code.click(change);
-        code1.click(change1);
+        changeLogin();
+        changeSingIn();
+        loginCode.click(changeLogin);
+        singCode.click(changeSingIn);
         //单击验证
-
-
         form.on('submit(sing-in)', function (data) {
-            var inputCode = $("#input").val().toUpperCase(); //取得输入的验证码并转化为大写
-            console.log(inputCode);
-            if(inputCode.length == 0) { //若输入的验证码长度为0
-                alert("请输入验证码！"); //则弹出请输入验证码
-            }
-            else if(inputCode!=codes.toUpperCase()) { //若输入的验证码与产生的验证码不一致时
-                alert("验证码输入错误!请重新输入"); //则弹出验证码输入错误
-                change();//刷新验证码
-                $("#input").val("");//清空文本框
-            }else { //输入正确时
-                alert("正确"); //弹出^-^
-            }
+           // alert(JSON.stringify(data.field))
             /*     alert(JSON.stringify(data.field), {
                        title: '最终的提交信息'
                    })*/
+
+/*
+            $.ajax({
+                type: "POST",
+                url: 'api/sign_in',
+                data: JSON.stringify(data.field),
+                contentType: "application/json",
+                dataType: "json",
+                beforeSend: function () {
+                    // TODO...
+                },
+                success: function (res) {
+                    if (res.code == 0) {
+
+                        // 提示语
+                        layer.msg('提交成功', {
+                            icon: 1,
+                            time: 1500
+                        });
+                        // editor.disable()
+
+                        // $('#blog_title').val("")
+                        // editor.clear()
+                        /!* // 延迟3秒
+                         setTimeout(function () {
+                           // 跳转后台首页
+                           window.location.href = "/index";
+                         }, 2000);*!/
+
+                        return false;
+                    } else {
+                        alert(res.msg())
+                        // 错误信息
+                        // layer.msg(res.msg, {icon: 2, anim: 6});
+
+                    }
+                },
+                error: function () {
+                    layer.msg("AJAX请求异常");
+                }
+            });
+*/
+
+
+            return false
         });
 /*
         $("#check").click(function(){
