@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"YunWeiBlog/models/dao"
-	"YunWeiBlog/util"
+	"YunWeiBlog/models/utils"
 	"encoding/json"
 	"fmt"
 	"github.com/beego/beego/v2/client/orm"
@@ -11,6 +11,7 @@ import (
 	"math/rand"
 	"path"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -87,9 +88,7 @@ func (c *ApiController) Post() {
 		if err != nil {
 			logs.Error("json.Unmarshal is err:", err.Error())
 		}
-		blogInfo.BlogCreateTime = util.GetNowTime()
-		blogInfo.BlogLastModifyTime = util.GetNowTime()
-		blogInfo.BlogCreateUser = "2"
+		blogInfo.BlogCreateUser = 2
 		o := orm.NewOrm()
 		insert, err := o.Insert(&blogInfo)
 		var jsonBack dao.JsonResult
@@ -112,35 +111,67 @@ func (c *ApiController) Post() {
 		c.Ctx.WriteString(string(res))
 		break
 	case "sign_in":
-		var blogInfo dao.BlogInfo
-		data := c.Ctx.Input.RequestBody
-		logs.Error(string(data))
-		err := json.Unmarshal(data, &blogInfo)
-		if err != nil {
-			logs.Error("json.Unmarshal is err:", err.Error())
-		}
-		blogInfo.BlogCreateTime = util.GetNowTime()
-		blogInfo.BlogLastModifyTime = util.GetNowTime()
-		blogInfo.BlogCreateUser = "2"
-		o := orm.NewOrm()
-		insert, err := o.Insert(&blogInfo)
+		var user dao.User
 		var jsonBack dao.JsonResult
-
+		data := c.Ctx.Input.RequestBody
+		err := json.Unmarshal(data, &user)
+		user.UserPassword = utils.Md5(user.UserPassword)
+		user.UserGrade = 4
 		if err != nil {
-			logs.Error(insert)
-			logs.Error(err.Error())
 			jsonBack.Code = -1
 			jsonBack.Msg = err.Error()
 		} else {
-			if insert > 0 {
-				jsonBack.Code = 0
-				jsonBack.Msg = "乘车"
+			o := orm.NewOrm()
+			_, err1 := o.Insert(&user)
+			if err1 != nil {
+				if strings.Contains(err1.Error(), "Duplicate entry") {
+					jsonBack.Code = -1
+					jsonBack.Msg = "该用户名已注册！"
+				} else {
+					logs.Error("用户注册失败！->" + err1.Error())
+					jsonBack.Code = -1
+					jsonBack.Msg = "用户注册失败！"
+				}
 			} else {
-				jsonBack.Code = -1
-				jsonBack.Msg = "失败"
+				jsonBack.Code = 0
+				jsonBack.Msg = "注册成功！"
 			}
 		}
-		res, err := json.Marshal(jsonBack)
+		res, _ := json.Marshal(jsonBack)
+		c.Ctx.WriteString(string(res))
+		break
+	case "login":
+		var user dao.User
+		var jsonBack dao.JsonResult
+		data := c.Ctx.Input.RequestBody
+		err := json.Unmarshal(data, &user)
+		user.UserPassword = utils.Md5(user.UserPassword)
+		if err != nil {
+			jsonBack.Code = -1
+			jsonBack.Msg = err.Error()
+		} else {
+			o := orm.NewOrm()
+			qs := o.QueryTable("user")
+			errO := qs.Filter("UserName", user.UserName).Filter("UserPassword", user.UserPassword).One(&user)
+			if errO != nil {
+				if strings.Contains(errO.Error(), "no row found") {
+					jsonBack.Code = -1
+					jsonBack.Msg = "账号或密码错误！"
+				} else {
+					jsonBack.Code = -1
+					jsonBack.Msg = errO.Error()
+				}
+			} else {
+				if user.UserId > 0 {
+					jsonBack.Code = 0
+					jsonBack.Msg = "登陆成功！"
+				} else {
+					jsonBack.Code = -1
+					jsonBack.Msg = "登陆失败！"
+				}
+			}
+		}
+		res, _ := json.Marshal(jsonBack)
 		c.Ctx.WriteString(string(res))
 		break
 	}

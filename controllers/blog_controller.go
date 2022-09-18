@@ -21,7 +21,9 @@ func (c *BlogController) Get() {
 		c.Data["Data"] = u
 	} else {
 		c.Data["Html"] = "<p>没内容！</p>"
-
 	}
+	o.QueryTable("BlogInfo").Filter("BlogId", u.BlogId).Update(orm.Params{
+		"BlogReadCount": orm.ColValue(orm.ColAdd, 1),
+	})
 	c.TplName = "blog.html"
 }

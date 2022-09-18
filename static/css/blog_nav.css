@@ -1,0 +1,46 @@
+.active_nav{
+
+    font-weight: 400;
+    line-height: 1;
+    color: #212529;
+    text-align: left;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 0;
+}
+.navigation-right {
+    font-weight: 400;
+    line-height: 31px;
+    color: #212529;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif;
+    padding: 0;
+    list-style: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+    height: 24px;
+    margin-right: 31px;
+
+}
+.navigation-right a{
+    -webkit-tap-highlight-color: transparent;
+    --swiper-theme-color: #007aff;
+    --swiper-navigation-size: 0.58667rem;
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
+    list-style: none;
+    line-height: 28px;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #272727;
+}

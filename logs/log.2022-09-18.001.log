@@ -1,0 +1,652 @@
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/17 19:12:57.831  [I] [parser.go:413]  generate router from comments
+2022/09/17 19:12:57.831  [I] [server.go:241]  http server Running on http://:80
+2022/09/17 19:13:02.714  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    18.9203ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 19:13:02.731  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|        998µs|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 19:23:08.842  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.9895ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:23:08.877  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      997.1µs|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 19:27:04.282  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.8366ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:27:04.289  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:27:05.817  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9871ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:27:05.824  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      218.9µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:34:55.105  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0091ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:34:55.113  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:34:55.113  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 19:35:59.538  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.3111ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:35:59.549  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:36:00.433  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.707ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:36:26.017  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9664ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:36:46.017  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.5034ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:37:02.120  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9781ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:37:02.130  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:37:22.128  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.7049ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:37:33.593  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.8192ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:39:29.076  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:40:08.822  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.5815ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:40:29.392  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9945ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:40:49.961  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.7343ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:40:49.972  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      520.3µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:41:21.879  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0587ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:41:28.831  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      761.3µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:41:31.048  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9947ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:41:54.617  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.7543ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:43:11.680  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.822ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:43:11.688  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 19:43:11.691  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.5041ms|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:43:12.528  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6753ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:43:12.535  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:43:17.993  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.2378ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:43:18.004  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      804.1µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:43:31.304  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.7426ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:43:31.314  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      996.9µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:43:42.881  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.5028ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:43:42.888  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.4µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:43:53.752  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6786ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:43:53.763  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:43:55.128  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3348ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:43:55.138  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:44:08.977  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.9739ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:44:08.987  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:44:10.695  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.5195ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:44:10.704  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      351.1µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:44:20.784  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.8631ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:44:20.802  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:44:22.119  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0908ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:44:22.131  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      998.3µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:44:29.032  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.335ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:44:29.039  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:44:30.199  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6216ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:44:30.207  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:44:45.649  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      2.176ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:44:45.657  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      602.4µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:44:53.480  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6477ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:44:53.490  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.9µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:44:59.152  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3704ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:44:59.159  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:45:01.671  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.4784ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:45:01.683  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 19:45:07.832  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0399ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 19:45:07.841  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|        997µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:23:17.726  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.5863ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:23:17.739  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.8µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:23:17.740  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|        727µs|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 20:23:44.637  [I] [parser.go:413]  generate router from comments
+2022/09/17 20:23:44.638  [I] [server.go:241]  http server Running on http://:80
+2022/09/17 20:23:48.693  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0538ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:23:48.708  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 20:23:48.713  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      2.716ms|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:24:07.316  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.4164ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:24:07.330  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:24:09.348  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0145ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:24:33.029  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.8275ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:24:33.039  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     1.9937ms|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:25:06.252  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6081ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:25:06.263  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:25:19.500  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.8792ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:25:19.512  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:35:41.069  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.2281ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:35:41.077  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      592.2µs|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 20:35:41.077  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      592.2µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:35:52.947  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9937ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:37:20.923  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9848ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:37:20.936  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:37:21.803  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0382ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:39:15.299  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.8636ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:39:15.306  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|        997µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:39:47.818  [D] [router.go:955]  |      127.0.0.1|[43m 404 [0m|      276.9µs| nomatch|[44m GET     [0m /static/css/cnds.11css
+2022/09/17 20:41:19.338  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|       1.44ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:41:19.355  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.5µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:46:43.035  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.2367ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:46:43.045  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 20:46:43.045  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:46:43.970  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6474ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:46:44.451  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3818ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:47:19.765  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6028ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:47:19.777  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:47:20.682  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0923ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:47:21.637  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.4637ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:48:07.132  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0068ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:48:07.145  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      997.7µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:48:07.995  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0509ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:48:08.402  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6076ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:50:39.648  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.4986ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:50:39.663  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      504.6µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:50:39.664  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 20:50:40.563  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.0307ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:50:41.027  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.5733ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:50:54.218  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.4294ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:50:55.010  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.7296ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:51:35.903  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0577ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:51:35.918  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:52:05.186  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.5567ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:52:06.252  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.4989ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:52:33.390  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0861ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:53:46.012  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      821.8µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:53:46.024  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     3.9897ms|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:54:24.626  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      934.5µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:54:40.298  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.7085ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:55:45.802  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.5058ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:55:45.817  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:55:57.506  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.035ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:55:59.914  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.2544ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:56:00.811  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9787ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:56:36.026  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9419ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:56:57.369  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0772ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:57:30.417  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3243ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 20:57:30.425  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      357.4µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 20:59:32.010  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:03:20.663  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.8873ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:03:20.676  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:04:10.739  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.2893ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:04:54.940  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0467ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:05:23.522  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.1177ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:05:35.651  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9486ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:05:35.667  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:05:35.672  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 21:05:47.233  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.4µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:08:05.091  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.4655ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:08:05.106  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:12:06.796  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.946ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:12:06.815  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 21:12:06.815  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:12:33.095  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      3.339ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:12:53.616  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3045ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:13:02.841  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3124ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:15:07.084  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|       1.86ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:15:08.088  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0014ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:15:08.975  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1543ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:15:51.344  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.5804ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:15:51.354  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.3µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:15:52.754  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3519ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:15:52.763  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:15:53.370  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3528ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:15:53.378  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:16:36.031  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.6µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:16:36.048  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.9µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:17:56.740  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    49.5704ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:17:56.749  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 21:18:56.768  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.4752ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:18:56.789  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:18:56.789  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:18:57.768  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0043ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:20:48.396  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    37.9051ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:21:28.693  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     39.592ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:21:28.704  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:22:15.078  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|        795µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:22:15.090  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:22:15.091  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:22:15.092  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      502.8µs|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 21:22:29.750  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.2267ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:24:25.822  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.7µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:24:25.833  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:24:26.711  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.8048ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:24:27.143  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.2698ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:24:56.998  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6247ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:24:57.006  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:24:57.758  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9733ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:25:52.990  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      801.9µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:25:53.000  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:25:53.927  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3304ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:25:54.359  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.7762ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:26:12.094  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.9µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:26:12.104  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      996.7µs|   match|[44m GET     [0m /static/css/prism.css
+2022/09/17 21:26:12.106  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      996.7µs|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 21:26:12.106  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:26:12.109  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      998.9µs|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:26:12.109  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:26:12.110  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.6005ms|   match|[44m GET     [0m /static/js/prism.js
+2022/09/17 21:26:12.112  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 21:26:12.115  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      998.6µs|   match|[44m GET     [0m /static/upload/202209152141583244.jpg
+2022/09/17 21:26:12.116  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/tx.jpg
+2022/09/17 21:26:12.143  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      998.2µs|   match|[44m GET     [0m /static/img/backicn.png
+2022/09/17 21:26:12.143  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/search.png
+2022/09/17 21:26:13.526  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.3362ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:26:43.715  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    38.7012ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:26:43.722  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      285.7µs|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:26:43.726  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      998.1µs|   match|[44m GET     [0m /static/layui/layui.js
+2022/09/17 21:26:43.979  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0057ms|   match|[44m GET     [0m /static/layui/css/modules/laydate/default/laydate.css
+2022/09/17 21:26:43.983  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/layui/css/modules/layer/default/layer.css
+2022/09/17 21:26:43.986  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      627.5µs|   match|[44m GET     [0m /static/layui/css/modules/code.css
+2022/09/17 21:27:25.214  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.5µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:27:25.225  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:27:25.226  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     1.0384ms|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:27:26.174  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0336ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:30:16.082  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0813ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:30:16.094  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     2.9943ms|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:30:16.096  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:30:16.099  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|        8.1µs|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:30:17.751  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6642ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:30:17.765  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:30:53.464  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9136ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:30:53.479  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.6µs|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:30:53.479  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:30:55.103  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0517ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:30:55.114  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:30:56.151  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      904.8µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:30:56.164  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:31:49.642  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.3682ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:31:49.667  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:31:49.668  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:31:49.668  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:32:28.374  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      998.2µs|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:32:28.374  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:32:37.701  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.8786ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:33:17.259  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:33:17.260  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     1.2267ms|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:34:08.926  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.7331ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:34:08.941  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:34:08.942  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:34:08.942  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:34:19.472  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.4132ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:34:19.484  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9943ms|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:34:42.200  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1391ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:34:42.218  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      997.2µs|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:34:42.218  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:35:01.440  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.3636ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:35:01.451  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:35:17.422  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.3581ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:35:17.432  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:35:17.437  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      997.8µs|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:35:49.797  [D] [template.go:71]  template Execute err: template: blog.html:24:28: executing "blog.html" at <.Data.BlogContent>: invalid value; expected string
+2022/09/17 21:35:49.797  [E] [router.go:896]  template: blog.html:24:28: executing "blog.html" at <.Data.BlogContent>: invalid value; expected string
+2022/09/17 21:35:49.797  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|  21.0333742s|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:35:50.894  [D] [template.go:71]  template Execute err: template: blog.html:24:28: executing "blog.html" at <.Data.BlogContent>: invalid value; expected string
+2022/09/17 21:35:50.894  [E] [router.go:896]  template: blog.html:24:28: executing "blog.html" at <.Data.BlogContent>: invalid value; expected string
+2022/09/17 21:35:50.895  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|   21.034299s|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:35:57.174  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3228ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:35:57.187  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     1.9954ms|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:35:57.187  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:35:57.187  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:35:59.054  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.3818ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:37:55.152  [D] [template.go:71]  template Execute err: template: blog.html:24:28: executing "blog.html" at <.Data.BlogContent>: invalid value; expected string
+2022/09/17 21:37:55.152  [E] [router.go:896]  template: blog.html:24:28: executing "blog.html" at <.Data.BlogContent>: invalid value; expected string
+2022/09/17 21:37:55.152  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|  21.0579401s|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:38:27.422  [D] [template.go:71]  template Execute err: template: blog.html:24:28: executing "blog.html" at <.Data.BlogContent>: invalid value; expected string
+2022/09/17 21:38:27.422  [E] [router.go:896]  template: blog.html:24:28: executing "blog.html" at <.Data.BlogContent>: invalid value; expected string
+2022/09/17 21:38:27.422  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|  21.0582348s|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:38:40.934  [D] [template.go:71]  template Execute err: template: blog.html:24:28: executing "blog.html" at <.Data.BlogContent>: invalid value; expected string
+2022/09/17 21:38:40.934  [E] [router.go:896]  template: blog.html:24:28: executing "blog.html" at <.Data.BlogContent>: invalid value; expected string
+2022/09/17 21:38:40.934  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|  21.0288665s|   match|[44m GET     [0m /blog/11   r:/blog/:id
+2022/09/17 21:38:43.835  [D] [template.go:71]  template Execute err: template: blog.html:24:28: executing "blog.html" at <.Data.BlogContent>: invalid value; expected string
+2022/09/17 21:38:43.836  [E] [router.go:896]  template: blog.html:24:28: executing "blog.html" at <.Data.BlogContent>: invalid value; expected string
+2022/09/17 21:38:43.836  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|  21.0381648s|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:38:57.645  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|   3.4606225s|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:38:57.663  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:38:57.668  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     3.9894ms|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:39:50.153  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     53.487ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:39:50.160  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|        997µs|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:39:50.160  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:39:53.280  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9942ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:39:53.291  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     2.0093ms|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:39:53.291  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:39:53.291  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:39:55.316  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.171ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:39:55.326  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     1.0338ms|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:40:30.309  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.994ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:40:30.317  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|        997µs|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:40:51.483  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:40:51.484  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      327.5µs|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:41:54.192  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    23.0976ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:41:54.199  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:41:54.200  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:41:55.198  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    25.2567ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:41:55.876  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     24.654ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:41:57.895  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.5131ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:41:57.903  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      997.7µs|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:41:57.903  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:41:58.828  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      968.2µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:42:10.658  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:44:26.844  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    24.1148ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:44:26.852  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      908.2µs|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:44:26.854  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      613.1µs|   match|[44m GET     [0m /static/css/prism.css
+2022/09/17 21:44:26.854  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:44:26.856  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 21:44:26.857  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/tx.jpg
+2022/09/17 21:44:26.857  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.1127ms|   match|[44m GET     [0m /static/js/prism.js
+2022/09/17 21:44:26.858  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      2.448ms|   match|[44m GET     [0m /static/layui/layui.js
+2022/09/17 21:44:26.874  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      995.8µs|   match|[44m GET     [0m /static/img/backicn.png
+2022/09/17 21:44:26.874  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/search.png
+2022/09/17 21:44:27.137  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      333.5µs|   match|[44m GET     [0m /static/layui/css/modules/laydate/default/laydate.css
+2022/09/17 21:44:27.144  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      743.2µs|   match|[44m GET     [0m /static/layui/css/modules/layer/default/layer.css
+2022/09/17 21:44:27.149  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/layui/css/modules/code.css
+2022/09/17 21:44:29.005  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9222ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:44:29.011  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 21:44:29.012  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      509.7µs|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:44:29.021  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      996.8µs|   match|[44m GET     [0m /static/upload/202209152141583244.jpg
+2022/09/17 21:44:30.109  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.5423ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:44:30.485  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.7061ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:44:56.525  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:48:36.171  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1753ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:48:36.185  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:48:36.185  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:48:38.841  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    24.0941ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:48:38.848  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:48:38.849  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:48:51.604  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     24.559ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:48:53.830  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9953ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:48:55.133  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.1508ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:49:13.097  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    21.1485ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:49:15.565  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.455ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:49:16.492  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3203ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:49:34.442  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    23.0506ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:49:34.450  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:49:46.399  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9946ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:49:46.418  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:49:46.421  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/prism.css
+2022/09/17 21:49:46.424  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1038ms|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:49:46.426  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/tx.jpg
+2022/09/17 21:49:46.438  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/backicn.png
+2022/09/17 21:49:46.439  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.5046ms|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 21:49:46.439  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/search.png
+2022/09/17 21:49:46.439  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     7.2988ms|   match|[44m GET     [0m /static/js/prism.js
+2022/09/17 21:49:46.750  [D] [router.go:955]  |      127.0.0.1|[43m 404 [0m|      208.1µs| nomatch|[44m GET     [0m /favicon.ico
+2022/09/17 21:49:55.018  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    25.5067ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:49:55.051  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    14.9595ms|   match|[44m GET     [0m /static/layui/layui.js
+2022/09/17 21:49:55.335  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|       97.1µs|   match|[44m GET     [0m /static/layui/css/modules/laydate/default/laydate.css
+2022/09/17 21:49:55.343  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      616.9µs|   match|[44m GET     [0m /static/layui/css/modules/layer/default/layer.css
+2022/09/17 21:49:55.347  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/layui/css/modules/code.css
+2022/09/17 21:50:15.444  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      601.7µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:50:15.455  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.9933ms|   match|[44m GET     [0m /static/css/prism.css
+2022/09/17 21:50:15.455  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:50:15.456  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      740.7µs|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:50:15.460  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 21:50:15.461  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      993.6µs|   match|[44m GET     [0m /static/js/prism.js
+2022/09/17 21:50:15.462  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/tx.jpg
+2022/09/17 21:50:15.490  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/backicn.png
+2022/09/17 21:50:15.490  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/search.png
+2022/09/17 21:50:16.476  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.5152ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:50:17.245  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0597ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:50:34.869  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6013ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:50:34.880  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/prism.css
+2022/09/17 21:50:34.881  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      996.6µs|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:50:34.884  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.7µs|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:50:34.890  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9939ms|   match|[44m GET     [0m /static/js/prism.js
+2022/09/17 21:50:34.892  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.9904ms|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 21:50:34.892  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      998.1µs|   match|[44m GET     [0m /static/img/tx.jpg
+2022/09/17 21:50:34.905  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/backicn.png
+2022/09/17 21:50:34.905  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/search.png
+2022/09/17 21:51:06.188  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3044ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:51:06.196  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      996.5µs|   match|[44m GET     [0m /static/upload/202209152141583244.jpg
+2022/09/17 21:51:08.943  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    28.2053ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:51:08.957  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.3365ms|   match|[44m GET     [0m /static/layui/layui.js
+2022/09/17 21:51:09.204  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      725.1µs|   match|[44m GET     [0m /static/layui/css/modules/laydate/default/laydate.css
+2022/09/17 21:51:09.210  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      116.3µs|   match|[44m GET     [0m /static/layui/css/modules/layer/default/layer.css
+2022/09/17 21:51:09.214  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      665.4µs|   match|[44m GET     [0m /static/layui/css/modules/code.css
+2022/09/17 21:51:29.572  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.408ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:51:40.133  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1867ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:51:40.141  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:51:40.141  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:51:40.142  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 21:51:45.132  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      665.8µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:51:47.658  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    24.2944ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 21:52:20.853  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0899ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:52:32.998  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:52:46.139  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.7µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:54:07.111  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      996.3µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:54:07.122  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:54:07.122  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:54:07.123  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 21:54:07.123  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 21:54:07.132  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     4.4373ms|   match|[44m GET     [0m /static/upload/202209152141583244.jpg
+2022/09/17 21:54:28.667  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.337ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:54:28.681  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:54:30.149  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0356ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:54:32.071  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6749ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:54:32.836  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6586ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:59:49.780  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      664.8µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 21:59:49.789  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      997.6µs|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 21:59:49.789  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 21:59:49.789  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 22:00:29.412  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.5714ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:01:03.301  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.0077ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:01:05.482  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.5µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:01:06.477  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.5556ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:01:06.867  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|       1.37ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:01:07.131  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3829ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:01:19.419  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.5874ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:01:38.226  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1385ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:02:07.835  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0105ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:02:07.846  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      916.5µs|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 22:02:09.338  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.4931ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:02:48.661  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.4546ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:02:48.671  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      997.1µs|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 22:03:09.419  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.8µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:03:19.098  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.5149ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:03:20.080  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.5981ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:03:21.764  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.902ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:03:22.533  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.8849ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:03:23.813  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.8468ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:03:26.039  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     21.996ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/17 22:03:28.771  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9924ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:03:30.908  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      2.114ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:03:58.786  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1643ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:04:04.012  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.7469ms|   match|[44m GET     [0m /edit   r:/edit
+2022/09/17 22:06:43.483  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|        638µs|   match|[44m GET     [0m /     r:/
+2022/09/17 22:06:43.491  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 22:06:43.493  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 22:06:43.493  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 22:07:10.067  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9871ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:07:10.947  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.1222ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:09:36.218  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      922.9µs|   match|[44m GET     [0m /     r:/
+2022/09/17 22:09:36.229  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 22:09:36.891  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9931ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:09:38.095  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0547ms|   match|[44m GET     [0m /login   r:/login
+2022/09/17 22:09:38.096  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     2.1828ms|   match|[44m GET     [0m /static/layui/css/modules/layer/default/loading-1.gif
+2022/09/17 22:09:38.097  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     2.9316ms|   match|[44m GET     [0m /static/layui/css/modules/layer/default/icon.png
+2022/09/17 22:09:49.707  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6864ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:09:51.149  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      996.5µs|   match|[44m GET     [0m /login   r:/login
+2022/09/17 22:10:01.066  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1504ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:10:01.079  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 22:10:01.079  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 22:10:02.734  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6208ms|   match|[44m GET     [0m /login   r:/login
+2022/09/17 22:10:05.161  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9942ms|   match|[44m GET     [0m /edit   r:/edit
+2022/09/17 22:10:07.002  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3394ms|   match|[44m GET     [0m /edit   r:/edit
+2022/09/17 22:10:39.510  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 22:12:25.753  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.7231ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:12:25.768  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 22:12:26.917  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     4.1759ms|   match|[44m GET     [0m /edit   r:/edit
+2022/09/17 22:13:28.090  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      996.9µs|   match|[44m GET     [0m /     r:/
+2022/09/17 22:13:28.102  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|        997µs|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 22:13:28.103  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 22:13:29.455  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9192ms|   match|[44m GET     [0m /login   r:/login
+2022/09/17 22:13:37.358  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.3575ms|   match|[44m GET     [0m /login   r:/login
+2022/09/17 22:14:09.525  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6974ms|   match|[44m GET     [0m /login   r:/login
+2022/09/17 22:14:11.738  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      946.9µs|   match|[44m GET     [0m /     r:/
+2022/09/17 22:14:13.238  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|        911µs|   match|[44m GET     [0m /login   r:/login
+2022/09/17 22:15:12.556  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.6285ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:15:12.565  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     1.0015ms|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 22:15:13.541  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1127ms|   match|[44m GET     [0m /login   r:/login
+2022/09/17 22:15:47.443  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|       2.17ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:15:48.493  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.2049ms|   match|[44m GET     [0m /login   r:/login
+2022/09/17 22:16:37.442  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.6862ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:19:14.147  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 22:19:14.150  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      996.6µs|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 22:19:14.150  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 22:19:14.151  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/list.css
+2022/09/17 22:19:26.129  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     1.9955ms|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 22:19:26.133  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/17 22:21:04.790  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.5989ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:21:04.808  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 22:21:04.808  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 22:21:05.691  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      996.7µs|   match|[44m GET     [0m /     r:/
+2022/09/17 22:21:06.803  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1291ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:21:49.507  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.1547ms|   match|[44m GET     [0m /     r:/
+2022/09/17 22:23:50.546  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.4358ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:23:50.556  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      996.8µs|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 22:23:50.557  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|        998µs|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 22:23:51.414  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0932ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:23:58.269  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|        997µs|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:23:58.278  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      998.6µs|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 22:24:02.814  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      3.961ms|   match|[44m GET     [0m /blog_list   r:/blog_list
+2022/09/17 22:24:02.823  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/view.css
+2022/09/17 22:24:17.094  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      751.7µs|   match|[44m GET     [0m /login   r:/login
+2022/09/17 22:24:19.043  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9364ms|   match|[44m GET     [0m /login   r:/login
+2022/09/17 22:24:27.196  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9368ms|   match|[44m GET     [0m /login   r:/login
+2022/09/17 22:24:36.145  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      986.1µs|   match|[44m GET     [0m /edit   r:/edit
+2022/09/17 22:24:36.157  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      786.2µs|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 22:24:36.159  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 23:41:30.755  [I] [parser.go:413]  generate router from comments
+2022/09/17 23:41:30.758  [I] [server.go:241]  http server Running on http://:80
+2022/09/17 23:42:51.675  [I] [parser.go:413]  generate router from comments
+2022/09/17 23:42:51.677  [I] [server.go:241]  http server Running on http://:80
+2022/09/17 23:45:12.137  [I] [parser.go:413]  generate router from comments
+2022/09/17 23:45:12.139  [I] [server.go:241]  http server Running on http://:80
+2022/09/17 23:45:35.872  [I] [parser.go:413]  generate router from comments
+2022/09/17 23:45:35.873  [I] [server.go:241]  http server Running on http://:80
+2022/09/17 23:48:35.531  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1991ms|   match|[44m GET     [0m /edit   r:/edit
+2022/09/17 23:48:35.547  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     9.3163ms|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/17 23:48:35.552  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     6.0616ms|   match|[44m GET     [0m /static/css/bomm.css
+2022/09/17 23:48:35.556  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     10.058ms|   match|[44m GET     [0m /static/img/logo.png
+2022/09/17 23:48:36.258  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.4647ms|   match|[44m GET     [0m /edit   r:/edit
+2022/09/17 23:48:46.295  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3686ms|   match|[46m POST    [0m /api/upload_img   r:/api/:id
+2022/09/17 23:48:46.304  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/upload/202209172348466678.png
+2022/09/17 23:48:51.759  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     4.3202ms|   match|[46m POST    [0m /api/upload_img   r:/api/:id
+2022/09/17 23:48:51.766  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.6359ms|   match|[44m GET     [0m /static/upload/202209172348517667.jpg
+2022/09/17 23:48:57.167  [E] [api_controller.go:84]  {"BlogTitle":"ASa s","BlogContent":"<p>AS a</p>","BlogBrief":"ASasA","BlogImgUrl":"/static/upload/202209172348517667.jpg","BlogClassifyType":"2|4","BlogVisibleType":0,"BlogState":0}
+2022/09/17 23:48:57.217  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     50.519ms|   match|[46m POST    [0m /api/edit_submit   r:/api/:id
+2022/09/17 23:50:47.628  [I] [parser.go:413]  generate router from comments
+2022/09/17 23:50:47.629  [I] [server.go:241]  http server Running on http://:80
+2022/09/17 23:50:50.379  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.5475ms|   match|[44m GET     [0m /edit   r:/edit
+2022/09/17 23:51:00.572  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     4.1052ms|   match|[46m POST    [0m /api/upload_img   r:/api/:id
+2022/09/17 23:51:00.578  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.3µs|   match|[44m GET     [0m /static/upload/202209172351003357.png
+2022/09/17 23:51:09.201  [E] [api_controller.go:84]  {"BlogTitle":"DSFGDSFG ","BlogContent":"<p>SDFGDFG</p>","BlogBrief":"DFGSDFGSDFGSDFGSDFG","BlogImgUrl":"/static/upload/202209172351003357.png","BlogClassifyType":"2|5|6","BlogVisibleType":1,"BlogState":0}
+2022/09/17 23:51:09.250  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    49.2992ms|   match|[46m POST    [0m /api/edit_submit   r:/api/:id
+2022/09/18 00:03:33.302  [I] [parser.go:413]  generate router from comments
+2022/09/18 00:03:33.304  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 00:04:11.278  [I] [parser.go:413]  generate router from comments
+2022/09/18 00:04:11.280  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 00:07:03.479  [I] [parser.go:413]  generate router from comments
+2022/09/18 00:07:03.481  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 00:10:09.198  [I] [parser.go:413]  generate router from comments
+2022/09/18 00:10:09.199  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 00:18:20.132  [I] [parser.go:413]  generate router from comments
+2022/09/18 00:18:20.133  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 00:37:13.015  [I] [parser.go:413]  generate router from comments
+2022/09/18 00:37:13.016  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 00:37:20.247  [I] [parser.go:413]  generate router from comments
+2022/09/18 00:37:20.256  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 00:38:31.588  [I] [parser.go:413]  generate router from comments
+2022/09/18 00:38:31.590  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 00:48:57.879  [I] [parser.go:413]  generate router from comments
+2022/09/18 00:48:57.880  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 00:49:07.439  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.6865ms|   match|[44m GET     [0m /     r:/
+2022/09/18 00:49:07.459  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     5.6792ms|   match|[44m GET     [0m /static/css/list.css
+2022/09/18 00:49:07.464  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     9.0814ms|   match|[44m GET     [0m /static/css/blog_nav.css
+2022/09/18 00:49:07.470  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      16.51ms|   match|[44m GET     [0m /static/css/view.css
+2022/09/18 00:49:07.470  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|    15.5439ms|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/18 00:49:07.471  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     15.122ms|   match|[44m GET     [0m /static/img/logo.png
+2022/09/18 00:49:57.135  [I] [parser.go:413]  generate router from comments
+2022/09/18 00:49:57.136  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 00:50:01.174  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.7053ms|   match|[44m GET     [0m /     r:/
+2022/09/18 00:50:03.876  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1911ms|   match|[44m GET     [0m /     r:/
+2022/09/18 00:50:47.161  [I] [parser.go:413]  generate router from comments
+2022/09/18 00:50:47.162  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 00:51:02.638  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      997.9µs|   match|[44m GET     [0m /edit   r:/edit
+2022/09/18 00:51:02.649  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     7.2975ms|   match|[44m GET     [0m /static/css/wangeditoreditor@5.1style.css
+2022/09/18 00:51:02.649  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     4.6666ms|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/18 00:51:02.657  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    13.6361ms|   match|[44m GET     [0m /static/layui/css/layui.css
+2022/09/18 00:51:02.658  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    11.8168ms|   match|[44m GET     [0m /static/css/bomm.css
+2022/09/18 00:51:02.658  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    10.3353ms|   match|[44m GET     [0m /static/img/logo.png
+2022/09/18 00:51:02.660  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    11.2277ms|   match|[44m GET     [0m /static/img/tx.jpg
+2022/09/18 00:51:02.712  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     6.2979ms|   match|[44m GET     [0m /static/layui/font/iconfont.eot
+2022/09/18 00:51:02.797  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|   146.1177ms|   match|[44m GET     [0m /static/layui/layui.js
+2022/09/18 00:51:02.858  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|   207.0573ms|   match|[44m GET     [0m /static/js/wangeditoreditor@5.1.15distindex.js
+2022/09/18 00:51:02.877  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     4.8585ms|   match|[44m GET     [0m /static/layui/css/modules/laydate/default/laydate.css
+2022/09/18 00:51:02.890  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     5.0924ms|   match|[44m GET     [0m /static/layui/css/modules/layer/default/layer.css
+2022/09/18 00:51:02.902  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.7308ms|   match|[44m GET     [0m /static/layui/css/modules/code.css
+2022/09/18 00:51:02.951  [D] [router.go:955]  |      127.0.0.1|[43m 404 [0m|           0s| nomatch|[44m GET     [0m /favicon.ico
+2022/09/18 00:51:11.567  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.9918ms|   match|[44m GET     [0m /static/layui/css/layui.css
+2022/09/18 00:51:42.548  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.071ms|   match|[44m GET     [0m /edit   r:/edit
+2022/09/18 00:51:42.561  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.9895ms|   match|[44m GET     [0m /static/css/cnds.css
+2022/09/18 00:51:42.564  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3065ms|   match|[44m GET     [0m /static/layui/layui.js
+2022/09/18 00:51:42.564  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/logo.png
+2022/09/18 00:51:42.821  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|       74.1µs|   match|[44m GET     [0m /static/layui/css/modules/laydate/default/laydate.css
+2022/09/18 00:51:42.826  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/layui/css/modules/layer/default/layer.css
+2022/09/18 00:51:42.829  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/layui/css/modules/code.css
+2022/09/18 00:55:01.800  [I] [parser.go:413]  generate router from comments
+2022/09/18 00:55:01.803  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:01:03.661  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:01:03.662  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:01:59.068  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:01:59.069  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:02:12.928  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:02:12.930  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:03:01.307  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:03:01.309  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:12:06.820  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:12:06.821  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:12:46.938  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:12:46.938  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:13:10.622  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:13:10.622  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:13:43.488  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:13:43.489  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:14:19.853  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:14:19.853  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:15:09.616  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:15:09.617  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:15:21.099  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:15:21.100  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:15:36.102  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:15:36.104  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:16:03.582  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:16:03.583  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:17:52.563  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:17:52.563  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:18:04.523  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:18:04.523  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 01:18:18.477  [I] [parser.go:413]  generate router from comments
+2022/09/18 01:18:18.477  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 18:11:24.002  [I] [parser.go:413]  generate router from comments
+2022/09/18 18:11:24.003  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 18:12:16.996  [I] [parser.go:413]  generate router from comments
+2022/09/18 18:12:16.998  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 18:34:50.838  [I] [parser.go:413]  generate router from comments
+2022/09/18 18:34:50.839  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 18:35:03.948  [I] [parser.go:413]  generate router from comments
+2022/09/18 18:35:03.950  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 18:35:30.011  [I] [parser.go:413]  generate router from comments
+2022/09/18 18:35:30.012  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 18:36:22.590  [I] [parser.go:413]  generate router from comments
+2022/09/18 18:36:22.592  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 18:57:51.767  [I] [parser.go:413]  generate router from comments
+2022/09/18 18:57:51.768  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 18:59:19.241  [E] [api_controller.go:152]  
+2022/09/18 18:59:19.241  [E] [api_controller.go:155]  json.Unmarshal is err: unexpected end of JSON input
+2022/09/18 18:59:19.241  [E] [api_controller.go:165]  0
+2022/09/18 18:59:19.241  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      995.1µs|   match|[46m POST    [0m /api/login   r:/api/:id
+2022/09/18 18:59:43.608  [E] [api_controller.go:152]  
+2022/09/18 18:59:43.608  [E] [api_controller.go:155]  json.Unmarshal is err: unexpected end of JSON input
+2022/09/18 18:59:43.608  [E] [api_controller.go:165]  0
+2022/09/18 18:59:43.608  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[46m POST    [0m /api/login   r:/api/:id
+2022/09/18 19:09:21.277  [E] [api_controller.go:152]  {"IdName":"admin","UserPassword":"123"}
+2022/09/18 19:09:21.277  [E] [api_controller.go:165]  0
+2022/09/18 19:09:21.277  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[46m POST    [0m /api/login   r:/api/:id
+2022/09/18 19:10:03.716  [I] [parser.go:413]  generate router from comments
+2022/09/18 19:10:03.718  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 19:10:07.027  [N] [api_controller.go:152]  {"IdName":"admin","UserPassword":"123"}
+2022/09/18 19:10:07.028  [N] [api_controller.go:165]  0
+2022/09/18 19:10:07.028  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      996.6µs|   match|[46m POST    [0m /api/login   r:/api/:id
+2022/09/18 19:11:20.273  [I] [parser.go:413]  generate router from comments
+2022/09/18 19:11:20.274  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 19:11:21.770  [N] [api_controller.go:152]  {"IdName":"admin","UserPassword":"123"}
+2022/09/18 19:11:21.770  [N] [api_controller.go:154]  123
+2022/09/18 19:11:21.770  [N] [api_controller.go:167]  0
+2022/09/18 19:11:21.770  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      642.2µs|   match|[46m POST    [0m /api/login   r:/api/:id
+2022/09/18 19:16:36.975  [I] [parser.go:413]  generate router from comments
+2022/09/18 19:16:36.977  [I] [server.go:241]  http server Running on http://:80
+2022/09/18 19:16:43.753  [N] [api_controller.go:152]  {"IdName":"admin","UserPassword":"123"}
+2022/09/18 19:16:43.753  [N] [api_controller.go:154]  123
+2022/09/18 19:16:43.753  [C] [config.go:190]  the request url is  /api/login
+2022/09/18 19:16:43.753  [C] [config.go:191]  Handler crashed with error <Ormer> cannot use non-ptr model struct `YunWeiBlog/models/dao.User`
+2022/09/18 19:16:43.753  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/18 19:16:43.753  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:114
+2022/09/18 19:16:43.753  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:137
+2022/09/18 19:16:43.753  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:134
+2022/09/18 19:16:43.753  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/api_controller.go:161
+2022/09/18 19:16:43.754  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/18 19:16:43.754  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/18 19:16:43.754  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/18 19:16:43.754  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/18 19:16:43.754  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/18 19:16:43.754  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571

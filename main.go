@@ -2,11 +2,14 @@ package main
 
 import (
 	"YunWeiBlog/models/dao"
+	"YunWeiBlog/models/utils"
 	_ "YunWeiBlog/routers"
 	"github.com/beego/beego/v2/client/orm"
 	"github.com/beego/beego/v2/core/logs"
 	beego "github.com/beego/beego/v2/server/web"
 	_ "github.com/go-sql-driver/mysql"
+	"os"
+	"strings"
 	"time"
 )
 
@@ -16,98 +19,96 @@ func main() {
 	beego.BConfig.WebConfig.Session.SessionGCMaxLifetime = 600
 	err := logs.SetLogger(logs.AdapterFile, `{"filename":"logs/log","level":7,"maxlines":0,"maxsize":0,"daily":true,"maxdays":10,"color":true}`)
 	if err != nil {
-		return
+		logs.Error("日志配置出错！->" + err.Error())
+		os.Exit(0)
 	}
+	beego.BConfig.WebConfig.StaticExtensionsToGzip = []string{".css", ".js"}
 	beego.Run()
-
-	/*	orm.Debug = true
-		o := orm.NewOrm()
-		user := dao.User{
-			Id:           1,
-			IdName:       "admin",
-			UserName:     "管理员",
-			UserPassword: "123"}
-		// insert
-		id, err := o.Insert(&user)
-		fmt.Printf("ID: %d, ERR: %v\n", id, err)*/
-
-	/*// update
-	//user.Id = 1
-	//user.UserName = "astaxie"
-	num, err := o.Update(&user)
-	fmt.Printf("NUM: %d, ERR: %v\n", num, err)
-
-	// read one
-	u := dao.User{Id: user.Id}
-	err := o.Read(&u)
-	fmt.Printf("ERR: %v\n", err)
-	fmt.Printf("ERR: %v\n", u)*/
-
-	// delete
-	/*	u := dao.User{Id: user.Id}
-
-		num, err := o.Delete(&u)
-		fmt.Printf("NUM: %d, ERR: %v\n", num, err)*/
-
-	//beego.Run()
-
-	// 默认使用 default，你可以指定为其他数据库
-	/*orm.Debug = true
-	o := orm.NewOrm()
-	profile := new(dao.Profile)
-	profile.Age = 33
-	user := new(dao.User1)
-
-	user.Profile = profile
-	user.Name = "slene123"
-	fmt.Println(o.Insert(profile))
-	fmt.Println(o.Insert(user))*/
-	//o := orm.NewOrm()
-	//ids := []int{1, 2, 3}
-	//var user []dao.User1
-
-	//var maps []orm.Params
-	//	var list orm.ParamsList
-	/*	res := make(orm.Params)
-
-		//num, err :=o.Raw("SELECT id FROM user1 WHERE id IN (?, ?, ?)", ids).QueryRows(&user)
-		//num, err :=o.Raw("SELECT * FROM user1 WHERE id IN (?, ?, ?)", ids).ValuesFlat(&list)
-		num, err :=o.Raw("SELECT id, name FROM user1").RowsToMap(&res, "id", "name")
-		if err == nil {
-			fmt.Println("user nums: ", num)
-		}
-		fmt.Println(res[])*/
-	/*	for i:=0;i<int(num);i++{
-		fmt.Println(list)
-	}*/
-
-	/*	res, err := o.Raw("UPDATE user1 SET name = ? where id=?", "your",1).Exec()
-		if err == nil {
-			num, _ := res.RowsAffected()
-			fmt.Println("mysql row affected nums: ", num)
-		}
-	*/
-
-	/*	var list orm.ParamsList
-		num, err := o.Raw("SELECT id FROM user WHERE id < ?", 10).ValuesFlat(&list)
-		if err == nil && num > 0 {
-			fmt.Println(list) // []{"1","2","3",...}
-		}*/
-
 }
 
 func init() {
 	orm.RegisterDriver("mysql", orm.DRMySQL)
-	dataSource, _ := beego.AppConfig.String("mysql")
+	dataSource, e := beego.AppConfig.String("mysql")
+	if e != nil {
+		logs.Error("获取数据库配置文件失败！->" + e.Error())
+		os.Exit(0)
+	}
 	//,"root:root@tcp(192.200.102.56:3306)/yunwei?charset=utf8"
-	orm.RegisterDataBase("default", "mysql", dataSource) // register model
+	errR := orm.RegisterDataBase("default", "mysql", dataSource)
+	if errR != nil {
+		logs.Error("连接数据库失败！->" + errR.Error())
+		os.Exit(0)
+	} // register model
 	orm.SetMaxIdleConns("default", 30)
 	orm.SetMaxOpenConns("default", 30)
 	orm.DefaultTimeLoc = time.UTC
 	orm.RegisterModel(new(dao.BlogInfo), new(dao.User))
 	//orm.RegisterModel(new(dao.User1), new(dao.Post), new(dao.Profile), new(dao.Tag))
+	isInstall, _ := beego.AppConfig.String("isInstall")
+	if len(isInstall) < 1 {
+		// create table
+		err := orm.RunSyncdb("default", false, true)
+		if err != nil {
+			logs.Error("创建表失败！->" + err.Error())
+			os.Exit(0)
+		}
+		var user dao.User
+		name, _ := beego.AppConfig.String("adminName")
+		password, _ := beego.AppConfig.String("adminPassword")
+		user.UserName = name
+		user.UserGrade = 0
+		user.UserPassword = utils.Md5(password)
+		if len(strings.TrimSpace(name)) < 1 {
+			logs.Error("获取管理员用户名错误！")
+			os.Exit(0)
+		}
+		if len(strings.TrimSpace(password)) < 1 {
+			logs.Error("获取管理员密码名错误！")
+			os.Exit(0)
+		}
+		o := orm.NewOrm()
+		_, err1 := o.Insert(&user)
+		if err1 != nil {
+			logs.Error("创建管理员用户失败！->" + err1.Error())
+			os.Exit(0)
+		}
 
-	// create table
-	orm.RunSyncdb("default", false, true)
+		file, errC := os.OpenFile("conf/app.conf", os.O_CREATE|os.O_APPEND|os.O_RDWR, 0744)
+		if errC != nil {
+			logs.Error("打开安装文件失败！->" + errC.Error())
+			os.Exit(0)
+		}
+		_, errW := file.WriteString("isInstall=0")
+		if errW != nil {
+			return
+		}
+		/*	path := "conf/install.conf"
+			_, err5 := os.OpenFile(path, os.O_APPEND|os.O_CREATE, 0644)
+			if err5 != nil {
+				logs.Error("创建安装文件失败！->" + err5.Error())
+				return
+			} else {
+				logs.Notice("创建成功！")
+				file, errC := os.OpenFile("conf/install.conf", os.O_CREATE|os.O_APPEND|os.O_RDWR, 0744)
+				if errC != nil {
+					logs.Error("打开安装文件失败！->" + errC.Error())
+					os.Exit(0)
+				}
+				_, errW := file.WriteString("isInstall=0")
+				if errW != nil {
+					return
+				}
+			}*/
+		/*
+			errS := beego.AppConfig.Set("isInstall", "1")
+			if errS != nil {
+				logs.Error("修改安装状态失败！->" + errS.Error())
+				os.Exit(0)
+			}
+			isInstall2, _ := beego.AppConfig.String("isInstall")
+			logs.Notice(isInstall2)*/
+	} else {
+		logs.Notice("初始化完成！")
 
+	}
 }

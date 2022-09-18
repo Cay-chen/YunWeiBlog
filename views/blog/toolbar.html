@@ -1,0 +1,93 @@
+<link href="/static/css/cnds.css" rel="stylesheet">
+<div id="csdn-toolbar" style="position: relative; min-width: 100%; width: max-content; top: 0px; left: 0px;">
+    <div class="toolbar-inside">
+        <div class="toolbar-container">
+            <div class="toolbar-container-left">
+                <div class="toolbar-logo"><a href="/"><img title="博客首页" src="/static/img/logo.png"></a>
+                </div>
+<!--
+                <a href="/">首页</a>
+-->
+               <ul class="toolbar-menus csdn-toolbar-fl">
+                    <li class="active " title="返回首页">
+                        <a href="/"> 首页</a>
+                    </li>
+       <!--             <li class="active " title="阅读深度、前沿文章">
+                        <a href="https://blog.csdn.net/"> 下载</a>
+                    </li>
+                    <li class="active " title="阅读深度、前沿文章">
+                        <a href="https://blog.csdn.net/"> 学习</a>
+                    </li>-->
+                </ul>
+            </div>
+            <div class="toolbar-container-middle">
+                <div class="toolbar-search">
+                    <div class="toolbar-search-container">
+                        <span class="icon-fire" style="display: none;"></span>
+                        <input id="toolbar-search-input" maxlength="2000" autocomplete="off" type="text" value=""
+                               placeholder="请输入搜索内容！" style="text-indent: 12px;">
+                        <div class="gradient"></div>
+                        <button id="toolbar-search-button">
+                            <i></i>
+                            <span class="button_span">搜索</span>
+                        </button>
+                        <input type="password" autocomplete="new-password" readonly="" disabled="true"
+                               style="display: none; position:absolute;left:-9999999px;width:0;height:0;">
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar-container-right">
+                <div class="toolbar-btns">
+<!--                    <div class="toolbar-btn_tx">
+                        <a class="hasAvatar" href="https://blog.csdn.net/qq_33989915"><img
+                                src="/static/img/tx.jpg"></a>
+                    </div>-->
+                    <div class="toolbar-btn ">
+                        <a id="login">登陆</a>
+                    </div>
+<!--                    <div class="toolbar-btn ">
+                        <div class="toolbar-subMenu-box">
+                            <a id="toolbar-remind" href="https://i.csdn.net/#/msg/index">消息</a>
+                        </div>
+                        <div class="toolbar-msg-box"></div>
+                    </div>-->
+                    <div class="toolbar-btn-write" id="write">
+                        <a data-report-click="{&quot;spm&quot;:&quot;3001.4503&quot;}" data-report-query="spm=3001.4503"><i></i>发布</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.use(['layer'], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        $('#login').click(function () {
+            login();
+/*            layer.open({
+                type: 2,//iframe层
+                title: false,//标题
+                area: ['400px', '376px'],//弹出区域
+                content: "/login",//所需弹出的登录/注册界面
+                offset: '100px',//设置弹出层在距离顶部，100px 水平居中
+                anim:0
+            });*/
+        });
+        $('#write').click(function () {
+            login();
+        });
+        function login(){
+            layer.open({
+                type: 2,//iframe层
+                title: false,//标题
+                area: ['500px', '450px'],//弹出区域
+                content: "/login",//所需弹出的登录/注册界面
+                offset: '100px',//设置弹出层在距离顶部，100px 水平居中
+                anim:0
+            });
+        }
+    });
+</script>
+
