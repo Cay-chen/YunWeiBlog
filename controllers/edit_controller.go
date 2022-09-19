@@ -1,11 +1,13 @@
 package controllers
 
-import beego "github.com/beego/beego/v2/server/web"
-
 type EditController struct {
-	beego.Controller
+	BaseController
 }
 
 func (c *EditController) Get() {
-	c.TplName = "blog_edit.html"
+	if c.IsLogin {
+		c.TplName = "blog_edit.html"
+	} else {
+		c.Redirect("/", 302)
+	}
 }

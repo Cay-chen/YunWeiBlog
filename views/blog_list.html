@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>博客园</title>
     <link href="/static/css/prism.css" rel="stylesheet">
     <link href="/static/css/view.css" rel="stylesheet">
    <link href="/static/css/list.css" rel="stylesheet">
@@ -24,6 +24,7 @@
 </head>
 <body>
 {{template "blog/toolbar.html"}}
+{{template "toolbar" .}}
 
 <div id="content">
     <div id="blog_nav_box">
@@ -35,47 +36,54 @@
                 <li class="navigation-right "><a href="">编程语言</a></li>
                 <li class="navigation-right "><a href="">人工智能</a></li>
                 <li class="navigation-right "><a href="">大数据</a></li>
+
                 <li class="navigation-right "><a href="">音视频</a></li>
+
                 <li class="navigation-right "><a href="">云生</a></li>
             </ul>
         </div>
     </div>
     <div id="page-container" class="page-container">
-            <div class="article-ir " data-v-503455fa="" data-v-69347e0e="">
-                <div class="article-irl " data-v-503455fa="">
-                    <div class="article-irl-img " data-v-503455fa="">
-                        <a href="https://www.51cto.com/article/718634.html" target="_blank" data-v-503455fa="">
-                            <img src="/static/upload/202209152141583244.jpg"
-                                 data-v-503455fa="">
+        {{range .BlogInfoList}}
+            <div class="article-ir " >
+                <div class="article-irl " >
+                    <div class="article-irl-img " >
+                        <a href="/blog/{{.BlogId}}" target="_blank">
+                            <img src="{{.BlogImgUrl}}">
                         </a>
                     </div>
-                    <div class="article-irl-c " data-v-503455fa="">
-                        <div class="title-box" data-v-503455fa="">
-                            <div class="article-irl-ct" data-v-503455fa="">
-                                <a href="https://www.51cto.com/article/718634.html" target="_blank"
-                                   class="usehover" data-v-503455fa="">为什么说 90% 的情况下，immer 能完胜
-                                    immutable？</a>
+                    <div class="article-irl-c">
+                        <div class="title-box" >
+                            <div class="article-irl-ct" >
+                                <a href="/blog/{{.BlogId}}" target="_blank" class="usehover">{{.BlogTitle}}</a>
                             </div>
-                            <a href="https://www.51cto.com/article/718634.html" target="_blank"
-                               class="split-top-m " data-v-503455fa="">在 React 组件里
-                                setState <em>是要创建新的</em> state 对象的，在继承 PureComponent 的 class 组件、function 组件都是这样。继承
-                                PureComponent 的 class
-                                组件会浅对比 props 和 state，如果 state 变了，并且 state 的 key 的某个值变了，才会渲染。</a>
+                            <a href="/blog/{{.BlogId}}" target="_blank"
+                               class="split-top-m ">{{.BlogBrief}}</a>
                         </div>
-                        <div class="article-irl-cb" data-v-503455fa="">
-                            <p class="article-irl-cb_time" data-v-503455fa=""> 2022-09-13 18:55:09</p>
-                            <div class="article-irl-cb_sign" data-v-503455fa="">
+                        <div class="article-irl-cb" >
+                            <p class="article-irl-cb_time" >{{.BlogCreateTime}}</p>
+                            <div class="article-irl-cb_sign" >
                                 <a target="_blank" href="https://so.51cto.com/?keywords=React"
-                                   class="split-left-m usehover" data-v-503455fa="">React</a>
+                                   class="split-left-m usehover" >React</a>
                                 <a target="_blank" href="https://so.51cto.com/?keywords=%E7%BB%84%E4%BB%B6"
-                                   class="split-left-m usehover" data-v-503455fa="">组件</a>
+                                   class="split-left-m usehover">组件</a>
                                 <a target="_blank" href="https://so.51cto.com/?keywords=fromJS"
-                                   class="split-left-m usehover" data-v-503455fa="">fromJS</a>
+                                   class="split-left-m usehover" >fromJS</a>
                             </div>
                         </div>
                     </div>
                 </div> <!---->
-            </div> <!---->
+            </div>
+
+        {{end}}
+<!--
+
+
+
+
+
+
+        &lt;!&ndash;&ndash;&gt;
             <div class="article-ir articleItem" data-v-503455fa="" data-v-69347e0e="">
                 <div class="article-irl " data-v-503455fa="">
                     <div class="article-irl-img " data-v-503455fa=""><a
@@ -90,7 +98,7 @@
                                     target="_blank"
                                     class="usehover "
                                     data-v-503455fa="">你的系统如果要支持百万连接，架构应该如何设计？</a>
-                                <!----> <!----></div>
+                                &lt;!&ndash;&ndash;&gt; &lt;!&ndash;&ndash;&gt;</div>
                             <a href="https://www.51cto.com/article/718633.html" target="_blank"
                                class="split-top-m "
                                data-v-503455fa="">这篇文章，给大家聊聊：如果你设计一个系统需要支撑百万用户连接，应该如何来设计其高并发请求处理架构？</a>
@@ -109,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                </div> <!----></div> <!---->
+                </div> &lt;!&ndash;&ndash;&gt;</div> &lt;!&ndash;&ndash;&gt;
             <div class="article-ir articleItem" data-v-503455fa="" data-v-69347e0e="">
                 <div class="article-irl article-irl_border" data-v-503455fa="">
                     <div class="article-irl-img usehover" data-v-503455fa=""><a
@@ -124,7 +132,7 @@
                                     target="_blank"
                                     class="usehover article-irl-ct_title"
                                     data-v-503455fa="">还在用定时器吗？借助 CSS 来监听事件</a>
-                                <!----> <!----></div>
+                                &lt;!&ndash;&ndash;&gt; &lt;!&ndash;&ndash;&gt;</div>
                             <a href="https://www.51cto.com/article/718632.html" target="_blank"
                                class="split-top-m usehover pc-three-line article-abstract" data-v-503455fa="">在使用mouseout​时还需要考虑
                                 dom​ 嵌套结构，因为这些事件在父级 -&gt; 子级的过程中仍然会触发，总之，细节会非常多，很容易误触发。</a></div>
@@ -144,7 +152,7 @@
                                     class="split-left-m usehover" data-v-503455fa="">监听事件</a></div>
                         </div>
                     </div>
-                </div> <!----></div> <!---->
+                </div> &lt;!&ndash;&ndash;&gt;</div> &lt;!&ndash;&ndash;&gt;
             <div class="article-ir articleItem" data-v-503455fa="" data-v-69347e0e="">
                 <div class="article-irl article-irl_border" data-v-503455fa="">
                     <div class="article-irl-img usehover" data-v-503455fa=""><a
@@ -159,7 +167,7 @@
                                     target="_blank"
                                     class="usehover article-irl-ct_title"
                                     data-v-503455fa="">使用 VSLook 自定义 VS Code 主题</a>
-                                <!----> <!----></div>
+                                &lt;!&ndash;&ndash;&gt; &lt;!&ndash;&ndash;&gt;</div>
                             <a href="https://www.51cto.com/article/718617.html" target="_blank"
                                class="split-top-m usehover pc-three-line article-abstract" data-v-503455fa="">我给你推荐一个扩展
                                 -
@@ -177,7 +185,7 @@
                                     class="split-left-m usehover" data-v-503455fa="">插件</a></div>
                         </div>
                     </div>
-                </div> <!----></div> <!---->
+                </div> &lt;!&ndash;&ndash;&gt;</div> &lt;!&ndash;&ndash;&gt;
             <div class="article-ir articleItem" data-v-503455fa="" data-v-69347e0e="">
                 <div class="article-irl article-irl_border" data-v-503455fa="">
                     <div class="article-irl-img usehover" data-v-503455fa=""><a
@@ -192,7 +200,7 @@
                                     target="_blank"
                                     class="usehover article-irl-ct_title"
                                     data-v-503455fa="">惊呆面试官的回答：HashMap和TreeMap的区别</a>
-                                <!----> <!----></div>
+                                &lt;!&ndash;&ndash;&gt; &lt;!&ndash;&ndash;&gt;</div>
                             <a href="https://www.51cto.com/article/718603.html" target="_blank"
                                class="split-top-m usehover pc-three-line article-abstract" data-v-503455fa="">HashMap是基于哈希表+数组来实现的，而TreeMap是基于红黑树实现的。使用HashMap需要键对象明确定义了hashCode()和equals()这两个方法，而且为了优化HashMap空间的使用，可以调整初始容量大小和扩容。</a>
                         </div>
@@ -213,7 +221,7 @@
                         </div>
                     </div>
                 </div>
-        </div>
+        </div>-->
     </div>
 </div>
 </body>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>文章编辑</title>
     <link href="/static/css/wangeditoreditor@5.1style.css" rel="stylesheet">
     <link href="/static/layui/css/layui.css" rel="stylesheet">
     <link href="/static/css/cnds.css" rel="stylesheet">
@@ -100,6 +100,7 @@
         </div>
     </div>
 </div>
+
 <div style="border-bottom: 1px solid #e8e8e8;">
     <div id="editor-toolbar"></div>
 </div>
@@ -283,6 +284,9 @@
             , brief: function (value) {
                 if (value.trim().length < 5) {
                     return '摘要不能少于5个字!';
+                }
+                if (value.trim().length >250) {
+                    return '摘要大于250个字!';
                 }
             }
             , required1: function (value) {

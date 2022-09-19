@@ -3,12 +3,11 @@ package controllers
 import (
 	"YunWeiBlog/models/dao"
 	"github.com/beego/beego/v2/client/orm"
-	beego "github.com/beego/beego/v2/server/web"
 	"strconv"
 )
 
 type BlogController struct {
-	beego.Controller
+	BaseController
 }
 
 func (c *BlogController) Get() {
