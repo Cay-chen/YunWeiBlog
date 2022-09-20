@@ -3,9 +3,9 @@ package test
 import (
 	_ "YunWeiBlog/routers"
 	"fmt"
+	"math"
 	"path/filepath"
 	"runtime"
-	"strings"
 	"testing"
 
 	beego "github.com/beego/beego/v2/server/web"
@@ -19,7 +19,10 @@ func init() {
 
 // TestBeego is a sample to run an endpoint test
 func TestBeego(t *testing.T) {
-	fmt.Println("中文字符串包含子串返回：", strings.Contains("蒋春生", "春生"))
+	var a, b float64
+	a = 16
+	b = 3
+	fmt.Println(int(math.Ceil(a / b)))
 
 	/*	r, _ := http.NewRequest("GET", "/", nil)
 		w := httptest.NewRecorder()

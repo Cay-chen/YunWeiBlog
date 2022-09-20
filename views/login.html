@@ -268,12 +268,12 @@
                         // 提示语
                         layer.msg(res.msg, {
                             icon: 1,
-                            time: 1500
+                            time: 1000
                         });
                         setTimeout(function () {
                             // 跳转后台首页
                             window.parent.location.reload();
-                        }, 1500);
+                        }, 500);
                     } else {
                         $("#err-id").text(res.msg);
                     }

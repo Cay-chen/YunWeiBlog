@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"github.com/beego/beego/v2/client/orm"
 	"github.com/beego/beego/v2/core/logs"
+	"math"
 	"math/rand"
 	"path"
 	"strconv"
@@ -140,40 +141,68 @@ func (c *ApiController) Post() {
 			res, _ := json.Marshal(jsonBack)
 			c.Ctx.WriteString(string(res))
 			break
-			/*		case "login":
-					var user dao.User
-					var jsonBack dao.JsonResult
-					data := c.Ctx.Input.RequestBody
-					err := json.Unmarshal(data, &user)
-					user.UserPassword = utils.Md5(user.UserPassword)
-					if err != nil {
-						jsonBack.Code = -1
-						jsonBack.Msg = err.Error()
-					} else {
-						o := orm.NewOrm()
-						qs := o.QueryTable("user")
-						errO := qs.Filter("UserName", user.UserName).Filter("UserPassword", user.UserPassword).One(&user)
-						if errO != nil {
-							if strings.Contains(errO.Error(), "no row found") {
-								jsonBack.Code = -1
-								jsonBack.Msg = "账号或密码错误！"
-							} else {
-								jsonBack.Code = -1
-								jsonBack.Msg = errO.Error()
-							}
+		/*		case "login":
+				var user dao.User
+				var jsonBack dao.JsonResult
+				data := c.Ctx.Input.RequestBody
+				err := json.Unmarshal(data, &user)
+				user.UserPassword = utils.Md5(user.UserPassword)
+				if err != nil {
+					jsonBack.Code = -1
+					jsonBack.Msg = err.Error()
+				} else {
+					o := orm.NewOrm()
+					qs := o.QueryTable("user")
+					errO := qs.Filter("UserName", user.UserName).Filter("UserPassword", user.UserPassword).One(&user)
+					if errO != nil {
+						if strings.Contains(errO.Error(), "no row found") {
+							jsonBack.Code = -1
+							jsonBack.Msg = "账号或密码错误！"
 						} else {
-							if user.UserId > 0 {
-								jsonBack.Code = 0
-								jsonBack.Msg = "登陆成功！"
-							} else {
-								jsonBack.Code = -1
-								jsonBack.Msg = "登陆失败！"
-							}
+							jsonBack.Code = -1
+							jsonBack.Msg = errO.Error()
+						}
+					} else {
+						if user.UserId > 0 {
+							jsonBack.Code = 0
+							jsonBack.Msg = "登陆成功！"
+						} else {
+							jsonBack.Code = -1
+							jsonBack.Msg = "登陆失败！"
 						}
 					}
-					res, _ := json.Marshal(jsonBack)
-					c.Ctx.WriteString(string(res))
-					break*/
+				}
+				res, _ := json.Marshal(jsonBack)
+				c.Ctx.WriteString(string(res))
+				break*/
+
+		case "blog_list":
+			limit := 8
+			var blogInfo []*dao.BlogInfo
+			var blogList dao.BlogList
+			wd := c.GetString("wd")
+			page, _ := c.GetInt("page")
+
+			logs.Notice(page)
+			start := (page - 1) * limit
+			end := page * limit
+			cond := orm.NewCondition()
+			cond1 := cond.And("BlogVisibleType", 0).And("BlogTitle__icontains", wd).Or("BlogBrief__icontains", wd)
+			o := orm.NewOrm()
+			qs := o.QueryTable("blogInfo")
+			logs.Error(start)
+			qs.SetCond(cond1).Limit(start, end).All(&blogInfo)
+			count, _ := qs.SetCond(cond1).Count()
+			pages := int(math.Ceil(float64(count) / float64(limit)))
+			blogList.Pages = pages
+			blogList.Data = blogInfo
+			backRes, _ := json.Marshal(blogList)
+			logs.Notice(string(backRes))
+
+			c.Ctx.WriteString(string(backRes))
+
+			break
+
 		}
 	} else {
 		var jsonBack dao.JsonResult

@@ -92,8 +92,10 @@
                         });*/
         });
 
-
-
+        $('#toolbar-search-button').click(function () {
+            wd = $('#toolbar-search-input').val();
+            $(location).prop('href', '/?wd='+wd)
+        });
         $('#write').click(function () {
             login();
         });

@@ -43,17 +43,31 @@ func (c *LoginController) Post() {
 				}
 			} else {
 				if user.UserId > 0 {
-					user.UserPassword = ""
-					jsonUser, _ := json.Marshal(user)
-					errSe := c.SetSession("loginUser", string(jsonUser))
-					if errSe != nil {
+					switch user.UserState {
+					case 0:
 						jsonBack.Code = -1
-						jsonBack.Msg = "登陆失败！"
-					} else {
-						jsonBack.Code = 0
-						jsonBack.Msg = "登陆成功！"
+						jsonBack.Msg = "账号未激活！"
+						break
+					case 1:
+						user.UserPassword = ""
+						jsonUser, _ := json.Marshal(user)
+						errSe := c.SetSession("loginUser", string(jsonUser))
+						if errSe != nil {
+							jsonBack.Code = -1
+							jsonBack.Msg = "登陆失败！"
+						} else {
+							jsonBack.Code = 0
+							jsonBack.Msg = "登陆成功！"
+						}
+						break
+					case 2:
+						jsonBack.Code = -1
+						jsonBack.Msg = "账号停用！"
+						break
+					default:
+						jsonBack.Code = -1
+						jsonBack.Msg = "未知错误！"
 					}
-
 				} else {
 					if c.GetSession("loginUser") != nil {
 						c.DestroySession()

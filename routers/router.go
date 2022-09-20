@@ -11,6 +11,7 @@ func init() {
 	beego.Router("/edit", &controllers.EditController{})
 	beego.Router("/blog/:id", &controllers.BlogController{})
 	beego.Router("/blog_list", &controllers.ListController{})
+	beego.Router("/my", &controllers.MyController{})
 	beego.Router("/login", &controllers.LoginController{})
 
 }

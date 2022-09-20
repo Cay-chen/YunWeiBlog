@@ -44,38 +44,7 @@
         </div>
     </div>
     <div id="page-container" class="page-container">
-        {{range .BlogInfoList}}
-            <div class="article-ir " >
-                <div class="article-irl " >
-                    <div class="article-irl-img " >
-                        <a href="/blog/{{.BlogId}}" target="_blank">
-                            <img src="{{.BlogImgUrl}}">
-                        </a>
-                    </div>
-                    <div class="article-irl-c">
-                        <div class="title-box" >
-                            <div class="article-irl-ct" >
-                                <a href="/blog/{{.BlogId}}" target="_blank" class="usehover">{{.BlogTitle}}</a>
-                            </div>
-                            <a href="/blog/{{.BlogId}}" target="_blank"
-                               class="split-top-m ">{{.BlogBrief}}</a>
-                        </div>
-                        <div class="article-irl-cb" >
-                            <p class="article-irl-cb_time" >{{.BlogCreateTime}}</p>
-                            <div class="article-irl-cb_sign" >
-                                <a target="_blank" href="https://so.51cto.com/?keywords=React"
-                                   class="split-left-m usehover" >React</a>
-                                <a target="_blank" href="https://so.51cto.com/?keywords=%E7%BB%84%E4%BB%B6"
-                                   class="split-left-m usehover">组件</a>
-                                <a target="_blank" href="https://so.51cto.com/?keywords=fromJS"
-                                   class="split-left-m usehover" >fromJS</a>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!---->
-            </div>
 
-        {{end}}
 <!--
 
 
@@ -225,6 +194,66 @@
     </div>
 </div>
 </body>
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.use('flow', function(){
+        var $ = layui.jquery; //不用额外加载jQuery，flow模块本身是有依赖jQuery的，直接用即可。
+        var flow = layui.flow;
+        flow.load({
+            elem: '#page-container' //指定列表容器
+            ,done: function(page, next){ //到达临界点（默认滚动触发），触发下一页
+                var lis = [];
+                //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+                $.post('/api/blog_list?page='+page, function(res1){
+
+                   var res =$.parseJSON(res1)
+                    console.log(res)
+                    console.log(res.pages)
+                    console.log(res.data)
+                    console.log(page)
+                    //假设你的列表返回在data集合中
+                    layui.each(res.data, function(index, item){
+                        lis.push(
+                            '            <div class="article-ir " >\n' +
+                            '                <div class="article-irl " >\n' +
+                            '                    <div class="article-irl-img " >\n' +
+                            '                        <a href="/blog/'+item.BlogId+'" target="_blank">\n' +
+                            '                            <img src="'+item.BlogImgUrl+'">\n' +
+                            '                        </a>\n' +
+                            '                    </div>\n' +
+                            '                    <div class="article-irl-c">\n' +
+                            '                        <div class="title-box" >\n' +
+                            '                            <div class="article-irl-ct" >\n' +
+                            '                                <a href="/blog/'+item.BlogId+'" target="_blank" class="usehover">'+item.BlogTitle+'</a>\n' +
+                            '                            </div>\n' +
+                            '                            <a href="'+item.BlogId+'" target="_blank"\n' +
+                            '                               class="split-top-m ">'+item.BlogBrief+'</a>\n' +
+                            '                        </div>\n' +
+                            '                        <div class="article-irl-cb" >\n' +
+                            '                            <p class="article-irl-cb_time" >'+item.BlogCreateTime+'</p>\n' +
+                            '                            <div class="article-irl-cb_sign" >\n' +
+                            '                                <a target="_blank" href="https://so.51cto.com/?keywords=React"\n' +
+                            '                                   class="split-left-m usehover" >React</a>\n' +
+                            '                                <a target="_blank" href="https://so.51cto.com/?keywords=%E7%BB%84%E4%BB%B6"\n' +
+                            '                                   class="split-left-m usehover">组件</a>\n' +
+                            '                                <a target="_blank" href="https://so.51cto.com/?keywords=fromJS"\n' +
+                            '                                   class="split-left-m usehover" >fromJS</a>\n' +
+                            '                            </div>\n' +
+                            '                        </div>\n' +
+                            '                    </div>\n' +
+                            '                </div> <!---->\n' +
+                            '            </div>'
+                        );
+                    });
+
+                    //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                    //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                    next(lis.join(''), page < res.pages);
+                });
+            }
+        });
+    });
+</script>
 </html>
 
 
