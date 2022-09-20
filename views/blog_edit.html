@@ -89,12 +89,12 @@
                     <div class="toolbar-btn">
                         <a href="">退出</a>
                     </div>
-<!--                    <div class="toolbar-btn ">
-                        <div class="toolbar-subMenu-box">
-                            <a id="toolbar-remind" href="">消息</a>
-                        </div>
-                        <div class="toolbar-msg-box"></div>
-                    </div>-->
+                    <!--                    <div class="toolbar-btn ">
+                                            <div class="toolbar-subMenu-box">
+                                                <a id="toolbar-remind" href="">消息</a>
+                                            </div>
+                                            <div class="toolbar-msg-box"></div>
+                                        </div>-->
                 </div>
             </div>
         </div>
@@ -129,9 +129,10 @@
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label" id="zhaiyao">摘要：</label>
+                <label class="layui-form-label">摘要：</label>
                 <div class="layui-input-block">
-                    <textarea name="brief" placeholder="请输入摘要" lay-verify="brief" class="layui-textarea"></textarea>
+                    <textarea name="brief" placeholder="请输入摘要" lay-verify="brief" class="layui-textarea"
+                              id="zhaiyao"></textarea>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -285,7 +286,7 @@
                 if (value.trim().length < 5) {
                     return '摘要不能少于5个字!';
                 }
-                if (value.trim().length >250) {
+                if (value.trim().length > 250) {
                     return '摘要大于250个字!';
                 }
             }
@@ -341,7 +342,7 @@
                 },
                 success: function (res) {
                     if (res.code == 0) {
-
+                        location.reload();
                         // 提示语
                         layer.msg('提交成功', {
                             icon: 1,
@@ -391,12 +392,9 @@
                        title: '最终的提交信息'
                    })*/
         });
+
         function flzlFun(s1, s2) {
-            if (s1.trim().length === 0) {
-                s1 = s2;
-            } else {
-                s1 = s1 + "|" + s2;
-            }
+            s1 = s1 + "|" + s2;
             return s1
         }
 
@@ -446,8 +444,8 @@
                 BlogContent: editor.getHtml(),
                 BlogBrief: data.field.brief,
                 BlogImgUrl: img_url,
-                BlogClassifyType:flzl,
-                BlogVisibleType: Number(data.field.fbxs) ,
+                BlogClassifyType: flzl,
+                BlogVisibleType: Number(data.field.fbxs),
                 //   BlogLastModifyTime: "",
                 BlogState: state
             }
@@ -462,7 +460,13 @@
                 },
                 success: function (res) {
                     if (res.code == 0) {
-
+                        $('#blog_title').val("");
+                        editor.clear();
+                        $('#zhaiyao').val("");
+                        $('#uploadDemoView').addClass('layui-hide').find('img').attr('src', "");
+                        $('#img_i').show();
+                        $('#img_p').show();
+                        // location.reload();
                         // 提示语
                         layer.msg('提交成功', {
                             icon: 1,
@@ -491,9 +495,9 @@
                 }
             });
 
-/*
-            alert(JSON.stringify(date));
-*/
+            /*
+                        alert(JSON.stringify(date));
+            */
         }
 
     });

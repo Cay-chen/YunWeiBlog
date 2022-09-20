@@ -88,7 +88,7 @@ func (c *ApiController) Post() {
 			if err != nil {
 				logs.Error("json.Unmarshal is err:", err.Error())
 			}
-			blogInfo.BlogCreateUser = 2
+			blogInfo.BlogCreateUser = c.User.UserId
 			o := orm.NewOrm()
 			insert, err := o.Insert(&blogInfo)
 			var jsonBack dao.JsonResult
@@ -182,5 +182,4 @@ func (c *ApiController) Post() {
 		res, _ := json.Marshal(jsonBack)
 		c.Ctx.WriteString(string(res))
 	}
-
 }
