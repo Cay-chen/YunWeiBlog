@@ -182,8 +182,6 @@ func (c *ApiController) Post() {
 			var blogList dao.BlogList
 			wd := c.GetString("wd")
 			page, _ := c.GetInt("page")
-
-			logs.Notice(page)
 			start := (page - 1) * limit
 			end := page * limit
 			cond := orm.NewCondition()
@@ -191,7 +189,7 @@ func (c *ApiController) Post() {
 			o := orm.NewOrm()
 			qs := o.QueryTable("blogInfo")
 			logs.Error(start)
-			qs.SetCond(cond1).Limit(start, end).All(&blogInfo)
+			qs.SetCond(cond1).Limit(end, start).All(&blogInfo, "BlogId", "BlogTitle", "BlogBrief", "BlogCreateTime", "BlogCreateUser", "BlogImgUrl", "BlogClassifyType", "BlogReadCount")
 			count, _ := qs.SetCond(cond1).Count()
 			pages := int(math.Ceil(float64(count) / float64(limit)))
 			blogList.Pages = pages

@@ -1,0 +1,20 @@
+0001/01/01 00:00:00.000  [M] [log.go:208]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/21 13:33:27.528  [N] [base_controller.go:25]  {"UserId":1,"UserName":"admin","UserPassword":"","RegisterTime":"2022-09-18T06:58:47Z","UserGrade":0,"UserState":1}
+2022/09/21 13:33:27.528  [N] [base_controller.go:39]  IsSuperAdmin
+2022/09/21 13:33:27.532  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|          4ms|   match|[44m GET     [0m /     r:/
+2022/09/21 13:33:27.589  [N] [base_controller.go:25]  {"UserId":1,"UserName":"admin","UserPassword":"","RegisterTime":"2022-09-18T06:58:47Z","UserGrade":0,"UserState":1}
+2022/09/21 13:33:27.589  [N] [base_controller.go:39]  IsSuperAdmin
+2022/09/21 13:33:27.589  [N] [api_controller.go:186]  1
+2022/09/21 13:33:27.589  [E] [api_controller.go:197]  0
+2022/09/21 13:33:27.589  [C] [config.go:190]  the request url is  /api/blog_list
+2022/09/21 13:33:27.589  [C] [config.go:191]  Handler crashed with error wrong object type `*[]*dao.BlogInfo1` for rows scan, need *[]*YunWeiBlog/models/dao.BlogInfo or *[]YunWeiBlog/models/dao.BlogInfo
+2022/09/21 13:33:27.589  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:884
+2022/09/21 13:33:27.589  [C] [config.go:197]  C:/Users/dell/go/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/db.go:977
+2022/09/21 13:33:27.589  [C] [config.go:197]  C:/Users/dell/go/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm_queryset.go:244
+2022/09/21 13:33:27.589  [C] [config.go:197]  C:/Users/dell/GolandProjects/YunWeiBlog/controllers/api_controller.go:198
+2022/09/21 13:33:27.589  [C] [config.go:197]  C:/Users/dell/go/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/21 13:33:27.590  [C] [config.go:197]  C:/Users/dell/go/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/21 13:33:27.590  [C] [config.go:197]  C:/Users/dell/go/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/21 13:33:27.590  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2947
+2022/09/21 13:33:27.590  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1991
+2022/09/21 13:33:27.590  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1594
