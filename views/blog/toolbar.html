@@ -82,20 +82,8 @@
         var layer = layui.layer;
         $('#login').click(function () {
             login();
-            /*            layer.open({
-                            type: 2,//iframe层
-                            title: false,//标题
-                            area: ['400px', '376px'],//弹出区域
-                            content: "/login",//所需弹出的登录/注册界面
-                            offset: '100px',//设置弹出层在距离顶部，100px 水平居中
-                            anim:0
-                        });*/
         });
 
-        $('#toolbar-search-button').click(function () {
-            wd = $('#toolbar-search-input').val();
-            $(location).prop('href', '/?wd='+wd)
-        });
         $('#write').click(function () {
             login();
         });

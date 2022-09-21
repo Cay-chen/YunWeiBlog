@@ -20,19 +20,6 @@ type BlogInfo struct {
 	BlogReadCount      int       `orm:"size(10);description(文章阅读量)"`
 	BlogState          int       `orm:"size(1);description(文章状态 0发表 1为草稿)"`
 }
-type BlogInfo1 struct {
-	BlogId             int
-	BlogTitle          string
-	BlogBrief          string
-	BlogCreateTime     string
-	BlogCreateUser     int
-	BlogImgUrl         string
-	BlogVisibleType    int
-	BlogClassifyType   string
-	BlogLastModifyTime string
-	BlogReadCount      int
-	BlogState          int
-}
 
 /*
 *

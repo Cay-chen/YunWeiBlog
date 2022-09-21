@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/static/css/blog-manage-list.css" rel="stylesheet">
+    <link href="/static/layui/css/layui.css" rel="stylesheet">
+    <style>
+
+        .toobar {
+            border-bottom: 1px dotted #ddd;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="toobar">
+    <div class="layui-inline">
+        <label class="layui-form-label" style="padding: 9px  15px 9px 0;width: auto;">关键字</label>
+        <div class="layui-inline">
+            <input class="layui-input" id="setl_id" autocomplete="off" placeholder="请输入关键·">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <label class="layui-form-label" style="text-align: right">开始时间</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="beginDate" style="width: 90px" placeholder="yyyy-MM-dd">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <label class="layui-form-label" style="text-align: right">结束时间</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="endDate" style="width: 90px" placeholder="yyyy-MM-dd">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <label class="layui-form-label" style="width: 60px;text-align: right">发布形式</label>
+        <div class="layui-input-inline">
+            <select name="JYConPersonBelong" lay-verify="required" id="nx_mz" lay-search="" class="layui-input"
+                    style="width: 90px">
+                <option value="9">所有</option>
+                <option value="0">全部可见</option>
+                <option value="1">仅我可见</option>
+            </select>
+        </div>
+    </div>
+    <button class="layui-btn layui-btn-sm" data-type="reload" lay-event="ss" style="margin-left: 15px">搜索</button>
+
+</div>
+
+<div class="article_manage_list" id="article_manage_list">
+    <!--    <div class="article-list-item-mp">
+            <a href="" class="list-item-mp-left" style="background-image: url('/static/upload/145ffd11263f17f42fa86559f101c8a11d9d14.png');"></a>
+            <div class="list-item-mp-right">
+                <div class="list-item-title">
+                    <p class="article-list-item-txt">
+                        <a href="" class="" title="编辑">我的测试文章</a>
+                    </p>
+                    <p class="article-list-item-time">2022-09-21 19:37:01</p>
+                </div>
+
+                <div class="article-list-item-info">
+                    <div class="item-info-left">
+                        <span class="circle-step"></span>
+                        <p class="article-list-item-readComment"> 阅读 0 </p>
+                    </div>
+                    <div class="item-info-oper">
+                        <a href="" class="">
+                            <span class="item-info-oper-text">编辑</span>
+                        </a>
+                        <a href="" target="_blank">
+                            <span class="item-info-oper-text">浏览</span>
+                        </a>
+                        <a href="" target="_blank">
+                            <span class="item-info-oper-text">删除</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article-list-item-mp" >
+            <a href="" class="list-item-mp-left"></a>
+            <div class="list-item-mp-right">
+                <div class="list-item-title">
+                    <p class="article-list-item-txt">
+                        <a href="" class="" title="编辑">我的测试文章</a>
+                    </p>
+                    <p class="article-list-item-time">2022-09-21 19:37:01</p>
+                </div>
+
+                <div class="article-list-item-info">
+                    <div class="item-info-left">
+                        <span class="circle-step"></span>
+                        <p class="article-list-item-readComment"> 阅读 0 </p>
+                    </div>
+                    <div class="item-info-oper">
+                        <a href="" class="">
+                            <span class="item-info-oper-text">编辑</span>
+                        </a>
+                        <a href="" target="_blank">
+                            <span class="item-info-oper-text">浏览</span>
+                        </a>
+                        <a href="" target="_blank">
+                            <span class="item-info-oper-text">删除</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+</div>
+</body>
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.use('flow', function () {
+        var $ = layui.jquery;
+        var flow = layui.flow;
+        flow.load({
+            elem: '#article_manage_list'
+            , isAuto: true
+            , done: function (page, next) {
+                var lis = [];
+                $.post('/blog_manage?page=' + page+'&wd='+{{.Wd}}+'&xs='+{{.Xs}}, function (res1) {
+                    var res = $.parseJSON(res1)
+                    //假设你的列表返回在data集合中
+                    layui.each(res.data, function (index, item) {
+                        lis.push(
+                            '    <div class="article-list-item-mp">\n' +
+                            '        <a href="/blog/' + item.BlogId + '"  target="_blank" title="浏览" class="list-item-mp-left" style="background-image: url(\'' + item.BlogImgUrl + '\');"></a>\n' +
+                            '        <div class="list-item-mp-right">\n' +
+                            '            <div class="list-item-title">\n' +
+                            '                <p class="article-list-item-txt">\n' +
+                            '                    <a href="/edit?id=' + item.BlogId + '" class="" title="编辑">' + item.BlogTitle + '</a>\n' +
+                            '                </p>\n' +
+                            '                <p class="article-list-item-time">' + item.BlogCreateTime + '</p>\n' +
+                            '            </div>\n' +
+                            '\n' +
+                            '            <div class="article-list-item-info">\n' +
+                            '                <div class="item-info-left">\n' +
+                            '                    <span class="circle-step"></span>\n' +
+                            '                    <p class="article-list-item-readComment"> 阅读 ' + item.BlogReadCount + ' </p>\n' +
+                            '                </div>\n' +
+                            '                <div class="item-info-oper">\n' +
+                            '                    <a href="/edit?id=' + item.BlogId + '" class="">\n' +
+                            '                        <span class="item-info-oper-text">编辑</span>\n' +
+                            '                    </a>\n' +
+                            '                    <a href="/blog/' + item.BlogId + '" target="_blank">\n' +
+                            '                        <span class="item-info-oper-text">浏览</span>\n' +
+                            '                    </a>\n' +
+                            '                    <a href="/delete?id=' + item.BlogId + '" target="_blank">\n' +
+                            '                        <span class="item-info-oper-text">删除</span>\n' +
+                            '                    </a>\n' +
+                            '                </div>\n' +
+                            '            </div>\n' +
+                            '        </div>\n' +
+                            '    </div>'
+                        );
+                    });
+                    next(lis.join(''), page < res.pages);
+                });
+            }
+        });
+    });
+</script>
+</html>

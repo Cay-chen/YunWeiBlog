@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"YunWeiBlog/models/dao"
-	"YunWeiBlog/models/utils"
 	"encoding/json"
 	"fmt"
 	"github.com/beego/beego/v2/client/orm"
@@ -11,7 +10,6 @@ import (
 	"math/rand"
 	"path"
 	"strconv"
-	"strings"
 	"time"
 )
 
@@ -111,81 +109,48 @@ func (c *ApiController) Post() {
 			res, err := json.Marshal(jsonBack)
 			c.Ctx.WriteString(string(res))
 			break
-		case "sign_in":
-			var user dao.User
-			var jsonBack dao.JsonResult
-			data := c.Ctx.Input.RequestBody
-			err := json.Unmarshal(data, &user)
-			user.UserPassword = utils.Md5(user.UserPassword)
-			user.UserGrade = 4
-			if err != nil {
-				jsonBack.Code = -1
-				jsonBack.Msg = err.Error()
-			} else {
-				o := orm.NewOrm()
-				_, err1 := o.Insert(&user)
-				if err1 != nil {
-					if strings.Contains(err1.Error(), "Duplicate entry") {
+			/*		case "sign_in":
+					var user dao.User
+					var jsonBack dao.JsonResult
+					data := c.Ctx.Input.RequestBody
+					err := json.Unmarshal(data, &user)
+					user.UserPassword = utils.Md5(user.UserPassword)
+					user.UserGrade = 4
+					if err != nil {
 						jsonBack.Code = -1
-						jsonBack.Msg = "该用户名已注册！"
+						jsonBack.Msg = err.Error()
 					} else {
-						logs.Error("用户注册失败！->" + err1.Error())
-						jsonBack.Code = -1
-						jsonBack.Msg = "用户注册失败！"
-					}
-				} else {
-					jsonBack.Code = 0
-					jsonBack.Msg = "注册成功！"
-				}
-			}
-			res, _ := json.Marshal(jsonBack)
-			c.Ctx.WriteString(string(res))
-			break
-		/*		case "login":
-				var user dao.User
-				var jsonBack dao.JsonResult
-				data := c.Ctx.Input.RequestBody
-				err := json.Unmarshal(data, &user)
-				user.UserPassword = utils.Md5(user.UserPassword)
-				if err != nil {
-					jsonBack.Code = -1
-					jsonBack.Msg = err.Error()
-				} else {
-					o := orm.NewOrm()
-					qs := o.QueryTable("user")
-					errO := qs.Filter("UserName", user.UserName).Filter("UserPassword", user.UserPassword).One(&user)
-					if errO != nil {
-						if strings.Contains(errO.Error(), "no row found") {
-							jsonBack.Code = -1
-							jsonBack.Msg = "账号或密码错误！"
+						o := orm.NewOrm()
+						_, err1 := o.Insert(&user)
+						if err1 != nil {
+							if strings.Contains(err1.Error(), "Duplicate entry") {
+								jsonBack.Code = -1
+								jsonBack.Msg = "该用户名已注册！"
+							} else {
+								logs.Error("用户注册失败！->" + err1.Error())
+								jsonBack.Code = -1
+								jsonBack.Msg = "用户注册失败！"
+							}
 						} else {
-							jsonBack.Code = -1
-							jsonBack.Msg = errO.Error()
-						}
-					} else {
-						if user.UserId > 0 {
 							jsonBack.Code = 0
-							jsonBack.Msg = "登陆成功！"
-						} else {
-							jsonBack.Code = -1
-							jsonBack.Msg = "登陆失败！"
+							jsonBack.Msg = "注册成功！"
 						}
 					}
-				}
-				res, _ := json.Marshal(jsonBack)
-				c.Ctx.WriteString(string(res))
-				break*/
-
-		case "blog_list":
+					res, _ := json.Marshal(jsonBack)
+					c.Ctx.WriteString(string(res))
+					break
+			*/
+		case "my_list":
 			limit := 8
 			var blogInfo []*dao.BlogInfo
 			var blogList dao.BlogList
 			wd := c.GetString("wd")
 			page, _ := c.GetInt("page")
+
 			start := (page - 1) * limit
 			end := page * limit
 			cond := orm.NewCondition()
-			cond1 := cond.And("BlogVisibleType", 0).And("BlogTitle__icontains", wd).Or("BlogBrief__icontains", wd)
+			cond1 := cond.And("BlogVisibleType", 0).And("BlogCreateUser", c.User.UserName).And("BlogState", 0).And("BlogTitle__icontains", wd).Or("BlogBrief__icontains", wd)
 			o := orm.NewOrm()
 			qs := o.QueryTable("blogInfo")
 			logs.Error(start)
@@ -196,7 +161,6 @@ func (c *ApiController) Post() {
 			blogList.Data = blogInfo
 			backRes, _ := json.Marshal(blogList)
 			logs.Notice(string(backRes))
-
 			c.Ctx.WriteString(string(backRes))
 
 			break

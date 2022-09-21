@@ -10,8 +10,11 @@ func init() {
 	beego.Router("/api/:id", &controllers.ApiController{})
 	beego.Router("/edit", &controllers.EditController{})
 	beego.Router("/blog/:id", &controllers.BlogController{})
-	beego.Router("/blog_list", &controllers.ListController{})
-	beego.Router("/my", &controllers.MyController{})
+	/*	beego.Router("/blog_list", &controllers.ListController{})
+	 */beego.Router("/my", &controllers.MyController{})
 	beego.Router("/login", &controllers.LoginController{})
+	beego.Router("/register", &controllers.RegisterController{})
+	beego.Router("/test", &controllers.TestController{})
+	beego.Router("/blog_manage", &controllers.BlogManageController{})
 
 }

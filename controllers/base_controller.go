@@ -3,7 +3,6 @@ package controllers
 import (
 	"YunWeiBlog/models/dao"
 	"encoding/json"
-	"github.com/beego/beego/v2/core/logs"
 	beego "github.com/beego/beego/v2/server/web"
 )
 
@@ -22,7 +21,6 @@ type BaseController struct {
 func (c *BaseController) Prepare() {
 	loginUser := c.GetSession("loginUser")
 	if loginUser != nil {
-		logs.Notice(loginUser.(string))
 		res := &dao.User{}
 		err := json.Unmarshal([]byte(loginUser.(string)), &res)
 		if err != nil {
@@ -36,7 +34,6 @@ func (c *BaseController) Prepare() {
 			switch res.UserGrade {
 			case 0:
 				c.Data["IsSuperAdmin"] = true
-				logs.Notice("IsSuperAdmin")
 				break
 			case 1:
 				c.Data["IsAdmin"] = true
