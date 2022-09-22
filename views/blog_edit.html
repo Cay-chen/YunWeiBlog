@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>文章编辑</title>
+    <title>{{.Title}}</title>
     <link href="/static/css/wangeditoreditor@5.1style.css" rel="stylesheet">
     <link href="/static/layui/css/layui.css" rel="stylesheet">
     <link href="/static/css/cnds.css" rel="stylesheet">
@@ -14,7 +14,6 @@
             overflow-y: auto;
             position: relative;
         }
-
         .editor-container {
             width: 850px;
             margin: 30px auto 15px auto;
@@ -23,7 +22,6 @@
             border: 1px solid #e8e8e8;
             box-shadow: 0 2px 10px rgb(0 0 0 / 12%);
         }
-
         .editor-container1 {
             width: 850px;
             margin: 5px auto 150px auto;
@@ -32,7 +30,6 @@
             border: 1px solid #e8e8e8;
             box-shadow: 0 2px 10px rgb(0 0 0 / 12%);
         }
-
         #title-container {
             padding: 20px 0;
             border-bottom: 1px solid #e8e8e8;
@@ -105,6 +102,7 @@
     <div id="editor-toolbar"></div>
 </div>
 <form class="layui-form">
+    <input id="BlogId" type="hidden" >
     <div id="content" class="content">
         <div id="editor-container" class="editor-container">
             <div id="title-container">
@@ -138,22 +136,24 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">分类专栏：</label>
                 <div class="layui-input-block">
-                    <input type="checkbox" name="flzl1" lay-skin="primary" value="1" lay-verify="required1"
-                           title="HIS">
-                    <input type="checkbox" name="flzl2" lay-skin="primary" value="2" title="PACS">
-                    <input type="checkbox" name="flzl3" lay-skin="primary" value="3" title="LIS">
-                    <input type="checkbox" name="flzl4" lay-skin="primary" value="4" title="手麻系统">
-                    <input type="checkbox" name="flzl5" lay-skin="primary" value="5" title="旅鸽无纸化">
-                    <input type="checkbox" name="flzl6" lay-skin="primary" value="6" title="护理质控">
-                    <input type="checkbox" name="flzl7" lay-skin="primary" value="7" title="超声系统">
+                    {{str2html .ClaaifyBox}}
+
+                    <!--                    <input type="checkbox" name="flzl1" lay-skin="primary" value="1" lay-verify="required1"
+                                               title="HIS">
+                                        <input type="checkbox" name="flzl2" lay-skin="primary" value="2" title="PACS">
+                                        <input type="checkbox" name="flzl3" lay-skin="primary" value="3" title="LIS">
+                                        <input type="checkbox" name="flzl4" lay-skin="primary" value="4" title="手麻系统">
+                                        <input type="checkbox" name="flzl5" lay-skin="primary" value="5" title="旅鸽无纸化">
+                                        <input type="checkbox" name="flzl6" lay-skin="primary" value="6" title="护理质控">
+                                        <input type="checkbox" name="flzl7" lay-skin="primary" value="7" title="超声系统">-->
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">发布形式：</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="fbxs" value="0" title="全部可见" checked="">
-                    <input type="radio" name="fbxs" value="1" title="仅我可见">
-                    <input type="radio" name="fbxs" value="2" title="登录可见">
+                    <input type="radio" id="allKj" name="fbxs" value="0" title="全部可见" {{.AllKj}}>
+                    <input type="radio" id="jwKj" name="fbxs" value="1" title="仅我可见" {{.JwKj}}>
+                    <input type="radio" id="dlKj" name="fbxs" value="2" title="登录可见" {{.DlKj}}>
                 </div>
             </div>
         </div>
@@ -162,6 +162,7 @@
         <div class="el-form-item__content" style="margin-left: 90px;">
             <div class="opt-box">
                 <div class="btn-box">
+                    {{if .IsXiu}}
                 <span>
                      <span class="el-popover__reference-wrapper">
                          <button type="button" class="el-button" lay-submit="" tabindex="0" lay-filter="button_cg">
@@ -171,9 +172,10 @@
                         </button>
                      </span>
                 </span>
+                    {{end}}
                     <button type="button" class="el-button btn-outline-danger " lay-submit="" lay-filter="button_tj"
                             id="submit">
-                        <span style="color: white"> 发布博客</span>
+                        <span style="color: white">{{.ButtonSubmit}}</span>
                     </button>
                 </div>
             </div>
@@ -273,8 +275,18 @@
             , upload = layui.upload
             , layer = layui.layer,
             form = layui.form;
-        var flzl = "", img_url = "";
+        var flzl = "", img_url = "", blog_id=-1;
 
+        {{if .IsEdit}}
+        editor.setHtml('{{.Data.BlogContent}}');
+        $('#uploadDemoView').removeClass('layui-hide').find('img').attr('src', {{.Data.BlogImgUrl}});
+        $('#img_i').hide();
+        $('#img_p').hide();
+        $('#blog_title').val("{{.Data.BlogTitle}}");
+        $('#zhaiyao').val("{{.Data.BlogBrief}}");
+        $('#BlogId').val("{{.Data.BlogId}}");
+        blog_id={{.Data.BlogId}};
+        {{end}}
         //自定义验证规则
         form.verify({
             title: function (value) {
@@ -300,7 +312,6 @@
                 , '密码必须6到12位，且不能出现空格'
             ]
         });
-
         //拖拽上传
         upload.render({
             elem: '#custom-fileName'
@@ -317,84 +328,16 @@
                 img_url = res.data.alt;
             }
         });
-        $('#submit11').on('click', function () {
-            var date = {
-                BlogTitle: $('#blog_title').val(),
-                BlogContent: editor.getHtml(),
-                //  BlogId: 1,
-                BlogBrief: "",
-                //   BlogCreateTime: "",
-                //  BlogCreateUser: "",
-                BlogImgUrl: "",
-                BlogType: 1,
-                //   BlogLastModifyTime: "",
-                BlogState: 0
-            }
-            // alert(JSON.stringify(date))
-            $.ajax({
-                type: "POST",
-                url: 'api/edit_submit',
-                data: JSON.stringify(date),
-                contentType: "application/json",
-                dataType: "json",
-                beforeSend: function () {
-                    // TODO...
-                },
-                success: function (res) {
-                    if (res.code == 0) {
-                        location.reload();
-                        // 提示语
-                        layer.msg('提交成功', {
-                            icon: 1,
-                            time: 1500
-                        });
-                        // editor.disable()
-
-                        // $('#blog_title').val("")
-                        // editor.clear()
-                        /* // 延迟3秒
-                         setTimeout(function () {
-                           // 跳转后台首页
-                           window.location.href = "/index";
-                         }, 2000);*/
-
-                        return false;
-                    } else {
-                        alert(res.msg())
-                        // 错误信息
-                        // layer.msg(res.msg, {icon: 2, anim: 6});
-
-                    }
-                },
-                error: function () {
-                    layer.msg("AJAX请求异常");
-                }
-            });
-
-
-        });
-        /*        $('#submit').on('click', function () {
-                    alert(editor.getText())
-                });*/
-        //提交事件
 
         form.on('submit(button_tj)', function (data) {
             submit(data, 0)
-
-            /*     alert(JSON.stringify(data.field), {
-                       title: '最终的提交信息'
-                   })*/
         });
         form.on('submit(button_cg)', function (data) {
             submit(data, 1)
-
-            /*     alert(JSON.stringify(data.field), {
-                       title: '最终的提交信息'
-                   })*/
         });
 
         function flzlFun(s1, s2) {
-            s1 = s1 + "|" + s2;
+            s1 = s1  + s2+ "|";
             return s1
         }
 
@@ -406,13 +349,13 @@
                 layer.msg("请输入内容！", {icon: 5, shift: 6});
                 return false;
             }
-
-            if (img_url.trim().length < 1) {
+            img_url = $('#uploadDemoView').find('img')[0].src;
+           if (img_url.trim().length < 1) {
+            //if ($('#uploadDemoView')[0].src.length < 1) {
                 $("html,body").animate({scrollTop: $("#zhaiyao").offset().top}, 100);
                 layer.msg("请选择封面！", {icon: 5, shift: 6});
                 return false;
             }
-
             if (typeof (data.field.flzl1) != 'undefined') {
                 flzl = flzlFun(flzl, data.field.flzl1)
             }
@@ -434,6 +377,47 @@
             if (typeof (data.field.flzl7) != 'undefined') {
                 flzl = flzlFun(flzl, data.field.flzl7)
             }
+            if (typeof (data.field.flzl8) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl8)
+            }
+            if (typeof (data.field.flzl9) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl9)
+            }
+            if (typeof (data.field.flzl10) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl10)
+            }
+            if (typeof (data.field.flzl11) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl11)
+            }
+            if (typeof (data.field.flzl12) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl12)
+            }
+            if (typeof (data.field.flzl13) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl13)
+            }
+            if (typeof (data.field.flzl14) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl14)
+            }
+            if (typeof (data.field.flzl15) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl15)
+            }
+             if (typeof (data.field.flzl16) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl16)
+            }
+             if (typeof (data.field.flzl17) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl17)
+            }
+             if (typeof (data.field.flzl18) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl18)
+            }
+             if (typeof (data.field.flzl19) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl19)
+            }
+             if (typeof (data.field.flzl20) != 'undefined') {
+                flzl = flzlFun(flzl, data.field.flzl20)
+            }
+
+
             if (flzl.trim().length < 1) {
                 $("html,body").animate({scrollTop: $("#zhaiyao").offset().top}, 100);
                 layer.msg("请选择分类专栏！", {icon: 5, shift: 6});
@@ -451,7 +435,7 @@
             }
             $.ajax({
                 type: "POST",
-                url: 'api/edit_submit',
+                url: 'api/edit_submit?blog_id='+blog_id,
                 data: JSON.stringify(dataJson),
                 contentType: "application/json",
                 dataType: "json",
@@ -502,55 +486,4 @@
 
     });
 </script>
-<!--
-<script>
-   // const E = window.wangEditor
-    const {createEditor,createToolbar}= window.wangEditor
-    // 切换语言
-    const LANG = location.href.indexOf('lang=en') > 0 ? 'en' : 'zh-CN'
-   createEditor.i18nChangeLanguage(LANG)
-
-    const editorConfig = {
-        placeholder: 'Type here...',
-        scroll: false, // 禁止编辑器滚动
-        MENU_CONF: {
-            uploadImage: {
-                fieldName: 'your-fileName',
-                base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
-            }
-        },
-        onChange(editor) {
-            console.log(editor.getHtml())
-        }
-    }
-
-    // 先创建 editor
-    const editor = createEditor({
-        selector: '#editor-text-area',
-        content: [],
-        // html: '',
-        config: editorConfig
-    })
-
-    // 创建 toolbar
-    const toolbar = createEditor.createToolbar({
-        editor,
-        selector: '#editor-toolbar',
-        config: {
-            excludeKeys: 'fullScreen',
-        }
-    })
-
-    // 点击空白处 focus 编辑器
-    document.getElementById('editor-text-area').addEventListener('click', e => {
-        if (e.target.id === 'editor-text-area') {
-            editor.blur()
-            editor.focus(true) // focus 到末尾
-        }
-    })
-    $('#hq').on('click', function () {
-        alert(editor.getHtml())
-    });
-</script>
--->
 </html>

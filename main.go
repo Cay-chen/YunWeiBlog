@@ -42,7 +42,7 @@ func init() {
 	orm.SetMaxIdleConns("default", 30)
 	orm.SetMaxOpenConns("default", 30)
 	orm.DefaultTimeLoc = time.UTC
-	orm.RegisterModel(new(dao.BlogInfo), new(dao.User))
+	orm.RegisterModel(new(dao.BlogInfo), new(dao.User), new(dao.BlogClassify))
 	//orm.RegisterModel(new(dao.User1), new(dao.Post), new(dao.Profile), new(dao.Tag))
 	isInstall, _ := beego.AppConfig.String("isInstall")
 	if len(isInstall) < 1 {

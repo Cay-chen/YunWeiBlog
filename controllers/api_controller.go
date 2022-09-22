@@ -26,7 +26,6 @@ func (c *ApiController) Post() {
 		id := c.Ctx.Input.Param(":id")
 		switch id {
 		case "upload_img":
-			fmt.Println("aaa")
 			var Success dao.SuccessJson
 			var Fail dao.FailJson
 			//获取上传的文件
@@ -81,6 +80,8 @@ func (c *ApiController) Post() {
 			break
 		case "edit_submit":
 			var blogInfo dao.BlogInfo
+			var jsonBack dao.JsonResult
+			blogId, _ := c.GetInt("blog_id")
 			data := c.Ctx.Input.RequestBody
 			logs.Error(string(data))
 			err := json.Unmarshal(data, &blogInfo)
@@ -89,21 +90,41 @@ func (c *ApiController) Post() {
 			}
 			blogInfo.BlogCreateUser = c.User.UserId
 			o := orm.NewOrm()
-			insert, err := o.Insert(&blogInfo)
-			var jsonBack dao.JsonResult
-
-			if err != nil {
-				logs.Error(insert)
-				logs.Error(err.Error())
-				jsonBack.Code = -1
-				jsonBack.Msg = err.Error()
-			} else {
-				if insert > 0 {
-					jsonBack.Code = 0
-					jsonBack.Msg = "乘车"
-				} else {
+			if blogId != -1 {
+				num, err2 := o.QueryTable("BlogInfo").Filter("BlogId", blogId).Update(orm.Params{
+					"BlogTitle":        blogInfo.BlogTitle,
+					"BlogBrief":        blogInfo.BlogBrief,
+					"BlogContent":      blogInfo.BlogContent,
+					"BlogImgUrl":       blogInfo.BlogImgUrl,
+					"BlogVisibleType":  blogInfo.BlogVisibleType,
+					"BlogClassifyType": blogInfo.BlogClassifyType,
+					"BlogState":        blogInfo.BlogState,
+				})
+				if err2 != nil {
 					jsonBack.Code = -1
-					jsonBack.Msg = "失败"
+					jsonBack.Msg = err2.Error()
+				} else {
+					if num > 0 {
+						jsonBack.Code = 0
+						jsonBack.Msg = "修改成功"
+					} else {
+						jsonBack.Code = -1
+						jsonBack.Msg = "失败"
+					}
+				}
+			} else {
+				insert, err1 := o.Insert(&blogInfo)
+				if err1 != nil {
+					jsonBack.Code = -1
+					jsonBack.Msg = err1.Error()
+				} else {
+					if insert > 0 {
+						jsonBack.Code = 0
+						jsonBack.Msg = "发表成功"
+					} else {
+						jsonBack.Code = -1
+						jsonBack.Msg = "失败"
+					}
 				}
 			}
 			res, err := json.Marshal(jsonBack)

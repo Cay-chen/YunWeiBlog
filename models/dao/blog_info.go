@@ -14,7 +14,7 @@ type BlogInfo struct {
 	BlogCreateUser     int       `orm:"size(4);description(文章创建用户ID)"`
 	BlogContent        string    `orm:"type(text);description(文章内容html)"`
 	BlogImgUrl         string    `orm:"type(char);size(255);description(文章图片地址)"`
-	BlogVisibleType    int       `orm:"size(1);description(文字可见类型，0全部可见，1为自己可见)"`
+	BlogVisibleType    int       `orm:"size(1);description(文字可见类型，0全部可见，1为自己可见，2为登陆可见)"`
 	BlogClassifyType   string    `orm:"type(char);description(文章分类 多个类型用|分开)"`
 	BlogLastModifyTime time.Time `orm:"auto_now;type(datetime);description(文章最后一次修改时间)"` //auto_now 每次 model 保存时都会对时间自动更新
 	BlogReadCount      int       `orm:"size(10);description(文章阅读量)"`
@@ -32,4 +32,11 @@ type User struct {
 	RegisterTime time.Time `orm:"auto_now_add;type(datetime);description(账号注册时间)"`
 	UserGrade    int       `orm:"size(1);default(4);description(用户等级 0为超级管理员 1为普通管理员 3位栏目管理员 4位普通用户)"`
 	UserState    int       `orm:"size(1);default(0);description(用户状态 0为没激活,1为激活，2位暂停)"`
+}
+
+type BlogClassify struct {
+	ClassifyId    int       `orm:"auto;description(分类唯一ID)"`
+	ClassifyName  string    `orm:"type(char);description(分类名称)"`
+	ClassifyState int       `orm:"size(1);default(0);description(0为在使用,1为停用)"`
+	CreateTime    time.Time `orm:"auto_now_add;type(datetime);description(创建时间)"`
 }
