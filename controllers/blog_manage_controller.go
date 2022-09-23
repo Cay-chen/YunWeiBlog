@@ -43,13 +43,13 @@ func (c *BlogManageController) Post() {
 		var cond1 *orm.Condition
 		switch xs {
 		case 0:
-			cond1 = cond.And("BlogVisibleType", 0).And("BlogCreateUser", c.User.UserId).And("BlogState", 0).And("BlogTitle__icontains", wd).Or("BlogBrief__icontains", wd)
+			cond1 = cond.And("BlogVisibleType", 0).And("BlogCreateUser", c.User.UserId).And("BlogState", 0).AndCond(cond.And("BlogTitle__icontains", wd).Or("BlogBrief__icontains", wd))
 			break
 		case 1:
-			cond1 = cond.And("BlogVisibleType", 1).And("BlogCreateUser", c.User.UserId).And("BlogState", 0).And("BlogTitle__icontains", wd).Or("BlogBrief__icontains", wd)
+			cond1 = cond.And("BlogVisibleType", 1).And("BlogCreateUser", c.User.UserId).And("BlogState", 0).AndCond(cond.And("BlogTitle__icontains", wd).Or("BlogBrief__icontains", wd))
 			break
 		case 9:
-			cond1 = cond.And("BlogCreateUser", c.User.UserName).And("BlogState", 0).And("BlogTitle__icontains", wd).Or("BlogBrief__icontains", wd)
+			cond1 = cond.And("BlogCreateUser", c.User.UserId).And("BlogState", 0).AndCond(cond.And("BlogTitle__icontains", wd).Or("BlogBrief__icontains", wd))
 			break
 		}
 		o := orm.NewOrm()
