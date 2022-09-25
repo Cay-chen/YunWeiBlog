@@ -5,10 +5,10 @@ type TestController struct {
 }
 
 func (c *TestController) Get() {
-	c.TplName = "blog_manage.html"
+	c.TplName = "iframe_blog_manage.html"
 
 	/*	if c.IsLogin{
-			c.TplName="layout.html"
+			c.TplName="blog_layout.html"
 		}else {
 			c.Redirect("/",302)
 		}*/

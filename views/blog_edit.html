@@ -60,38 +60,28 @@
     <div class="toolbar-inside">
         <div class="toolbar-container">
             <div class="toolbar-container-left">
-                <div class="toolbar-logo"><a href=""><img title="博客首页" src="/static/img/logo.png"></a>
+                <div class="toolbar-logo"><a href="/"><img title="博客首页" src="/static/img/logo.png"></a>
                 </div>
                 <ul class="toolbar-menus csdn-toolbar-fl">
-                    <li class="active " title="阅读深度、前沿文章">
-                        <a href="https://blog.csdn.net/"> 博客</a>
+                    <li class="active " title="首页">
+                        <a href="/">首页</a>
                     </li>
-                    <li class="active " title="阅读深度、前沿文章">
-                        <a href="https://blog.csdn.net/"> 下载</a>
-                    </li>
-                    <li class="active " title="阅读深度、前沿文章">
-                        <a href="https://blog.csdn.net/"> 学习</a>
-                    </li>
+
+
                 </ul>
             </div>
             <div class="toolbar-container-right">
                 <div class="toolbar-btns">
                     <div class="toolbar-btn_tx">
-                        <a class="hasAvatar" href=""><img
+                        <a class="hasAvatar" href="/my"><img
                                 src="/static/img/tx.jpg"></a>
                     </div>
                     <div class="toolbar-btn ">
-                        <a href="">我的博客</a>
+                        <a href="/my">我的博客</a>
                     </div>
                     <div class="toolbar-btn">
-                        <a href="">退出</a>
+                        <a href="/exit">退出</a>
                     </div>
-                    <!--                    <div class="toolbar-btn ">
-                                            <div class="toolbar-subMenu-box">
-                                                <a id="toolbar-remind" href="">消息</a>
-                                            </div>
-                                            <div class="toolbar-msg-box"></div>
-                                        </div>-->
                 </div>
             </div>
         </div>
@@ -137,15 +127,6 @@
                 <label class="layui-form-label">分类专栏：</label>
                 <div class="layui-input-block">
                     {{str2html .ClaaifyBox}}
-
-                    <!--                    <input type="checkbox" name="flzl1" lay-skin="primary" value="1" lay-verify="required1"
-                                               title="HIS">
-                                        <input type="checkbox" name="flzl2" lay-skin="primary" value="2" title="PACS">
-                                        <input type="checkbox" name="flzl3" lay-skin="primary" value="3" title="LIS">
-                                        <input type="checkbox" name="flzl4" lay-skin="primary" value="4" title="手麻系统">
-                                        <input type="checkbox" name="flzl5" lay-skin="primary" value="5" title="旅鸽无纸化">
-                                        <input type="checkbox" name="flzl6" lay-skin="primary" value="6" title="护理质控">
-                                        <input type="checkbox" name="flzl7" lay-skin="primary" value="7" title="超声系统">-->
                 </div>
             </div>
             <div class="layui-form-item">
@@ -187,8 +168,9 @@
 <script src="/static/js/wangeditoreditor@5.1.15distindex.js"></script>
 <script src="/static/layui/layui.js"></script>
 <script>
-
     const E = window.wangEditor
+
+
     // Change language
     const LANG = location.href.indexOf('lang=en') > 0 ? 'en' : 'zh-CN'
     E.i18nChangeLanguage(LANG)
@@ -223,40 +205,7 @@
             console.error('onError', file, err, res)
         },
 
-        // customInsert(res, insertFn) {
-        //   console.log('customInsert', res)
-        //   const imgInfo = res.data[0] || {}
-        //   const { url, alt, href } = imgInfo
-        //   if (!url) throw new Error(`Image url is empty`)
-
-        //   console.log('Your image url ', url)
-        //   insertFn(url, alt, href)
-        // },
-
-        // customUpload(file, insertFn) {
-        //   console.log('customUpload', file)
-
-        //   return new Promise((resolve) => {
-        //     // Simulate async insert image
-        //     setTimeout(() => {
-        //       const src = `https://www.baidu.com/img/flexible/logo/pc/result@2.png?r=${Math.random()}`
-        //       insertFn(src, 'baidu logo', src)
-        //       resolve('ok')
-        //     }, 500)
-        //   })
-        // },
-
-        // customBrowseAndUpload(insertFn) {
-        //   alert('Custom browse and upload')
-
-        //   // Simulate async insert image
-        //   setTimeout(() => {
-        //     const src = 'https://www.baidu.com/img/flexible/logo/pc/result@2.png'
-        //     insertFn(src, 'baidu logo', src) // insert a image
-        //   }, 500)
-        // },
     }
-
     const editor = E.createEditor({
         selector: '#editor-text-area',
         config: editorConfig
@@ -270,6 +219,7 @@
         }
         // config: {}
     })
+
     layui.use(['form', 'upload', 'element', 'layer'], function () {
         var $ = layui.jquery
             , upload = layui.upload
@@ -430,12 +380,11 @@
                 BlogImgUrl: img_url,
                 BlogClassifyType: flzl,
                 BlogVisibleType: Number(data.field.fbxs),
-                //   BlogLastModifyTime: "",
                 BlogState: state
             }
             $.ajax({
                 type: "POST",
-                url: 'api/edit_submit?blog_id='+blog_id,
+                url: '/edit?blog_id='+blog_id,
                 data: JSON.stringify(dataJson),
                 contentType: "application/json",
                 dataType: "json",
@@ -456,21 +405,10 @@
                             icon: 1,
                             time: 1000
                         });
-                        // editor.disable()
-
-                        // $('#blog_title').val("")
-                        // editor.clear()
-                        /* // 延迟3秒
-                         setTimeout(function () {
-                           // 跳转后台首页
-                           window.location.href = "/index";
-                         }, 2000);*/
-
                         return false;
                     } else {
                         alert(res.msg)
-                        // 错误信息
-                        // layer.msg(res.msg, {icon: 2, anim: 6});
+
 
                     }
                 },
@@ -478,10 +416,6 @@
                     layer.msg("AJAX请求异常");
                 }
             });
-
-            /*
-                        alert(JSON.stringify(date));
-            */
         }
 
     });

@@ -1,8 +1,7 @@
 package controllers
 
 import (
-	"YunWeiBlog/models/dao"
-	"github.com/beego/beego/v2/client/orm"
+	"YunWeiBlog/models"
 	"strconv"
 )
 
@@ -12,17 +11,17 @@ type BlogController struct {
 
 func (c *BlogController) Get() {
 	id := c.Ctx.Input.Param(":id")
-	o := orm.NewOrm()
-	id1, _ := strconv.Atoi(id)
-	u := dao.BlogInfo{BlogId: id1}
-	err := o.Read(&u)
-	if err == nil {
-		c.Data["Data"] = u
+	id1, err2 := strconv.Atoi(id)
+	if err2 != nil {
+		c.Redirect("/", 302)
 	} else {
-		c.Data["Html"] = "<p>没内容！</p>"
+		blogInfo, err := models.GetBlogInfo(id1)
+		if err == nil {
+			c.Data["Data"] = blogInfo
+			models.ReadAdd(id1)
+			c.TplName = "blog.html"
+		} else {
+			c.Redirect("/", 302)
+		}
 	}
-	o.QueryTable("BlogInfo").Filter("BlogId", u.BlogId).Update(orm.Params{
-		"BlogReadCount": orm.ColValue(orm.ColAdd, 1),
-	})
-	c.TplName = "blog.html"
 }

@@ -1,11 +1,7 @@
 .article-ir{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
     color: #333;
     font-size: 14px;
     line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     margin: 0;
     padding: 0;
@@ -15,9 +11,7 @@
     padding-top: 24px;
 }
 .article-irl{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
+
     color: #333;
     font-size: 14px;
     line-height: 1.75;
@@ -34,13 +28,10 @@
     border-bottom: 1px solid #f4f4f4;
 }
 .article-irl-img{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
+
     color: #333;
     font-size: 14px;
     line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     word-break: break-all;
     margin: 0;
@@ -54,12 +45,8 @@
     margin-top: 3px;
 }
 .article-irl-img a{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
-    font-size: 14px;
+
     line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     word-break: break-all;
     margin: 0;
@@ -68,12 +55,9 @@
     color: #272727;
 }
 .article-irl-img a img{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
+
     font-size: 14px;
     line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     word-break: break-all;
     margin: 0;
@@ -84,10 +68,7 @@
     color: #272727;
 }
 .article-irl-c{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
-    -webkit-font-smoothing: antialiased;
+
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     word-break: break-all;
     margin: 0;
@@ -102,10 +83,7 @@
     margin-left: 26px;
 }
 .title-box{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
-    -webkit-font-smoothing: antialiased;
+
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     word-break: break-all;
     font-size: 16px;
@@ -119,10 +97,7 @@
     overflow: hidden;
 }
 .article-irl-ct{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
-    -webkit-font-smoothing: antialiased;
+
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     word-break: break-all;
     margin: 0;
@@ -139,10 +114,7 @@
     -webkit-box-orient: vertical;
 }
 .usehover{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
-    -webkit-font-smoothing: antialiased;
+
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     word-break: break-all;
     font-size: 18px;
@@ -155,10 +127,7 @@
     line-height: 25px;
 }
 .split-top-m{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
-    -webkit-font-smoothing: antialiased;
+
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     word-break: break-all;
     font-weight: 400;
@@ -177,10 +146,6 @@
     font-size: 14px;
 }
 .article-irl-cb{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
-    -webkit-font-smoothing: antialiased;
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     word-break: break-all;
     font-size: 16px;
@@ -199,10 +164,6 @@
     align-items: flex-end;
 }
 .article-irl-cb_time{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
-    -webkit-font-smoothing: antialiased;
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     word-break: break-all;
     font-weight: 400;
@@ -213,10 +174,6 @@
     line-height: 1;
 }
 .article-irl-cb_sign{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
-    -webkit-font-smoothing: antialiased;
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     word-break: break-all;
     font-size: 16px;
@@ -229,10 +186,6 @@
     display: flex;
 }
 .split-left-m{
-    -webkit-tap-highlight-color: transparent;
-    --swiper-theme-color: #007aff;
-    --swiper-navigation-size: 0.58667rem;
-    -webkit-font-smoothing: antialiased;
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,Hiragino Sans GB,Microsoft Yahei,sans-serif;
     word-break: break-all;
     margin: 0;

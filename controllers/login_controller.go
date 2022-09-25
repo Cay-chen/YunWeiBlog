@@ -4,6 +4,7 @@ import (
 	"YunWeiBlog/models/dao"
 	"YunWeiBlog/models/utils"
 	"encoding/json"
+	"fmt"
 	"github.com/beego/beego/v2/client/orm"
 	"strings"
 )
@@ -25,7 +26,9 @@ func (c *LoginController) Post() {
 		var jsonBack dao.JsonResult
 		data := c.Ctx.Input.RequestBody
 		err := json.Unmarshal(data, &user)
+		fmt.Println("aaa" + user.UserPassword)
 		user.UserPassword = utils.Md5(user.UserPassword)
+
 		if err != nil {
 			jsonBack.Code = -1
 			jsonBack.Msg = err.Error()

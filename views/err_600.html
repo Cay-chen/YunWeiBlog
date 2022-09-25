@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>HTTP</title>
+</head>
+<script src="/static/js/JQuery.min.js"></script>
+<body class="error-page-wrapper" onload="onclick_back();">
+</body>
+<script>
+    if(top.location!=self.location){
+        window.parent.location.reload()
+    }else {
+        window.location.replace("/");
+    }
+   /* function onclick_back(){
+        parent.httpReplace()
+    }*/
+</script>

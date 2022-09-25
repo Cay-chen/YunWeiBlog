@@ -1,30 +1,16 @@
 {{define "toolbar"}}
 <link href="/static/css/cnds.css" rel="stylesheet">
+
 <div id="csdn-toolbar" style="position: relative; min-width: 100%; width: max-content; top: 0px; left: 0px;">
     <div class="toolbar-inside">
         <div class="toolbar-container">
             <div class="toolbar-container-left">
                 <div class="toolbar-logo"><a href="/"><img title="博客首页" src="/static/img/logo.png"></a>
                 </div>
-                <!--
-                                <a href="/">首页</a>
-                -->
                 <ul class="toolbar-menus csdn-toolbar-fl">
                     <li class="active " title="返回首页">
                         <a href="/"> 首页</a>
                     </li>
-                    {{if .IsSuperAdmin}}
-                    <li class="active " title="设置">
-                        <a href=""> 设置</a>
-                    </li>
-                    -->
-                    {{end}}
-                    <!--             <li class="active " title="阅读深度、前沿文章">
-                                     <a href="https://blog.csdn.net/"> 下载</a>
-                                 </li>
-                                 <li class="active " title="阅读深度、前沿文章">
-                                     <a href="https://blog.csdn.net/"> 学习</a>
-                                 </li>-->
                 </ul>
             </div>
             <div class="toolbar-container-middle">

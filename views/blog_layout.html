@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>我的博客</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/layui/css/layui.css" rel="stylesheet">
+    <link href="/static/css/cnds.css" rel="stylesheet">
+    <link href="/static/css/blog-manage-list.css" rel="stylesheet">
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+    <link href="/static/css/cnds.css" rel="stylesheet">
+    <div id="csdn-toolbar" style="position: relative; min-width: 100%; width: max-content; top: 0px; left: 0px;border-bottom: 1px solid #f4f4f4;">
+        <div class="toolbar-inside">
+            <div class="toolbar-container">
+                <div class="toolbar-container-left">
+                    <div class="toolbar-logo"><a href="/"><img title="博客首页" src="/static/img/logo.png"></a>
+                    </div>
+                    <ul class="toolbar-menus csdn-toolbar-fl">
+                        <li class="active " title="返回首页">
+                            <a href="/"> 首页</a>
+                        </li>
+                    </ul>
+                </div>
+
+<!--
+                <div class="toolbar-container-middle">
+                    <div class="toolbar-search">
+                        <div class="toolbar-search-container">
+                            <span class="icon-fire" style="display: none;"></span>
+                            <input id="toolbar-search-input" maxlength="2000" autocomplete="off" type="text" value=""
+                                   placeholder="请输入搜索内容！" style="text-indent: 12px;">
+                            <div class="gradient"></div>
+                            <button id="toolbar-search-button">
+                                <i></i>
+                                <span class="button_span">搜索</span>
+                            </button>
+                            <input type="password" autocomplete="new-password" readonly="" disabled="true"
+                                   style="display: none; position:absolute;left:-9999999px;width:0;height:0;">
+                        </div>
+                    </div>
+                </div>
+-->
+
+                <div class="toolbar-container-right">
+                    <div class="toolbar-btns">
+                        {{if .IsSuperAdmin}}
+                        <div class="toolbar-btn_tx">
+                            <a class="hasAvatar" href="https://blog.csdn.net/qq_33989915"><img
+                                    src="/static/img/tx.jpg"></a>
+                        </div>
+                        <div class="toolbar-btn ">
+                            <a href="">我的博客</a>
+                        </div>
+                        <div class="toolbar-btn">
+                            <a href="">退出</a>
+                        </div>
+                        <div class="toolbar-btn-write">
+                            <a href="/edit"  target="_blank"><i></i>发布</a>
+                        </div>
+                        {{else }}
+                        <div class="toolbar-btn ">
+                            <a id="login">登陆</a>
+                        </div>
+                        <div class="toolbar-btn-write" id="write">
+                            <a><i></i>发布</a>
+                        </div>
+                        {{end}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-side layui-bg-black" style="top:49px" >
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;" > <span class="uispan">内容管理</span></a>
+                    <dl class="layui-nav-child">
+                        <dd class="layui-this"><a href="javascript:;" id="blog" >&nbsp;&nbsp;&nbsp;已发布</a></dd>
+                        <dd><a href="javascript:;">&nbsp;&nbsp;&nbsp;草稿箱</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" ><span class="uispan">设置</span></a></a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" id="person">&nbsp;&nbsp;&nbsp;账号管理</a></dd>
+                        <dd><a href="javascript:;">&nbsp;&nbsp;&nbsp;栏目设置</a></dd>
+                        <dd><a href="javascript:;">&nbsp;&nbsp;&nbsp;文章管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="javascript:;"><span class="uispan">设置</span></a></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="layui-body" style="top:50px;padding-bottom: 5px">
+        <iframe src="/blog_manage" style="width: 100%;height: 100%;border: medium none;" id="content"></iframe>
+    </div>
+<!--    <div class="layui-footer">
+        &lt;!&ndash; 底部固定区域 &ndash;&gt;
+        底部固定区域
+    </div>-->
+</div>
+<script src="/static/layui/layui.js"></script>
+<script>
+    //JS
+    layui.use(['element', 'layer', 'util'], function(){
+        var element = layui.element
+            ,layer = layui.layer
+            ,util = layui.util
+            ,$ = layui.$;
+/*        //头部事件
+        util.event('lay-header-event', {
+            //左侧菜单事件
+            menuLeft: function(othis){
+                layer.msg('展开左侧菜单的操作', {icon: 0});
+            }
+            ,menuRight: function(){
+                layer.open({
+                    type: 1
+                    ,title: '更多'
+                    ,content: '<div style="padding: 15px;">处理右侧面板的操作</div>'
+                    ,area: ['260px', '100%']
+                    ,offset: 'rt' //右上角
+                    ,anim: 5
+                    ,shadeClose: true
+                    ,scrollbar: false
+                });
+            }
+        });*/
+
+        $('#login').click(function () {
+            login();
+        });
+
+        $('#toolbar-search-button').click(function () {
+            wd = $('#toolbar-search-input').val();
+            $(location).prop('href', '/?wd='+wd)
+        });
+        $('#write').click(function () {
+            login();
+        });
+        function login() {
+            layer.open({
+                type: 2,//iframe层
+                title: false,//标题
+                area: ['500px', '450px'],//弹出区域
+                content: "/login",//所需弹出的登录/注册界面
+                offset: '100px',//设置弹出层在距离顶部，100px 水平居中
+                anim: 0
+            });
+        }
+
+        $("#blog").click(function () {
+            $("#content").attr("src", "/blog_manage");
+        });
+        $("#person").click(function () {
+            $("#content").attr("src", "/person_manage");
+        });
+
+    });
+
+</script>
+</body>
+</html>

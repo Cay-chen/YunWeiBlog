@@ -1,0 +1,17 @@
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/25 20:50:19.849  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     34.175ms|   match|[44m GET     [0m /edit   r:/edit
+2022/09/25 20:50:41.379  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1976ms|   match|[46m POST    [0m /api/upload_img   r:/api/:id
+2022/09/25 20:50:41.390  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      836.1µs|   match|[44m GET     [0m /static/upload/202209252050411636.png
+2022/09/25 20:50:45.626  [C] [config.go:190]  the request url is  /edit
+2022/09/25 20:50:45.626  [C] [config.go:191]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2022/09/25 20:50:45.626  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/25 20:50:45.626  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:220
+2022/09/25 20:50:45.626  [C] [config.go:197]  C:/Program Files/Go/src/runtime/signal_windows.go:255
+2022/09/25 20:50:45.626  [C] [config.go:197]  C:/GoProject/YunWeiBlog/models/blog_info_models.go:109
+2022/09/25 20:50:45.626  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/blog_edit_controller.go:65
+2022/09/25 20:50:45.626  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/25 20:50:45.627  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/25 20:50:45.627  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/25 20:50:45.627  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/25 20:50:45.627  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/25 20:50:45.627  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571

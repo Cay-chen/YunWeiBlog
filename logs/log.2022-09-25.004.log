@@ -1,0 +1,214 @@
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/25 20:54:00.093  [I] [parser.go:413]  generate router from comments
+2022/09/25 20:54:00.094  [I] [server.go:241]  http server Running on http://:80
+2022/09/25 20:54:03.571  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    17.4992ms|   match|[44m GET     [0m /     r:/
+2022/09/25 20:54:03.955  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    352.131ms|   match|[46m POST    [0m /     r:/
+2022/09/25 20:54:04.736  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.8341ms|   match|[44m GET     [0m /login   r:/login
+2022/09/25 20:54:12.523  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     16.874ms|   match|[46m POST    [0m /login   r:/login
+2022/09/25 20:54:13.053  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    21.1012ms|   match|[44m GET     [0m /     r:/
+2022/09/25 20:54:13.434  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|   346.8323ms|   match|[46m POST    [0m /     r:/
+2022/09/25 20:54:16.162  [C] [config.go:190]  the request url is  /edit
+2022/09/25 20:54:16.162  [C] [config.go:191]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2022/09/25 20:54:16.162  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/25 20:54:16.162  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:220
+2022/09/25 20:54:16.162  [C] [config.go:197]  C:/Program Files/Go/src/runtime/signal_windows.go:255
+2022/09/25 20:54:16.162  [C] [config.go:197]  C:/GoProject/YunWeiBlog/models/blog_info_models.go:110
+2022/09/25 20:54:16.162  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/blog_edit_controller.go:65
+2022/09/25 20:54:16.162  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/25 20:54:16.162  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/25 20:54:16.162  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/25 20:54:16.162  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/25 20:54:16.162  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/25 20:54:16.162  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/25 20:55:26.372  [I] [parser.go:413]  generate router from comments
+2022/09/25 20:55:26.373  [I] [server.go:241]  http server Running on http://:80
+2022/09/25 20:55:28.885  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    17.5521ms|   match|[44m GET     [0m /     r:/
+2022/09/25 20:55:29.317  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    409.395ms|   match|[46m POST    [0m /     r:/
+2022/09/25 20:55:30.199  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.7149ms|   match|[44m GET     [0m /login   r:/login
+2022/09/25 20:55:52.599  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    18.1365ms|   match|[46m POST    [0m /login   r:/login
+2022/09/25 20:55:53.450  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|   332.9255ms|   match|[44m GET     [0m /     r:/
+2022/09/25 20:55:53.824  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|   341.8562ms|   match|[46m POST    [0m /     r:/
+2022/09/25 20:55:55.636  [C] [config.go:190]  the request url is  /edit
+2022/09/25 20:55:55.636  [C] [config.go:191]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2022/09/25 20:55:55.636  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/25 20:55:55.636  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:220
+2022/09/25 20:55:55.636  [C] [config.go:197]  C:/Program Files/Go/src/runtime/signal_windows.go:255
+2022/09/25 20:55:55.636  [C] [config.go:197]  C:/GoProject/YunWeiBlog/models/blog_info_models.go:111
+2022/09/25 20:55:55.636  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/blog_edit_controller.go:65
+2022/09/25 20:55:55.636  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/25 20:55:55.636  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/25 20:55:55.636  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/25 20:55:55.636  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/25 20:55:55.636  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/25 20:55:55.636  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/25 20:57:34.398  [I] [parser.go:413]  generate router from comments
+2022/09/25 20:57:34.399  [I] [server.go:241]  http server Running on http://:80
+2022/09/25 20:57:36.224  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    17.7457ms|   match|[44m GET     [0m /     r:/
+2022/09/25 20:57:36.285  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    34.9511ms|   match|[46m POST    [0m /     r:/
+2022/09/25 20:57:37.597  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0393ms|   match|[44m GET     [0m /login   r:/login
+2022/09/25 20:57:43.957  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    18.8951ms|   match|[46m POST    [0m /login   r:/login
+2022/09/25 20:57:44.484  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    18.7083ms|   match|[44m GET     [0m /     r:/
+2022/09/25 20:57:44.865  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|   350.3639ms|   match|[46m POST    [0m /     r:/
+2022/09/25 20:57:47.307  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    64.9673ms|   match|[46m POST    [0m /edit   r:/edit
+2022/09/25 21:03:00.711  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     20.662ms|   match|[44m GET     [0m /     r:/
+2022/09/25 21:03:00.773  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    30.9268ms|   match|[46m POST    [0m /     r:/
+2022/09/25 21:03:00.788  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|        684µs|   match|[44m GET     [0m /static/upload/202209252050411636.png
+2022/09/25 21:03:04.576  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    74.8608ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/25 21:03:18.529  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.3514ms|   match|[44m GET     [0m /my   r:/my
+2022/09/25 21:03:18.551  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1015ms|   match|[44m GET     [0m /blog_manage   r:/blog_manage
+2022/09/25 21:03:18.551  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     13.595ms|   match|[44m GET     [0m /static/css/blog-manage-list.css
+2022/09/25 21:03:18.639  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    32.3916ms|   match|[46m POST    [0m /blog_manage   r:/blog_manage
+2022/09/25 21:03:26.324  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     37.914ms|   match|[44m GET     [0m /edit   r:/edit
+2022/09/25 21:03:31.229  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    93.7722ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/25 21:04:08.358  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    82.2417ms|   match|[44m GET     [0m /blog/1   r:/blog/:id
+2022/09/25 21:08:54.516  [I] [parser.go:413]  generate router from comments
+2022/09/25 21:08:54.519  [I] [server.go:241]  http server Running on http://:80
+2022/09/25 21:08:58.604  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    19.8144ms|   match|[44m GET     [0m /     r:/
+2022/09/25 21:08:58.694  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    58.6474ms|   match|[46m POST    [0m /     r:/
+2022/09/25 21:09:01.009  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    17.1067ms|   match|[44m GET     [0m /     r:/
+2022/09/25 21:09:01.063  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    34.4049ms|   match|[46m POST    [0m /     r:/
+2022/09/25 21:09:01.645  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    20.6038ms|   match|[44m GET     [0m /     r:/
+2022/09/25 21:09:01.701  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    35.0014ms|   match|[46m POST    [0m /     r:/
+2022/09/25 21:09:06.088  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    16.1461ms|   match|[44m GET     [0m /     r:/
+2022/09/25 21:09:06.138  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    30.1834ms|   match|[46m POST    [0m /     r:/
+2022/09/25 21:11:52.543  [I] [parser.go:413]  generate router from comments
+2022/09/25 21:11:52.545  [I] [server.go:241]  http server Running on http://:80
+2022/09/25 21:11:55.577  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    17.3912ms|   match|[44m GET     [0m /     r:/
+2022/09/25 21:11:55.605  [C] [config.go:190]  the request url is  /
+2022/09/25 21:11:55.605  [C] [config.go:191]  Handler crashed with error runtime error: index out of range [0] with length 0
+2022/09/25 21:11:55.606  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/25 21:11:55.606  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:89
+2022/09/25 21:11:55.606  [C] [config.go:197]  C:/GoProject/YunWeiBlog/models/blog_info_models.go:53
+2022/09/25 21:11:55.606  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/blog_list_controller.go:21
+2022/09/25 21:11:55.606  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/25 21:11:55.606  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/25 21:11:55.606  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/25 21:11:55.607  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/25 21:11:55.607  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/25 21:11:55.607  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/25 21:12:28.393  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    17.0461ms|   match|[44m GET     [0m /     r:/
+2022/09/25 21:12:28.418  [C] [config.go:190]  the request url is  /
+2022/09/25 21:12:28.418  [C] [config.go:191]  Handler crashed with error runtime error: index out of range [0] with length 0
+2022/09/25 21:12:28.418  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/25 21:12:28.418  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:89
+2022/09/25 21:12:28.418  [C] [config.go:197]  C:/GoProject/YunWeiBlog/models/blog_info_models.go:53
+2022/09/25 21:12:28.418  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/blog_list_controller.go:21
+2022/09/25 21:12:28.418  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/25 21:12:28.419  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/25 21:12:28.419  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/25 21:12:28.419  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/25 21:12:28.419  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/25 21:12:28.419  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/25 21:14:07.269  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    16.2381ms|   match|[44m GET     [0m /     r:/
+2022/09/25 21:14:07.335  [C] [config.go:190]  the request url is  /
+2022/09/25 21:14:07.335  [C] [config.go:191]  Handler crashed with error runtime error: index out of range [0] with length 0
+2022/09/25 21:14:07.336  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/25 21:14:07.336  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:89
+2022/09/25 21:14:07.336  [C] [config.go:197]  C:/GoProject/YunWeiBlog/models/blog_info_models.go:53
+2022/09/25 21:14:07.336  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/blog_list_controller.go:21
+2022/09/25 21:14:07.336  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/25 21:14:07.336  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/25 21:14:07.336  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/25 21:14:07.336  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/25 21:14:07.336  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/25 21:14:07.336  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/25 21:15:18.226  [I] [parser.go:413]  generate router from comments
+2022/09/25 21:15:18.227  [I] [server.go:241]  http server Running on http://:80
+2022/09/25 21:15:19.278  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    19.0546ms|   match|[44m GET     [0m /     r:/
+2022/09/25 21:15:19.344  [C] [config.go:190]  the request url is  /
+2022/09/25 21:15:19.345  [C] [config.go:191]  Handler crashed with error unknown model/table name `UserName`
+2022/09/25 21:15:19.345  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/25 21:15:19.347  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/db_tables.go:160
+2022/09/25 21:15:19.347  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/db.go:1022
+2022/09/25 21:15:19.347  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm_queryset.go:244
+2022/09/25 21:15:19.347  [C] [config.go:197]  C:/GoProject/YunWeiBlog/models/blog_info_models.go:52
+2022/09/25 21:15:19.348  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/blog_list_controller.go:21
+2022/09/25 21:15:19.348  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/25 21:15:19.348  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/25 21:15:19.348  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/25 21:15:19.348  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/25 21:15:19.348  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/25 21:15:19.348  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/25 21:15:58.309  [I] [parser.go:413]  generate router from comments
+2022/09/25 21:15:58.311  [I] [server.go:241]  http server Running on http://:80
+2022/09/25 21:15:59.437  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    18.0406ms|   match|[44m GET     [0m /     r:/
+2022/09/25 21:15:59.505  [C] [config.go:190]  the request url is  /
+2022/09/25 21:15:59.505  [C] [config.go:191]  Handler crashed with error runtime error: index out of range [0] with length 0
+2022/09/25 21:15:59.505  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/25 21:15:59.505  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:89
+2022/09/25 21:15:59.505  [C] [config.go:197]  C:/GoProject/YunWeiBlog/models/blog_info_models.go:53
+2022/09/25 21:15:59.505  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/blog_list_controller.go:21
+2022/09/25 21:15:59.505  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/25 21:15:59.505  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/25 21:15:59.505  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/25 21:15:59.505  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/25 21:15:59.506  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/25 21:15:59.506  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/25 21:16:32.568  [I] [parser.go:413]  generate router from comments
+2022/09/25 21:16:32.569  [I] [server.go:241]  http server Running on http://:80
+2022/09/25 21:16:33.426  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    17.4975ms|   match|[44m GET     [0m /     r:/
+2022/09/25 21:16:33.506  [C] [config.go:190]  the request url is  /
+2022/09/25 21:16:33.506  [C] [config.go:191]  Handler crashed with error runtime error: index out of range [0] with length 0
+2022/09/25 21:16:33.512  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/25 21:16:33.512  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:89
+2022/09/25 21:16:33.512  [C] [config.go:197]  C:/GoProject/YunWeiBlog/models/blog_info_models.go:53
+2022/09/25 21:16:33.513  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/blog_list_controller.go:21
+2022/09/25 21:16:33.513  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/25 21:16:33.513  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/25 21:16:33.513  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/25 21:16:33.513  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/25 21:16:33.513  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/25 21:16:33.513  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/25 21:16:43.043  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.1704ms|   match|[44m GET     [0m /login   r:/login
+2022/09/25 21:16:49.352  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    16.0495ms|   match|[46m POST    [0m /login   r:/login
+2022/09/25 21:16:49.887  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    22.1312ms|   match|[44m GET     [0m /     r:/
+2022/09/25 21:16:49.939  [C] [config.go:190]  the request url is  /
+2022/09/25 21:16:49.939  [C] [config.go:191]  Handler crashed with error runtime error: index out of range [0] with length 0
+2022/09/25 21:16:49.939  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/25 21:16:49.939  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:89
+2022/09/25 21:16:49.939  [C] [config.go:197]  C:/GoProject/YunWeiBlog/models/blog_info_models.go:53
+2022/09/25 21:16:49.939  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/blog_list_controller.go:21
+2022/09/25 21:16:49.940  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/25 21:16:49.940  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/25 21:16:49.940  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/25 21:16:49.940  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/25 21:16:49.940  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/25 21:16:49.940  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/25 21:16:51.463  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      715.4µs|   match|[44m GET     [0m /my   r:/my
+2022/09/25 21:16:51.485  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.9857ms|   match|[44m GET     [0m /blog_manage   r:/blog_manage
+2022/09/25 21:16:51.517  [C] [config.go:190]  the request url is  /blog_manage
+2022/09/25 21:16:51.517  [C] [config.go:191]  Handler crashed with error runtime error: index out of range [0] with length 0
+2022/09/25 21:16:51.517  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/25 21:16:51.518  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:89
+2022/09/25 21:16:51.518  [C] [config.go:197]  C:/GoProject/YunWeiBlog/models/blog_info_models.go:53
+2022/09/25 21:16:51.519  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/blog_manage_controller.go:50
+2022/09/25 21:16:51.519  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/25 21:16:51.519  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/25 21:16:51.519  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/25 21:16:51.519  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/25 21:16:51.519  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/25 21:16:51.519  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571
+0001/01/01 00:00:00.000  [M] [log.go:205]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:230)
+2022/09/25 21:17:03.699  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.3277ms|   match|[44m GET     [0m /my   r:/my
+2022/09/25 21:17:03.712  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.2081ms|   match|[44m GET     [0m /blog_manage   r:/blog_manage
+2022/09/25 21:17:03.744  [C] [config.go:190]  the request url is  /blog_manage
+2022/09/25 21:17:03.744  [C] [config.go:191]  Handler crashed with error runtime error: index out of range [0] with length 0
+2022/09/25 21:17:03.744  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:838
+2022/09/25 21:17:03.745  [C] [config.go:197]  C:/Program Files/Go/src/runtime/panic.go:89
+2022/09/25 21:17:03.745  [C] [config.go:197]  C:/GoProject/YunWeiBlog/models/blog_info_models.go:53
+2022/09/25 21:17:03.745  [C] [config.go:197]  C:/GoProject/YunWeiBlog/controllers/blog_manage_controller.go:50
+2022/09/25 21:17:03.745  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:865
+2022/09/25 21:17:03.746  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81
+2022/09/25 21:17:03.746  [C] [config.go:197]  C:/Users/Admin/go/src/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664
+2022/09/25 21:17:03.746  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:2916
+2022/09/25 21:17:03.746  [C] [config.go:197]  C:/Program Files/Go/src/net/http/server.go:1966
+2022/09/25 21:17:03.746  [C] [config.go:197]  C:/Program Files/Go/src/runtime/asm_amd64.s:1571

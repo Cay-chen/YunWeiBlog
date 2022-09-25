@@ -1,10 +1,4 @@
 .el-form-item{
-    -webkit-text-size-adjust: 100%;
-    --animate-duration: 1s;
-    --animate-delay: 1s;
-    --animate-repeat: 1;
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
     color: #2c3e50;
     list-style: none;
     font-family: SF Pro Display,Roboto,Noto,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
@@ -22,12 +16,6 @@
     z-index: 8;
 }
 .el-form-item__content{
-    -webkit-text-size-adjust: 100%;
-    --animate-duration: 1s;
-    --animate-delay: 1s;
-    --animate-repeat: 1;
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
     color: #2c3e50;
     list-style: none;
     font-family: SF Pro Display,Roboto,Noto,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
@@ -41,12 +29,6 @@
     margin: 0!important;
 }
 .opt-box{
-    -webkit-text-size-adjust: 100%;
-    --animate-duration: 1s;
-    --animate-delay: 1s;
-    --animate-repeat: 1;
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
     color: #2c3e50;
     list-style: none;
     font-family: SF Pro Display,Roboto,Noto,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
@@ -64,12 +46,6 @@
     transform: translateX(-16px);
 }
 .btn-box{
-    -webkit-text-size-adjust: 100%;
-    --animate-duration: 1s;
-    --animate-delay: 1s;
-    --animate-repeat: 1;
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
     color: #2c3e50;
     list-style: none;
     font-family: SF Pro Display,Roboto,Noto,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
@@ -82,12 +58,6 @@
     margin-left: auto;
 }
 .btn-box span{
-    -webkit-text-size-adjust: 100%;
-    --animate-duration: 1s;
-    --animate-delay: 1s;
-    --animate-repeat: 1;
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
     color: #2c3e50;
     list-style: none;
     text-align: left;
@@ -99,12 +69,6 @@
     font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif!important;
 }
 .el-popover__reference-wrapper{
-    -webkit-text-size-adjust: 100%;
-    --animate-duration: 1s;
-    --animate-delay: 1s;
-    --animate-repeat: 1;
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
     color: #2c3e50;
     list-style: none;
     text-align: left;
@@ -116,12 +80,6 @@
     font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif!important;
 }
 .el-button{
-    -webkit-text-size-adjust: 100%;
-    --animate-duration: 1s;
-    --animate-delay: 1s;
-    --animate-repeat: 1;
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
     list-style: none;
     font-family: inherit;
     overflow: visible;
@@ -151,12 +109,6 @@
     font-size: 16px;
 }
 .el-button span{
-    -webkit-text-size-adjust: 100%;
-    --animate-duration: 1s;
-    --animate-delay: 1s;
-    --animate-repeat: 1;
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
     list-style: none;
     text-transform: none;
     white-space: nowrap;
@@ -173,11 +125,6 @@
     font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif!important;
 }
 .el-icon-caret-bottom{
-    -webkit-text-size-adjust: 100%;
-    --animate-duration: 1s;
-    --animate-delay: 1s;
-    --animate-repeat: 1;
-    -webkit-box-direction: normal;
     list-style: none;
     white-space: nowrap;
     text-align: center;
@@ -202,12 +149,6 @@
     margin-right: -2px;
 }
 .btn-outline-danger{
-    -webkit-text-size-adjust: 100%;
-    --animate-duration: 1s;
-    --animate-delay: 1s;
-    --animate-repeat: 1;
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
     list-style: none;
     font-family: inherit;
     overflow: visible;

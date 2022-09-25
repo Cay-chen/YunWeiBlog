@@ -10,7 +10,6 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"os"
 	"strings"
-	"time"
 )
 
 func main() {
@@ -41,7 +40,7 @@ func init() {
 	} // register model
 	orm.SetMaxIdleConns("default", 30)
 	orm.SetMaxOpenConns("default", 30)
-	orm.DefaultTimeLoc = time.UTC
+	//orm.DefaultTimeLoc = time.UTC
 	orm.RegisterModel(new(dao.BlogInfo), new(dao.User), new(dao.BlogClassify))
 	//orm.RegisterModel(new(dao.User1), new(dao.Post), new(dao.Profile), new(dao.Tag))
 	isInstall, _ := beego.AppConfig.String("isInstall")
